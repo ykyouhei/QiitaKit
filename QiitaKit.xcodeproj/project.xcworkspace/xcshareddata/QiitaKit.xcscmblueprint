@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "51B721E3C5D188F8396985506E57B94B32382ED9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F207A49DE14554C3B5D51A0C807E4D5D4ABB5432" : 0,
+    "51B721E3C5D188F8396985506E57B94B32382ED9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AC799F6F-4A8F-4993-B663-9F069DF441E1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F207A49DE14554C3B5D51A0C807E4D5D4ABB5432" : "",
+    "51B721E3C5D188F8396985506E57B94B32382ED9" : "QiitaKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "QiitaKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "QiitaKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ykyouhei\/QiitaKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "51B721E3C5D188F8396985506E57B94B32382ED9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ykyouhei\/Qiitag.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F207A49DE14554C3B5D51A0C807E4D5D4ABB5432"
+    }
+  ]
+}

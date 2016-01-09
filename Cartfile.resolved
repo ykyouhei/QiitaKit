@@ -1,0 +1,4 @@
+github "kishikawakatsumi/KeychainAccess" "v2.3.3"
+github "Hearst-DD/ObjectMapper" "1.1.1"
+github "antitypical/Result" "1.0.1"
+github "ishkawa/APIKit" "1.1.2"
