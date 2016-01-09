@@ -10,6 +10,18 @@
 		C278CA8B1C40F146005DCFB5 /* QiitaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C278CA8A1C40F146005DCFB5 /* QiitaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
 		C278CA971C40F146005DCFB5 /* QiitaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */; };
+		C278CAB81C40F51A005DCFB5 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */; };
+		C278CAB91C40F51A005DCFB5 /* AuthenticatedUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */; };
+		C278CABA1C40F51A005DCFB5 /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */; };
+		C278CABB1C40F51A005DCFB5 /* FollowingTagsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */; };
+		C278CABC1C40F51A005DCFB5 /* ItemsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */; };
+		C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */; };
+		C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */; };
+		C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */; };
+		C278CAC51C40F52F005DCFB5 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC01C40F52F005DCFB5 /* PostItem.swift */; };
+		C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC11C40F52F005DCFB5 /* Tag.swift */; };
+		C278CAC71C40F52F005DCFB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC21C40F52F005DCFB5 /* User.swift */; };
+		C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC81C40F54E005DCFB5 /* AuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,18 @@
 		C278CA911C40F146005DCFB5 /* QiitaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaKitTests.swift; sourceTree = "<group>"; };
 		C278CA981C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
+		C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserRequest.swift; sourceTree = "<group>"; };
+		C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
+		C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingTagsRequest.swift; sourceTree = "<group>"; };
+		C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsRequest.swift; sourceTree = "<group>"; };
+		C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaRequestType.swift; sourceTree = "<group>"; };
+		C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
+		C278CAC01C40F52F005DCFB5 /* PostItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		C278CAC11C40F52F005DCFB5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		C278CAC21C40F52F005DCFB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C278CAC81C40F54E005DCFB5 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +95,9 @@
 		C278CA891C40F146005DCFB5 /* QiitaKit */ = {
 			isa = PBXGroup;
 			children = (
-				C278CA8A1C40F146005DCFB5 /* QiitaKit.h */,
-				C278CA8C1C40F146005DCFB5 /* Info.plist */,
+				C278CAAA1C40F388005DCFB5 /* Classes */,
+				C278CAAF1C40F44E005DCFB5 /* Frameworks */,
+				C278CAAB1C40F394005DCFB5 /* SupportingFiles */,
 			);
 			path = QiitaKit;
 			sourceTree = "<group>";
@@ -80,10 +105,69 @@
 		C278CA951C40F146005DCFB5 /* QiitaKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */,
 				C278CA981C40F146005DCFB5 /* Info.plist */,
+				C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */,
 			);
 			path = QiitaKitTests;
+			sourceTree = "<group>";
+		};
+		C278CAAA1C40F388005DCFB5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C278CAAE1C40F444005DCFB5 /* Managers */,
+				C278CAAD1C40F43E005DCFB5 /* Requests */,
+				C278CAAC1C40F424005DCFB5 /* Entities */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C278CAAB1C40F394005DCFB5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C278CA8C1C40F146005DCFB5 /* Info.plist */,
+				C278CA8A1C40F146005DCFB5 /* QiitaKit.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C278CAAC1C40F424005DCFB5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */,
+				C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */,
+				C278CAC01C40F52F005DCFB5 /* PostItem.swift */,
+				C278CAC11C40F52F005DCFB5 /* Tag.swift */,
+				C278CAC21C40F52F005DCFB5 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C278CAAD1C40F43E005DCFB5 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */,
+				C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */,
+				C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */,
+				C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */,
+				C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */,
+				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C278CAAE1C40F444005DCFB5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C278CAC81C40F54E005DCFB5 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C278CAAF1C40F44E005DCFB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +278,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C278CAC51C40F52F005DCFB5 /* PostItem.swift in Sources */,
+				C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */,
+				C278CAB91C40F51A005DCFB5 /* AuthenticatedUserRequest.swift in Sources */,
+				C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */,
+				C278CAB81C40F51A005DCFB5 /* AccessTokenRequest.swift in Sources */,
+				C278CABC1C40F51A005DCFB5 /* ItemsRequest.swift in Sources */,
+				C278CABB1C40F51A005DCFB5 /* FollowingTagsRequest.swift in Sources */,
+				C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */,
+				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
+				C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */,
+				C278CABA1C40F51A005DCFB5 /* AuthorizeRequest.swift in Sources */,
+				C278CAC71C40F52F005DCFB5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,27 +404,30 @@
 		C278CA9C1C40F146005DCFB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = QiitaKit/Info.plist;
+				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C278CA9D1C40F146005DCFB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = QiitaKit/Info.plist;
+				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
@@ -376,6 +475,7 @@
 				C278CA9D1C40F146005DCFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C278CA9E1C40F146005DCFB5 /* Build configuration list for PBXNativeTarget "QiitaKitTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +484,7 @@
 				C278CAA01C40F146005DCFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
