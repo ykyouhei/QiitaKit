@@ -22,6 +22,14 @@
 		C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC11C40F52F005DCFB5 /* Tag.swift */; };
 		C278CAC71C40F52F005DCFB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC21C40F52F005DCFB5 /* User.swift */; };
 		C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC81C40F54E005DCFB5 /* AuthManager.swift */; };
+		C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */; };
+		C2A29E6F1C4129BA00542D7C /* NSURL+Fragments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */; };
+		C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E711C412AE200542D7C /* UIKit.framework */; };
+		C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E731C412AF200542D7C /* WebKit.framework */; };
+		C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
+		C2A29E7A1C412B2500542D7C /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E761C412B2500542D7C /* KeychainAccess.framework */; };
+		C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
+		C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E7F1C41388300542D7C /* QiitaKitError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,14 @@
 		C278CAC11C40F52F005DCFB5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C278CAC21C40F52F005DCFB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C278CAC81C40F54E005DCFB5 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWebViewController.swift; path = ViewControllers/AuthWebViewController.swift; sourceTree = "<group>"; };
+		C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Fragments.swift"; sourceTree = "<group>"; };
+		C2A29E711C412AE200542D7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C2A29E731C412AF200542D7C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C2A29E751C412B2500542D7C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = SOURCE_ROOT; };
+		C2A29E761C412B2500542D7C /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = SOURCE_ROOT; };
+		C2A29E781C412B2500542D7C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
+		C2A29E7F1C41388300542D7C /* QiitaKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaKitError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */,
+				C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */,
+				C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */,
+				C2A29E7A1C412B2500542D7C /* KeychainAccess.framework in Frameworks */,
+				C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,9 +135,12 @@
 		C278CAAA1C40F388005DCFB5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C2A29E6D1C41299200542D7C /* Extensions */,
+				C278CACA1C40FAB6005DCFB5 /* ViewControllers */,
 				C278CAAE1C40F444005DCFB5 /* Managers */,
 				C278CAAD1C40F43E005DCFB5 /* Requests */,
 				C278CAAC1C40F424005DCFB5 /* Entities */,
+				C2A29E7F1C41388300542D7C /* QiitaKitError.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -145,9 +169,9 @@
 		C278CAAD1C40F43E005DCFB5 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */,
 				C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */,
 				C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */,
-				C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */,
 				C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */,
 				C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */,
 				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
@@ -166,8 +190,29 @@
 		C278CAAF1C40F44E005DCFB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2A29E751C412B2500542D7C /* APIKit.framework */,
+				C2A29E761C412B2500542D7C /* KeychainAccess.framework */,
+				C2A29E781C412B2500542D7C /* Result.framework */,
+				C2A29E731C412AF200542D7C /* WebKit.framework */,
+				C2A29E711C412AE200542D7C /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C278CACA1C40FAB6005DCFB5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C2A29E6D1C41299200542D7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +237,7 @@
 				C278CA831C40F146005DCFB5 /* Frameworks */,
 				C278CA841C40F146005DCFB5 /* Headers */,
 				C278CA851C40F146005DCFB5 /* Resources */,
+				C2A29E701C412A8300542D7C /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -273,18 +319,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C2A29E701C412A8300542D7C /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C278CA821C40F146005DCFB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A29E6F1C4129BA00542D7C /* NSURL+Fragments.swift in Sources */,
 				C278CAC51C40F52F005DCFB5 /* PostItem.swift in Sources */,
 				C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */,
 				C278CAB91C40F51A005DCFB5 /* AuthenticatedUserRequest.swift in Sources */,
 				C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */,
 				C278CAB81C40F51A005DCFB5 /* AccessTokenRequest.swift in Sources */,
 				C278CABC1C40F51A005DCFB5 /* ItemsRequest.swift in Sources */,
+				C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */,
 				C278CABB1C40F51A005DCFB5 /* FollowingTagsRequest.swift in Sources */,
+				C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */,
 				C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */,
 				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
 				C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */,
@@ -409,6 +479,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -428,6 +502,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

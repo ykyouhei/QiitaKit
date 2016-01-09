@@ -13,7 +13,7 @@ import ObjectMapper
 /**
  ユーザがフォローしているタグ一覧をフォロー日時の降順で返すリクエスト
  */
-public struct FollowingTagsRequest: QiitaPageableRequestType {
+public struct FollowingTagsRequest {
     
     /// 取得するユーザのID
     public let userID: String
@@ -31,6 +31,10 @@ public struct FollowingTagsRequest: QiitaPageableRequestType {
         self.perPage = perPage
     }
     
+}
+
+extension FollowingTagsRequest: QiitaPageableRequestType {
+    
     public var method: HTTPMethod {
         return .GET
     }
@@ -42,6 +46,7 @@ public struct FollowingTagsRequest: QiitaPageableRequestType {
     public var parameters: [String : AnyObject] {
         return pageParamaters
     }
+    
     
     public func responseFromObjects(object: AnyObject) -> [Tag]? {
         guard let json = object as? [AnyObject] else {

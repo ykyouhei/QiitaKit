@@ -12,20 +12,23 @@ import ObjectMapper
 /**
  投稿に付けられた個々のタグを表します
  */
-public struct Tag: Mappable {
+public struct Tag  {
     
     /// タグを特定するための一意な名前
-    private(set) var id: String!
+    public private(set) var id: String!
     
     /// このタグをフォローしているユーザの数
-    private(set) var followersCount: Int!
+    public private(set) var followersCount: Int!
     
     /// このタグが付けられた投稿の数
-    private(set) var itemsCount : Int!
+    public private(set) var itemsCount : Int!
     
     /// このタグに設定されたアイコン画像のURL
-    private(set) var iconURL: NSURL?
+    public private(set) var iconURL: NSURL?
     
+}
+
+extension Tag: Mappable {
     
     public init?(_ map: Map) {
     }

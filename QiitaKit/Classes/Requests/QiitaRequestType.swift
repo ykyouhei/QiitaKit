@@ -20,11 +20,12 @@ extension QiitaRequestType {
     }
     
     public var baseURL: NSURL {
-        return NSURL(string: "https://qiita.com/api/\(version)")!
+        let domain = AuthManager.teamDomain ?? "qiita.com"
+        return NSURL(string: "https://\(domain)/api/\(version)")!
     }
     
     public var HTTPHeaderFields: [String : String] {
-        guard let token = Keychain.serviceKeychain[.QiitaAccessToken] else {
+        guard let token = AuthManager.accessToken else {
             return [String : String]()
         }
         return [
@@ -39,7 +40,7 @@ extension QiitaRequestType {
         {
             return nil
         }
-        return Error.Other(type: type, message: message)
+        return QiitaKitError.CommonError(message: message, type: type)
     }
 
 }

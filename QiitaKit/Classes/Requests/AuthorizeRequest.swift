@@ -9,58 +9,31 @@
 import Foundation
 import APIKit
 
+/**
+ APIのスコープ
+ 
+ - ReadQiita:      Qiitaからアクセストークンに紐付いたユーザに関連したデータを読み出す
+ - ReadQiitaTeam:  Qiita:Teamからデータを読み出す
+ - WriteQiita:     Qiitaにデータを書き込む
+ - WriteQiitaTeam: Qiita:Teamにデータを書き込む
+ */
+public enum Scope: String {
+    case ReadQiita      = "read_qiita"
+    case ReadQiitaTeam  = "read_qiita_team"
+    case WriteQiita     = "write_qiita"
+    case WriteQiitaTeam = "write_qiita_team"
+}
+
+/**
+ アプリケーションのユーザに認可画面を表示するためのリクエスト
+ */
 public struct AuthorizeRequest {
     
-    /* ====================================================================== */
-    // MARK: - Types
-    /* ====================================================================== */
-    
-    /**
-    APIのスコープ
-    
-    - ReadQiita:      Qiitaからアクセストークンに紐付いたユーザに関連したデータを読み出す
-    - ReadQiitaTeam:  Qiita:Teamからデータを読み出す
-    - WriteQiita:     Qiitaにデータを書き込む
-    - WriteQiitaTeam: Qiita:Teamにデータを書き込む
-    */
-    struct Scope: OptionSetType {
-        let rawValue: Int
-        
-        static let ReadQiita      = Scope(rawValue: 0)
-        static let ReadQiitaTeam  = Scope(rawValue: 1 << 0)
-        static let WriteQiita     = Scope(rawValue: 1 << 1)
-        static let WriteQiitaTeam = Scope(rawValue: 1 << 2)
-        
-        var paramaterString: String {
-            var scopes = [String]()
-            
-            if contains(.ReadQiita) {
-                scopes.append("read_qiita")
-            }
-            if contains(.ReadQiitaTeam) {
-                scopes.append("read_qiita_team")
-            }
-            if contains(.WriteQiita) {
-                scopes.append("write_qiita")
-            }
-            if contains(.WriteQiitaTeam) {
-                scopes.append("write_qiita_team")
-            }
-            
-            return scopes.joinWithSeparator(" ")
-        }
-    }
-    
-    
-    /* ====================================================================== */
-    // MARK: - Properties
-    /* ====================================================================== */
-    
-    /// QiitaAPIのClientID
+    /// 登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます。
     let clientID: String
     
-    /// 利用許可を求めるスコープ
-    let scope: Scope
+    /// アプリケーションが利用するスコープ
+    let scopes: Set<Scope>
     
     /// CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値
     let state: String
@@ -82,12 +55,13 @@ extension AuthorizeRequest: QiitaRequestType {
     public var parameters: [String : AnyObject] {
         return [
             "client_id" : clientID,
-            "scope" : scope.paramaterString,
-            "state" : state
+            "scope"     : scopes.map{ $0.rawValue }.joinWithSeparator(" "),
+            "state"     : state
         ]
     }
     
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
         return nil
     }
+    
 }

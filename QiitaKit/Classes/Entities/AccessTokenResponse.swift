@@ -12,19 +12,23 @@ import ObjectMapper
 /**
  アクセストークン情報
  */
-public struct AccessTokenResponse: Mappable {
+public struct AccessTokenResponse {
     
-    private(set) var clientID: String!
+    public private(set) var clientID: String!
     
-    private(set) var token: String!
-    
+    public private(set) var token: String!
+   
+}
+
+extension AccessTokenResponse: Mappable {
+   
     public init?(_ map: Map) {
     }
     
-    // Mappable
     public mutating func mapping(map: Map) {
         clientID <- map["client_id"]
         token    <- map["token"]
     }
-    
+     
 }
+

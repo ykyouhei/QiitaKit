@@ -14,6 +14,10 @@ import ObjectMapper
  現在のアクセストークンで認証中のユーザを取得するリクエスト
  */
 public struct AuthenticatedUserRequest {
+    
+    public init() {
+    }
+    
 }
 
 extension AuthenticatedUserRequest: QiitaRequestType {

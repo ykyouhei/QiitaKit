@@ -12,41 +12,44 @@ import ObjectMapper
 /**
  ユーザからの投稿を表します
  */
-public struct PostItem: Mappable {
+public struct PostItem {
     
     /// タグを特定するための一意な名前
-    private(set) var id: String!
+    public private(set) var id: String!
     
     /// HTML形式の本文
-    private(set) var renderedBody: String!
+    public private(set) var renderedBody: String!
     
     /// Markdown形式の本文
-    private(set) var body: String!
+    public private(set) var body: String!
     
     /// この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)
-    private(set) var coediting: Bool!
+    public private(set) var coediting: Bool!
     
     /// データが作成された日時
-    private(set) var createdAt: NSDate!
+    public private(set) var createdAt: NSDate!
     
     /// 限定共有状態かどうかを表すフラグ (Qiita:Teamでは無効)
-    private(set) var privated: Bool!
+    public private(set) var privated: Bool!
     
     /// このタグが付けられた投稿の数
-    private(set) var tags: [[String : AnyObject]]!
+    public private(set) var tags: [[String : AnyObject]]!
     
     /// 投稿のタイトル
-    private(set) var title: String!
+    public private(set) var title: String!
     
     /// データが最後に更新された日時
-    private(set) var updatedAt: NSDate!
+    public private(set) var updatedAt: NSDate!
     
     /// 投稿のURL
-    private(set) var URL: NSURL!
+    public private(set) var URL: NSURL!
     
     /// 投稿者
-    private(set) var user: User!
+    public private(set) var user: User!
     
+}
+
+extension PostItem: Mappable {
     
     public init?(_ map: Map) {
     }
@@ -56,11 +59,11 @@ public struct PostItem: Mappable {
         renderedBody    <- map["rendered_body"]
         body            <- map["body"]
         coediting       <- map["coediting"]
-        createdAt       <- (map["created_at"], qiitaDateTransform())
+        createdAt       <- (map["created_at"], ISO8601DateTransform())
         privated        <- map["private"]
         tags            <- map["tags"]
         title           <- map["title"]
-        updatedAt       <- (map["updated_at"], qiitaDateTransform())
+        updatedAt       <- (map["updated_at"], ISO8601DateTransform())
         URL             <- (map["url"], URLTransform())
         user            <- map["user"]
     }

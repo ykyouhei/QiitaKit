@@ -16,89 +16,59 @@ import Result
  */
 public struct AuthenticatedUser {
     
-    /// 認証中のユーザ
-    static private(set) var currentUser: AuthenticatedUser?
-    
-    
-    /// ユーザID
-    private(set) var id: String!
-    
-    //// このユーザがフォローしているユーザの数
-    private(set) var followeesCount: Int!
-    
-    /// このユーザをフォローしているユーザの数
-    private(set) var followersCount: Int!
-    
-    /// このユーザが qiita.com 上で公開している投稿の数 (Qiita:Teamでの投稿数は含まれません)
-    private(set) var itemsCount: Int!
-    
-    /// ユーザごとに割り当てられる整数のID
-    private(set) var permanentID: Int!
-    
-    /// 設定しているプロフィール画像のURL
-    private(set) var profileImageURL: NSURL!
-    
-    /// 1ヶ月あたりにQiitaにアップロードできる画像の総容量
-    private(set) var imageMonthlyUploadLimit: Int!
-    
-    /// その月にQiitaにアップロードできる画像の残りの容量
-    private(set) var imageMonthlyUploadRemaining: Int!
-    
-    /// Qiita:Team専用モードに設定されているかどうか
-    private(set) var teamOnly: Bool!
-    
     /// 自己紹介文
-    private(set) var description: String?
+    public private(set) var description: String?
     
     /// Facebook ID
-    private(set) var facebookID: String?
+    public private(set) var facebookID: String?
+    
+    //// このユーザがフォローしているユーザの数
+    public private(set) var followeesCount: Int!
+    
+    /// このユーザをフォローしているユーザの数
+    public private(set) var followersCount: Int!
     
     /// GitHub ID
-    private(set) var githubLoginName: String?
+    public private(set) var githubLoginName: String?
+    
+    /// ユーザID
+    public private(set) var id: String!
+    
+    /// このユーザが qiita.com 上で公開している投稿の数 (Qiita:Teamでの投稿数は含まれません)
+    public private(set) var itemsCount: Int!
     
     /// LinkedIn ID
-    private(set) var linkedinID: String?
+    public private(set) var linkedinID: String?
     
     /// 居住地
-    private(set) var location: String?
+    public private(set) var location: String?
     
     /// 設定している名前
-    private(set) var name: String?
+    public private(set) var name: String?
     
     /// 所属している組織
-    private(set) var organization: String?
+    public private(set) var organization: String?
+    
+    /// ユーザごとに割り当てられる整数のID
+    public private(set) var permanentID: Int!
+    
+    /// 設定しているプロフィール画像のURL
+    public private(set) var profileImageURL: NSURL!
     
     /// Twitterのスクリーンネーム
-    private(set) var twitterScreenName: String?
+    public private(set) var twitterScreenName: String?
     
     /// 設定しているWebサイトのURL
-    private(set) var websiteURL: NSURL?
+    public private(set) var websiteURL: NSURL?
     
+    /// 1ヶ月あたりにQiitaにアップロードできる画像の総容量
+    public private(set) var imageMonthlyUploadLimit: Int!
     
-    /* ====================================================================== */
-    // MARK: - Public Method
-    /* ====================================================================== */
+    /// その月にQiitaにアップロードできる画像の残りの容量
+    public private(set) var imageMonthlyUploadRemaining: Int!
     
-    /**
-    認証中のユーザを取得する
-    
-    - parameter completion: 取得完了後に呼ばれるコールバック
-    */
-    static public func fetchCurrentUserWithCompletion(completion: (Result<AuthenticatedUser, Error>) -> Void) {
-        Session.sendRequest(AuthenticatedUserRequest()) { result in
-            switch result {
-            case .Success(let user):
-                
-                currentUser = user
-                
-                completion(.Success(user))
-                
-            case .Failure:
-                completion(Result.Failure(Error.Other(type: "", message: "")))
-                
-            }
-        }
-    }
+    /// Qiita:Team専用モードに設定されているかどうか
+    public private(set) var teamOnly: Bool!
     
 }
 
@@ -115,9 +85,6 @@ extension AuthenticatedUser: Mappable {
         itemsCount                  <- map["items_count"]
         permanentID                 <- map["permanent_id"]
         profileImageURL             <- (map["profile_image_url"], URLTransform())
-        imageMonthlyUploadLimit     <- map["image_monthly_upload_limit"]
-        imageMonthlyUploadRemaining <- map["image_monthly_upload_remaining"]
-        teamOnly                    <- map["team_only"]
         description                 <- map["description"]
         facebookID                  <- map["facebook_id"]
         githubLoginName             <- map["github_login_name"]
@@ -127,6 +94,11 @@ extension AuthenticatedUser: Mappable {
         organization                <- map["organization"]
         twitterScreenName           <- map["twitter_screen_name"]
         websiteURL                  <- (map["website_url"], URLTransform())
+        
+        imageMonthlyUploadLimit     <- map["image_monthly_upload_limit"]
+        imageMonthlyUploadRemaining <- map["image_monthly_upload_remaining"]
+        teamOnly                    <- map["team_only"]
     }
+    
 }
 
