@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C266F4731C43EED40069AAB5 /* StockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266F4721C43EED40069AAB5 /* StockRequest.swift */; };
 		C278CA8B1C40F146005DCFB5 /* QiitaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C278CA8A1C40F146005DCFB5 /* QiitaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
 		C278CA971C40F146005DCFB5 /* QiitaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C266F4721C43EED40069AAB5 /* StockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockRequest.swift; sourceTree = "<group>"; };
 		C278CA871C40F146005DCFB5 /* QiitaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QiitaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C278CA8A1C40F146005DCFB5 /* QiitaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiitaKit.h; sourceTree = "<group>"; };
 		C278CA8C1C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */,
 				C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */,
 				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
+				C266F4721C43EED40069AAB5 /* StockRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */,
 				C278CABB1C40F51A005DCFB5 /* FollowingTagsRequest.swift in Sources */,
 				C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */,
+				C266F4731C43EED40069AAB5 /* StockRequest.swift in Sources */,
 				C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */,
 				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
 				C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */,
