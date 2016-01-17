@@ -40,7 +40,13 @@ extension QiitaRequestType {
         {
             return nil
         }
-        return QiitaKitError.CommonError(message: message, type: type)
+       
+        switch type {
+        case "already_stocked":
+            return QiitaKitError.AlreadyStocked
+        default:
+            return QiitaKitError.CommonError(message: message, type: type)
+        }
     }
 
 }

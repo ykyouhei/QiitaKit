@@ -21,6 +21,8 @@ public enum QiitaKitError: ErrorType {
     
     case FaildToGetAccessToken
     
+    case AlreadyStocked
+    
     case CommonError(message: String, type: String)
     
 }
