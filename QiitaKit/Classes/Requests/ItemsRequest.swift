@@ -8,111 +8,98 @@
 
 import Foundation
 import APIKit
-import ObjectMapper
+import Unbox
 
-/**
- 各種投稿一覧を返すリクエスト
- */
-public struct ItemsRequest {
-    
-    /* ====================================================================== */
-    // MARK: - Types
-    /* ====================================================================== */
+extension QiitaAPI {
     
     /**
-    投稿取得のタイプ
-    */
-    public enum Type {
-        
-        /// 認証中のユーザの投稿の一覧を作成日時の降順で返します
-        case AuthenticatedUser
+     各種投稿一覧を返すリクエスト
+     */
+    public struct ItemsRequest: QiitaPageableRequestType {
         
         /**
-         クエリにマッチした投稿の一覧を作成日時の降順で返します
-         - ex. "qiita user:yaotti"
-        */
-        case Search(query: String)
-
-        /// 指定されたタグが付けられた投稿一覧をタグを付けた日時の降順で返します
-        case Tag(tagID: String)
-        
-        /// 指定されたユーザの投稿一覧を作成日時の降順で返します
-        case User(userID: String)
-
-        /// 指定されたユーザがストックした投稿一覧をストックした日時の降順で返します
-        case UserStoks(userID: String)
-        
-    }
-    
-    
-    /* ====================================================================== */
-    // MARK: - Properties
-    /* ====================================================================== */
-    
-    /// 取得する投稿の種別
-    public let type: Type
-    
-    /// ページ番号 (1から100まで)
-    public var page: Int
-    
-    /// 1ページあたりに含まれる要素数 (1から100まで)
-    public var perPage: Int
-    
-    
-    public init(type: Type, page: Int = 1, perPage: Int = 20) {
-        self.type    = type
-        self.page    = page
-        self.perPage = perPage
-    }
-    
-}
-
-extension ItemsRequest: QiitaPageableRequestType {
-    
-    public var method: HTTPMethod {
-        return .GET
-    }
-    
-    public var path: String {
-        switch type {
-        case .AuthenticatedUser:
-            return "authenticated_user/items"
+         投稿取得のタイプ
+         */
+        public enum Type {
             
-        case .Search:
-            return "items"
+            /// 認証中のユーザの投稿の一覧を作成日時の降順で返します
+            case AuthenticatedUser
             
-        case .Tag(let tagID):
-            return "tags/\(tagID)/items"
+            /**
+             クエリにマッチした投稿の一覧を作成日時の降順で返します
+             - ex. "qiita user:yaotti"
+             */
+            case Search(query: String)
             
-        case .User(let userID):
-            return "users/\(userID)/items"
+            /// 指定されたタグが付けられた投稿一覧をタグを付けた日時の降順で返します
+            case Tag(tagID: String)
             
-        case .UserStoks(let userID):
-            return "users/\(userID)/stocks"
-        }
-    }
-    
-    public var parameters: [String : AnyObject] {
-        var params = pageParamaters
-        
-        if case .Search(let query) = type {
-            params["query"] = query
+            /// 指定されたユーザの投稿一覧を作成日時の降順で返します
+            case User(userID: String)
+            
+            /// 指定されたユーザがストックした投稿一覧をストックした日時の降順で返します
+            case UserStoks(userID: String)
+            
         }
         
-        return params
-    }
-    
-    public func responseFromObjects(object: AnyObject) -> [PostItem]? {
-        guard let json = object as? [AnyObject] else {
-            return nil
+        
+        /// 取得する投稿の種別
+        public let type: Type
+        
+        /// ページ番号 (1から100まで)
+        public var page: Int
+        
+        /// 1ページあたりに含まれる要素数 (1から100まで)
+        public var perPage: Int
+        
+        
+        public init(type: Type, page: Int = 1, perPage: Int = 20) {
+            self.type    = type
+            self.page    = page
+            self.perPage = perPage
         }
         
-        var items = [PostItem]()
-        json.forEach {
-            items.append(Mapper<PostItem>().map($0)!)
+        
+        // MARK: QiitaPageableRequestType
+        
+        public var method: HTTPMethod {
+            return .GET
         }
         
-        return items
+        public var path: String {
+            switch type {
+            case .AuthenticatedUser:
+                return "authenticated_user/items"
+                
+            case .Search:
+                return "items"
+                
+            case .Tag(let tagID):
+                return "tags/\(tagID)/items"
+                
+            case .User(let userID):
+                return "users/\(userID)/items"
+                
+            case .UserStoks(let userID):
+                return "users/\(userID)/stocks"
+            }
+        }
+        
+        public var parameters: AnyObject? {
+            var params = pageParamaters
+            
+            if case .Search(let query) = type {
+                params["query"] = query
+            }
+            
+            return params
+        }
+        
+        public func responseFromObjects(object: AnyObject) throws -> [PostItem] {
+            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
+            return try Unbox(json)
+        }
+        
     }
     
 }

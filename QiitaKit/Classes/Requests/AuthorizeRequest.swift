@@ -24,44 +24,45 @@ public enum Scope: String {
     case WriteQiitaTeam = "write_qiita_team"
 }
 
-/**
- アプリケーションのユーザに認可画面を表示するためのリクエスト
- */
-public struct AuthorizeRequest {
-    
-    /// 登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます。
-    let clientID: String
-    
-    /// アプリケーションが利用するスコープ
-    let scopes: Set<Scope>
-    
-    /// CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値
-    let state: String
-    
-}
+public extension QiitaAPI {
 
-extension AuthorizeRequest: QiitaRequestType {
+    /**
+     アプリケーションのユーザに認可画面を表示するためのリクエスト
+     */
+    public struct AuthorizeRequest: QiitaRequestType {
+        
+        /// 登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます。
+        let clientID: String
+        
+        /// アプリケーションが利用するスコープ
+        let scopes: Set<Scope>
+        
+        /// CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値
+        let state: String
+        
     
-    public typealias Response = AnyObject
-    
-    public var method: HTTPMethod {
-        return .GET
-    }
-    
-    public var path: String {
-        return "/oauth/authorize"
-    }
-    
-    public var parameters: [String : AnyObject] {
-        return [
-            "client_id" : clientID,
-            "scope"     : scopes.map{ $0.rawValue }.joinWithSeparator(" "),
-            "state"     : state
-        ]
-    }
-    
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Response? {
-        return nil
+        // MARK: QiitaRequestType
+        
+        public var method: HTTPMethod {
+            return .GET
+        }
+        
+        public var path: String {
+            return "/oauth/authorize"
+        }
+        
+        public var parameters: AnyObject? {
+            return [
+                "client_id" : clientID,
+                "scope"     : scopes.map{ $0.rawValue }.joinWithSeparator(" "),
+                "state"     : state
+            ]
+        }
+        
+        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Bool {
+            return true
+        }
+        
     }
     
 }

@@ -8,30 +8,37 @@
 
 import Foundation
 import APIKit
-import ObjectMapper
+import Unbox
 
-/**
- 現在のアクセストークンで認証中のユーザを取得するリクエスト
- */
-public struct AuthenticatedUserRequest {
-    
-    public init() {
+extension QiitaAPI {
+
+    /**
+     現在のアクセストークンで認証中のユーザを取得するリクエスト
+     
+     https://qiita.com/api/v2/docs#get-apiv2authenticated_user
+     */
+    public struct AuthenticatedUserRequest: QiitaRequestType {
+        
+        public init() {
+        }
+        
+        
+        // MARK: QiitaRequestType
+        
+        public var method: HTTPMethod {
+            return .GET
+        }
+        
+        public var path: String {
+            return "/authenticated_user"
+        }
+        
+        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AuthenticatedUser {
+            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
+            return try Unbox(json)
+        }
+        
     }
-    
+
 }
 
-extension AuthenticatedUserRequest: QiitaRequestType {
-    
-    public var method: HTTPMethod {
-        return .GET
-    }
-    
-    public var path: String {
-        return "/authenticated_user"
-    }
-    
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> AuthenticatedUser? {
-        return Mapper<AuthenticatedUser>().map(object)
-    }
-    
-}

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Unbox
 
 /**
  ユーザからの投稿を表します
@@ -15,57 +15,58 @@ import ObjectMapper
 public struct PostItem {
     
     /// タグを特定するための一意な名前
-    public private(set) var id: String!
+    public let id: String
     
     /// HTML形式の本文
-    public private(set) var renderedBody: String!
+    public let renderedBody: String
     
     /// Markdown形式の本文
-    public private(set) var body: String!
+    public let body: String
     
     /// この投稿が共同更新状態かどうか (Qiita:Teamでのみ有効)
-    public private(set) var coediting: Bool!
+    public let coediting: Bool
     
     /// データが作成された日時
-    public private(set) var createdAt: NSDate!
+    public let createdAt: NSDate
+    
+    /// Qiita:Teamのグループを表します
+    public let group: Group?
     
     /// 限定共有状態かどうかを表すフラグ (Qiita:Teamでは無効)
-    public private(set) var privated: Bool!
+    public let privated: Bool
     
     /// このタグが付けられた投稿の数
-    public private(set) var tags: [[String : AnyObject]]!
+    public let tags: [[String : AnyObject]]
     
     /// 投稿のタイトル
-    public private(set) var title: String!
+    public let title: String
     
     /// データが最後に更新された日時
-    public private(set) var updatedAt: NSDate!
+    public let updatedAt: NSDate
     
     /// 投稿のURL
-    public private(set) var URL: NSURL!
+    public let URL: NSURL
     
     /// 投稿者
-    public private(set) var user: User!
+    public let user: User
     
 }
 
-extension PostItem: Mappable {
+extension PostItem: Unboxable {
     
-    public init?(_ map: Map) {
-    }
-    
-    public mutating func mapping(map: Map) {
-        id              <- map["id"]
-        renderedBody    <- map["rendered_body"]
-        body            <- map["body"]
-        coediting       <- map["coediting"]
-        createdAt       <- (map["created_at"], ISO8601DateTransform())
-        privated        <- map["private"]
-        tags            <- map["tags"]
-        title           <- map["title"]
-        updatedAt       <- (map["updated_at"], ISO8601DateTransform())
-        URL             <- (map["url"], URLTransform())
-        user            <- map["user"]
+    public init(unboxer: Unboxer) {
+        id           = unboxer.unbox("id")
+        renderedBody = unboxer.unbox("rendered_body")
+        body         = unboxer.unbox("body")
+        coediting    = unboxer.unbox("coediting")
+        createdAt    = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
+        group        = unboxer.unbox("group")
+        privated     = unboxer.unbox("private")
+        tags         = unboxer.unbox("tags")
+        title        = unboxer.unbox("title")
+        updatedAt    = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
+        URL          = unboxer.unbox("url")
+        user         = unboxer.unbox("user")
     }
     
 }

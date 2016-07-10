@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
-import APIKit
-import Result
+import Unbox
 
 /**
  現在のアクセストークンで認証中のユーザを表します。通常のユーザ情報よりも詳細な情報を含んでいます。
@@ -17,87 +15,84 @@ import Result
 public struct AuthenticatedUser {
     
     /// 自己紹介文
-    public private(set) var description: String?
+    public let description: String?
     
     /// Facebook ID
-    public private(set) var facebookID: String?
+    public let facebookID: String?
     
     //// このユーザがフォローしているユーザの数
-    public private(set) var followeesCount: Int!
+    public let followeesCount: Int
     
     /// このユーザをフォローしているユーザの数
-    public private(set) var followersCount: Int!
+    public let followersCount: Int
     
     /// GitHub ID
-    public private(set) var githubLoginName: String?
+    public let githubLoginName: String?
     
     /// ユーザID
-    public private(set) var id: String!
+    public let id: String
     
     /// このユーザが qiita.com 上で公開している投稿の数 (Qiita:Teamでの投稿数は含まれません)
-    public private(set) var itemsCount: Int!
+    public let itemsCount: Int
     
     /// LinkedIn ID
-    public private(set) var linkedinID: String?
+    public let linkedinID: String?
     
     /// 居住地
-    public private(set) var location: String?
+    public let location: String?
     
     /// 設定している名前
-    public private(set) var name: String?
+    public let name: String?
     
     /// 所属している組織
-    public private(set) var organization: String?
+    public let organization: String?
     
     /// ユーザごとに割り当てられる整数のID
-    public private(set) var permanentID: Int!
+    public let permanentID: Int
     
     /// 設定しているプロフィール画像のURL
-    public private(set) var profileImageURL: NSURL!
+    public let profileImageURL: NSURL
     
     /// Twitterのスクリーンネーム
-    public private(set) var twitterScreenName: String?
+    public let twitterScreenName: String?
     
     /// 設定しているWebサイトのURL
-    public private(set) var websiteURL: NSURL?
+    public let websiteURL: NSURL?
     
     /// 1ヶ月あたりにQiitaにアップロードできる画像の総容量
-    public private(set) var imageMonthlyUploadLimit: Int!
+    public let imageMonthlyUploadLimit: Int
     
     /// その月にQiitaにアップロードできる画像の残りの容量
-    public private(set) var imageMonthlyUploadRemaining: Int!
+    public let imageMonthlyUploadRemaining: Int
     
     /// Qiita:Team専用モードに設定されているかどうか
-    public private(set) var teamOnly: Bool!
+    public let teamOnly: Bool
     
 }
 
 
-extension AuthenticatedUser: Mappable {
+extension AuthenticatedUser: Unboxable {
     
-    public init?(_ map: Map) {
-    }
-    
-    public mutating func mapping(map: Map) {
-        id                          <- map["id"]
-        followeesCount              <- map["followees_count"]
-        followersCount              <- map["followers_count"]
-        itemsCount                  <- map["items_count"]
-        permanentID                 <- map["permanent_id"]
-        profileImageURL             <- (map["profile_image_url"], URLTransform())
-        description                 <- map["description"]
-        facebookID                  <- map["facebook_id"]
-        githubLoginName             <- map["github_login_name"]
-        linkedinID                  <- map["linkedin_id"]
-        location                    <- map["location"]
-        name                        <- map["name"]
-        organization                <- map["organization"]
-        twitterScreenName           <- map["twitter_screen_name"]
-        websiteURL                  <- (map["website_url"], URLTransform())
+    public init(unboxer: Unboxer) {
+        id                          = unboxer.unbox("id")
+        followeesCount              = unboxer.unbox("followees_count")
+        followersCount              = unboxer.unbox("followers_count")
+        itemsCount                  = unboxer.unbox("items_count")
+        permanentID                 = unboxer.unbox("permanent_id")
+        profileImageURL             = unboxer.unbox("profile_image_url")
+        description                 = unboxer.unbox("description")
+        facebookID                  = unboxer.unbox("facebook_id")
+        githubLoginName             = unboxer.unbox("github_login_name")
+        linkedinID                  = unboxer.unbox("linkedin_id")
+        location                    = unboxer.unbox("location")
+        name                        = unboxer.unbox("name")
+        organization                = unboxer.unbox("organization")
+        twitterScreenName           = unboxer.unbox("twitter_screen_name")
+        websiteURL                  = unboxer.unbox("website_url")
         
-        imageMonthlyUploadLimit     <- map["image_monthly_upload_limit"]
-        imageMonthlyUploadRemaining <- map["image_monthly_upload_remaining"]
-        teamOnly                    <- map["team_only"]
+        imageMonthlyUploadLimit     = unboxer.unbox("image_monthly_upload_limit")
+        imageMonthlyUploadRemaining = unboxer.unbox("image_monthly_upload_remaining")
+        teamOnly                    = unboxer.unbox("team_only")
     }
     
 }

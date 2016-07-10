@@ -8,7 +8,13 @@
 
 import Foundation
 import APIKit
-import KeychainAccess
+
+/**
+ QiitaのAPIクラス
+ 
+ Extensinoで各エンドポイント用のリクエストが実装されています
+ */
+public final class QiitaAPI {}
 
 public protocol QiitaRequestType: RequestType {
 }
@@ -20,12 +26,12 @@ extension QiitaRequestType {
     }
     
     public var baseURL: NSURL {
-        let domain = AuthManager.teamDomain ?? "qiita.com"
+        let domain = AuthManager.sharedManager.teamDomain ?? "qiita.com"
         return NSURL(string: "https://\(domain)/api/\(version)")!
     }
     
-    public var HTTPHeaderFields: [String : String] {
-        guard let token = AuthManager.accessToken else {
+    public var headerFields: [String : String] {
+        guard let token = AuthManager.sharedManager.accessToken else {
             return [String : String]()
         }
         return [
@@ -33,22 +39,14 @@ extension QiitaRequestType {
         ]
     }
     
-    public func errorFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> ErrorType? {
-        guard let json = object as? [String : String],
-            type = json["type"],
-            message = json["message"] else
-        {
-            return nil
+    public func interceptObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AnyObject {
+        guard (200..<300).contains(URLResponse.statusCode) else {
+            throw QiitaKitError(object: object)
         }
-       
-        switch type {
-        case "already_stocked":
-            return QiitaKitError.AlreadyStocked
-        default:
-            return QiitaKitError.CommonError(message: message, type: type)
-        }
+        
+        return object
     }
-
+    
 }
 
 /**
@@ -97,7 +95,7 @@ public struct PageableResponse<Element> {
  */
 public protocol QiitaPageableRequestType: QiitaRequestType {
     
-    typealias Element
+    associatedtype Element
     
     /// ページ番号 (1から100まで)
     var page: Int { get set }
@@ -112,7 +110,7 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
      
      - returns: [Element]
      */
-    func responseFromObjects(object: AnyObject) -> [Element]?
+    func responseFromObjects(object: AnyObject) throws -> [Element]
     
 }
 
@@ -126,11 +124,8 @@ public extension QiitaPageableRequestType {
         ]
     }
     
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> PageableResponse<Element>? {
-        guard let elements = responseFromObjects(object) else {
-            return nil
-        }
-        
+    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> PageableResponse<Element> {
+        let elements = try responseFromObjects(object)
         let totalCount = (URLResponse.allHeaderFields["Total-Count"] as? Int) ?? 0
         var hasNext = false
         var hasPrev = false

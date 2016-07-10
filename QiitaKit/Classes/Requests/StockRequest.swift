@@ -6,32 +6,36 @@
 //  Copyright © 2016年 kyo__hei. All rights reserved.
 //
 
+import Foundation
 import APIKit
 
-/**
- 現在のアクセストークンで認証中のユーザを取得するリクエスト
- */
-public struct StockRequest {
+extension QiitaAPI {
     
-    public let itemID: String
-    
-    public let method: HTTPMethod
-    
-    public init(itemID: String, method: HTTPMethod) {
-        self.itemID = itemID
-        self.method = method
-    }
-    
-}
-
-extension StockRequest: QiitaRequestType {
-    
-    public var path: String {
-        return "/items/\(itemID)/stock"
-    }
-    
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) -> Bool? {
-        return URLResponse.statusCode == 204
+    /**
+     現在のアクセストークンで認証中のユーザを取得するリクエスト
+     */
+    public struct StockRequest: QiitaRequestType {
+        
+        public let itemID: String
+        
+        public let method: HTTPMethod
+        
+        public init(itemID: String, method: HTTPMethod) {
+            self.itemID = itemID
+            self.method = method
+        }
+        
+        
+        // MARK: QiitaRequestType
+        
+        public var path: String {
+            return "/items/\(itemID)/stock"
+        }
+        
+        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Bool {
+            return URLResponse.statusCode == 204
+        }
+        
     }
     
 }

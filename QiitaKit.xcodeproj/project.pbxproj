@@ -7,10 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
+		414EBBEA1D325AF400078494 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBE91D325AF400078494 /* TagTests.swift */; };
+		414EBBEC1D325B0100078494 /* Tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBBEB1D325B0100078494 /* Tag.json */; };
+		414EBBEE1D32615800078494 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBED1D32615800078494 /* UserTests.swift */; };
+		414EBBF01D32616400078494 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBBEF1D32616400078494 /* User.json */; };
+		414EBBFE1D3280E800078494 /* LikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBFD1D3280E800078494 /* LikeRequest.swift */; };
+		414EBC001D3285B600078494 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBFF1D3285B600078494 /* Like.swift */; };
+		414EBC021D32866800078494 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBC011D32866800078494 /* Like.json */; };
+		414EBC041D3286F800078494 /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC031D3286F800078494 /* LikeTests.swift */; };
+		4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFDE1D3228B200B421A0 /* AuthManager.swift */; };
+		4175AFE11D3228CE00B421A0 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */; };
+		41E5E3D81D32466F0051BDC4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
+		41E5E3D91D32466F0051BDC4 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
+		41E5E3DA1D32466F0051BDC4 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
+		41E5E3DF1D3249D60051BDC4 /* AccessTokenResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */; };
+		41E5E3E11D324A4F0051BDC4 /* AccessTokenResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */; };
+		41E5E3E31D324A9B0051BDC4 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */; };
+		41E5E3E61D324DCC0051BDC4 /* AuthenticatedUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */; };
+		41E5E3E81D324DD70051BDC4 /* AuthenticatedUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */; };
+		41E5E3EA1D324F720051BDC4 /* PostItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E91D324F720051BDC4 /* PostItemTests.swift */; };
+		41E5E3EC1D324F800051BDC4 /* PostItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3EB1D324F800051BDC4 /* PostItem.json */; };
+		41E5E3EE1D3250EB0051BDC4 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3ED1D3250EB0051BDC4 /* Group.swift */; };
+		41E5E3F01D3252BE0051BDC4 /* Group.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3EF1D3252BE0051BDC4 /* Group.json */; };
+		41E5E3F21D3252CE0051BDC4 /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */; };
 		C266F4731C43EED40069AAB5 /* StockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266F4721C43EED40069AAB5 /* StockRequest.swift */; };
 		C278CA8B1C40F146005DCFB5 /* QiitaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C278CA8A1C40F146005DCFB5 /* QiitaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
-		C278CA971C40F146005DCFB5 /* QiitaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */; };
 		C278CAB81C40F51A005DCFB5 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */; };
 		C278CAB91C40F51A005DCFB5 /* AuthenticatedUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */; };
 		C278CABA1C40F51A005DCFB5 /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */; };
@@ -22,13 +45,11 @@
 		C278CAC51C40F52F005DCFB5 /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC01C40F52F005DCFB5 /* PostItem.swift */; };
 		C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC11C40F52F005DCFB5 /* Tag.swift */; };
 		C278CAC71C40F52F005DCFB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC21C40F52F005DCFB5 /* User.swift */; };
-		C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC81C40F54E005DCFB5 /* AuthManager.swift */; };
 		C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */; };
 		C2A29E6F1C4129BA00542D7C /* NSURL+Fragments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */; };
 		C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E711C412AE200542D7C /* UIKit.framework */; };
 		C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E731C412AF200542D7C /* WebKit.framework */; };
 		C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
-		C2A29E7A1C412B2500542D7C /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E761C412B2500542D7C /* KeychainAccess.framework */; };
 		C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
 		C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E7F1C41388300542D7C /* QiitaKitError.swift */; };
 /* End PBXBuildFile section */
@@ -44,12 +65,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4100A3201D3218FF009D62AC /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = SOURCE_ROOT; };
+		414EBBE91D325AF400078494 /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		414EBBEB1D325B0100078494 /* Tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tag.json; sourceTree = "<group>"; };
+		414EBBED1D32615800078494 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		414EBBEF1D32616400078494 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		414EBBFD1D3280E800078494 /* LikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRequest.swift; sourceTree = "<group>"; };
+		414EBBFF1D3285B600078494 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		414EBC011D32866800078494 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
+		414EBC031D3286F800078494 /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
+		4175AFDE1D3228B200B421A0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = QiitaKit/Classes/Models/AuthManager.swift; sourceTree = SOURCE_ROOT; };
+		4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = QiitaKit/Classes/Models/KeychainWrapper.swift; sourceTree = SOURCE_ROOT; };
+		41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccessTokenResponse.json; sourceTree = "<group>"; };
+		41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponseTests.swift; sourceTree = "<group>"; };
+		41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
+		41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserTests.swift; sourceTree = "<group>"; };
+		41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AuthenticatedUser.json; sourceTree = "<group>"; };
+		41E5E3E91D324F720051BDC4 /* PostItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItemTests.swift; sourceTree = "<group>"; };
+		41E5E3EB1D324F800051BDC4 /* PostItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostItem.json; sourceTree = "<group>"; };
+		41E5E3ED1D3250EB0051BDC4 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		41E5E3EF1D3252BE0051BDC4 /* Group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Group.json; sourceTree = "<group>"; };
+		41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		C266F4721C43EED40069AAB5 /* StockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockRequest.swift; sourceTree = "<group>"; };
 		C278CA871C40F146005DCFB5 /* QiitaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QiitaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C278CA8A1C40F146005DCFB5 /* QiitaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiitaKit.h; sourceTree = "<group>"; };
 		C278CA8C1C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C278CA911C40F146005DCFB5 /* QiitaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaKitTests.swift; sourceTree = "<group>"; };
 		C278CA981C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
 		C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserRequest.swift; sourceTree = "<group>"; };
@@ -62,13 +103,11 @@
 		C278CAC01C40F52F005DCFB5 /* PostItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		C278CAC11C40F52F005DCFB5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C278CAC21C40F52F005DCFB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C278CAC81C40F54E005DCFB5 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWebViewController.swift; path = ViewControllers/AuthWebViewController.swift; sourceTree = "<group>"; };
 		C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Fragments.swift"; sourceTree = "<group>"; };
 		C2A29E711C412AE200542D7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2A29E731C412AF200542D7C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C2A29E751C412B2500542D7C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = SOURCE_ROOT; };
-		C2A29E761C412B2500542D7C /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = SOURCE_ROOT; };
 		C2A29E781C412B2500542D7C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		C2A29E7F1C41388300542D7C /* QiitaKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaKitError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +120,7 @@
 				C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */,
 				C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */,
 				C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */,
-				C2A29E7A1C412B2500542D7C /* KeychainAccess.framework in Frameworks */,
+				4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */,
 				C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,13 +129,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E5E3D91D32466F0051BDC4 /* APIKit.framework in Frameworks */,
 				C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */,
+				41E5E3D81D32466F0051BDC4 /* Unbox.framework in Frameworks */,
+				41E5E3DA1D32466F0051BDC4 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E5E3DB1D32492F0051BDC4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				41E5E3DC1D32493D0051BDC4 /* Entities */,
+				41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		41E5E3DC1D32493D0051BDC4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */,
+				41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */,
+				41E5E3E91D324F720051BDC4 /* PostItemTests.swift */,
+				414EBBE91D325AF400078494 /* TagTests.swift */,
+				414EBBED1D32615800078494 /* UserTests.swift */,
+				41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */,
+				414EBC031D3286F800078494 /* LikeTests.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		41E5E3DD1D3249690051BDC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */,
+				41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */,
+				41E5E3EB1D324F800051BDC4 /* PostItem.json */,
+				414EBBEB1D325B0100078494 /* Tag.json */,
+				414EBBEF1D32616400078494 /* User.json */,
+				41E5E3EF1D3252BE0051BDC4 /* Group.json */,
+				414EBC011D32866800078494 /* Like.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C278CA7D1C40F146005DCFB5 = {
 			isa = PBXGroup;
 			children = (
@@ -128,8 +207,9 @@
 		C278CA951C40F146005DCFB5 /* QiitaKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				41E5E3DB1D32492F0051BDC4 /* Classes */,
+				41E5E3DD1D3249690051BDC4 /* Resources */,
 				C278CA981C40F146005DCFB5 /* Info.plist */,
-				C278CA961C40F146005DCFB5 /* QiitaKitTests.swift */,
 			);
 			path = QiitaKitTests;
 			sourceTree = "<group>";
@@ -139,7 +219,7 @@
 			children = (
 				C2A29E6D1C41299200542D7C /* Extensions */,
 				C278CACA1C40FAB6005DCFB5 /* ViewControllers */,
-				C278CAAE1C40F444005DCFB5 /* Managers */,
+				C278CAAE1C40F444005DCFB5 /* Models */,
 				C278CAAD1C40F43E005DCFB5 /* Requests */,
 				C278CAAC1C40F424005DCFB5 /* Entities */,
 				C2A29E7F1C41388300542D7C /* QiitaKitError.swift */,
@@ -164,6 +244,8 @@
 				C278CAC01C40F52F005DCFB5 /* PostItem.swift */,
 				C278CAC11C40F52F005DCFB5 /* Tag.swift */,
 				C278CAC21C40F52F005DCFB5 /* User.swift */,
+				41E5E3ED1D3250EB0051BDC4 /* Group.swift */,
+				414EBBFF1D3285B600078494 /* Like.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -171,30 +253,33 @@
 		C278CAAD1C40F43E005DCFB5 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
 				C278CAB41C40F51A005DCFB5 /* AuthorizeRequest.swift */,
 				C278CAB21C40F51A005DCFB5 /* AccessTokenRequest.swift */,
 				C278CAB31C40F51A005DCFB5 /* AuthenticatedUserRequest.swift */,
 				C278CAB51C40F51A005DCFB5 /* FollowingTagsRequest.swift */,
 				C278CAB61C40F51A005DCFB5 /* ItemsRequest.swift */,
-				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
 				C266F4721C43EED40069AAB5 /* StockRequest.swift */,
+				414EBBFD1D3280E800078494 /* LikeRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
 		};
-		C278CAAE1C40F444005DCFB5 /* Managers */ = {
+		C278CAAE1C40F444005DCFB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C278CAC81C40F54E005DCFB5 /* AuthManager.swift */,
+				4175AFDE1D3228B200B421A0 /* AuthManager.swift */,
+				4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */,
 			);
+			name = Models;
 			path = Managers;
 			sourceTree = "<group>";
 		};
 		C278CAAF1C40F44E005DCFB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4100A3201D3218FF009D62AC /* Unbox.framework */,
 				C2A29E751C412B2500542D7C /* APIKit.framework */,
-				C2A29E761C412B2500542D7C /* KeychainAccess.framework */,
 				C2A29E781C412B2500542D7C /* Result.framework */,
 				C2A29E731C412AF200542D7C /* WebKit.framework */,
 				C2A29E711C412AE200542D7C /* UIKit.framework */,
@@ -240,7 +325,6 @@
 				C278CA831C40F146005DCFB5 /* Frameworks */,
 				C278CA841C40F146005DCFB5 /* Headers */,
 				C278CA851C40F146005DCFB5 /* Resources */,
-				C2A29E701C412A8300542D7C /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -258,6 +342,7 @@
 				C278CA8D1C40F146005DCFB5 /* Sources */,
 				C278CA8E1C40F146005DCFB5 /* Frameworks */,
 				C278CA8F1C40F146005DCFB5 /* Resources */,
+				41E5E3E41D324D4C0051BDC4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,7 +360,7 @@
 		C278CA7E1C40F146005DCFB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = kyo__hei;
 				TargetAttributes = {
@@ -317,24 +402,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E5E3E81D324DD70051BDC4 /* AuthenticatedUser.json in Resources */,
+				41E5E3DF1D3249D60051BDC4 /* AccessTokenResponse.json in Resources */,
+				41E5E3EC1D324F800051BDC4 /* PostItem.json in Resources */,
+				41E5E3F01D3252BE0051BDC4 /* Group.json in Resources */,
+				414EBC021D32866800078494 /* Like.json in Resources */,
+				414EBBF01D32616400078494 /* User.json in Resources */,
+				414EBBEC1D325B0100078494 /* Tag.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C2A29E701C412A8300542D7C /* Carthage */ = {
+		41E5E3E41D324D4C0051BDC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
-			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,16 +439,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2A29E6F1C4129BA00542D7C /* NSURL+Fragments.swift in Sources */,
+				414EBBFE1D3280E800078494 /* LikeRequest.swift in Sources */,
 				C278CAC51C40F52F005DCFB5 /* PostItem.swift in Sources */,
-				C278CAC91C40F54E005DCFB5 /* AuthManager.swift in Sources */,
 				C278CAB91C40F51A005DCFB5 /* AuthenticatedUserRequest.swift in Sources */,
 				C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */,
 				C278CAB81C40F51A005DCFB5 /* AccessTokenRequest.swift in Sources */,
 				C278CABC1C40F51A005DCFB5 /* ItemsRequest.swift in Sources */,
 				C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */,
 				C278CABB1C40F51A005DCFB5 /* FollowingTagsRequest.swift in Sources */,
+				4175AFE11D3228CE00B421A0 /* KeychainWrapper.swift in Sources */,
+				41E5E3EE1D3250EB0051BDC4 /* Group.swift in Sources */,
 				C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */,
+				4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */,
 				C266F4731C43EED40069AAB5 /* StockRequest.swift in Sources */,
+				414EBC001D3285B600078494 /* Like.swift in Sources */,
 				C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */,
 				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
 				C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */,
@@ -371,7 +465,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C278CA971C40F146005DCFB5 /* QiitaKitTests.swift in Sources */,
+				41E5E3E11D324A4F0051BDC4 /* AccessTokenResponseTests.swift in Sources */,
+				41E5E3E31D324A9B0051BDC4 /* SupportFunctions.swift in Sources */,
+				414EBC041D3286F800078494 /* LikeTests.swift in Sources */,
+				41E5E3EA1D324F720051BDC4 /* PostItemTests.swift in Sources */,
+				414EBBEE1D32615800078494 /* UserTests.swift in Sources */,
+				41E5E3E61D324DCC0051BDC4 /* AuthenticatedUserTests.swift in Sources */,
+				414EBBEA1D325AF400078494 /* TagTests.swift in Sources */,
+				41E5E3F21D3252CE0051BDC4 /* GroupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,16 +624,27 @@
 		C278CA9F1C40F146005DCFB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C278CAA01C40F146005DCFB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QiitaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";

@@ -25,4 +25,23 @@ public enum QiitaKitError: ErrorType {
     
     case CommonError(message: String, type: String)
     
+    case InvalidJSON
+    
+    case Unknown
+    
+    internal init(object: AnyObject) {
+        guard let json = object as? [String : String],
+            type = json["type"],
+            message = json["message"] else
+        {
+            self = .Unknown
+            return
+        }
+        
+        switch type {
+        case "already_stocked": self = .AlreadyStocked
+        default:                self = CommonError(message: message, type: type)
+        }
+    }
+    
 }

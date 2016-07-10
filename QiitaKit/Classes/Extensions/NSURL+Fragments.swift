@@ -8,6 +8,12 @@
 
 import Foundation
 
+internal let ISO8601DateFormatter: NSDateFormatter = {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    return dateFormatter
+}()
+
 internal extension NSURL {
     var fragments: [String : String] {
         
@@ -16,7 +22,8 @@ internal extension NSURL {
                 return [:]
         }
         
-        return items.reduce([String : String]()) { (var dic, item) in
+        return items.reduce([String : String]()) { (dic, item) in
+            var dic = dic
             dic[item.name] = item.value
             return dic
         }

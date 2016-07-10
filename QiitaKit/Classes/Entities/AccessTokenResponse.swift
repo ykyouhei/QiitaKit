@@ -7,28 +7,25 @@
 //
 
 import Foundation
-import ObjectMapper
+import Unbox
 
 /**
  アクセストークン情報
  */
 public struct AccessTokenResponse {
     
-    public private(set) var clientID: String!
+    public let clientID: String
     
-    public private(set) var token: String!
+    public let token: String
    
 }
 
-extension AccessTokenResponse: Mappable {
+extension AccessTokenResponse: Unboxable {
    
-    public init?(_ map: Map) {
+    public init(unboxer: Unboxer) {
+        self.clientID = unboxer.unbox("client_id")
+        self.token    = unboxer.unbox("token")
     }
     
-    public mutating func mapping(map: Map) {
-        clientID <- map["client_id"]
-        token    <- map["token"]
-    }
-     
 }
 

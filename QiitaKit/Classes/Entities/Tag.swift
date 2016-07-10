@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Unbox
 
 /**
  投稿に付けられた個々のタグを表します
@@ -15,29 +15,26 @@ import ObjectMapper
 public struct Tag  {
     
     /// タグを特定するための一意な名前
-    public private(set) var id: String!
+    public let id: String
     
     /// このタグをフォローしているユーザの数
-    public private(set) var followersCount: Int!
+    public let followersCount: Int
     
     /// このタグが付けられた投稿の数
-    public private(set) var itemsCount : Int!
+    public let itemsCount: Int
     
     /// このタグに設定されたアイコン画像のURL
-    public private(set) var iconURL: NSURL?
+    public let iconURL: NSURL?
     
 }
 
-extension Tag: Mappable {
+extension Tag: Unboxable {
     
-    public init?(_ map: Map) {
-    }
-    
-    public mutating func mapping(map: Map) {
-        id              <- map["id"]
-        followersCount  <- map["followers_count"]
-        itemsCount      <- map["items_count"]
-        iconURL         <- (map["icon_url"], URLTransform())
+    public init(unboxer: Unboxer) {
+        id             = unboxer.unbox("id")
+        followersCount = unboxer.unbox("followers_count")
+        itemsCount     = unboxer.unbox("items_count")
+        iconURL        = unboxer.unbox("icon_url")
     }
     
 }
