@@ -1,5 +1,5 @@
 //
-//  AuthenticatedUserRequest.swift
+//  GetAuthenticatedUserRequest.swift
 //  Qiitag
 //
 //  Created by 山口　恭兵 on 2015/12/28.
@@ -10,14 +10,14 @@ import Foundation
 import APIKit
 import Unbox
 
-extension QiitaAPI {
+public extension QiitaAPI.User {
 
     /**
      現在のアクセストークンで認証中のユーザを取得するリクエスト
      
      https://qiita.com/api/v2/docs#get-apiv2authenticated_user
      */
-    public struct AuthenticatedUserRequest: QiitaRequestType {
+    public struct GetAuthenticatedUserRequest: QiitaRequestType {
         
         public init() {
         }

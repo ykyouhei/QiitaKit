@@ -183,7 +183,7 @@ internal final class AuthWebViewController: UIViewController {
             return
         }
         
-        let accessTokenRequest = QiitaAPI.AccessTokenRequest(
+        let accessTokenRequest = QiitaAPI.Authorization.AccessTokenRequest(
             clientID: AuthManager.sharedManager.clientID,
             clientSecret: AuthManager.sharedManager.clientSecret,
             code: code)

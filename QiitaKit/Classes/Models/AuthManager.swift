@@ -106,8 +106,8 @@ public final class AuthManager {
     public func setup(clientID clientID: String,
                                       clientSecret: String,
                                       teamDomain: String? = nil,
-                                      keychainConfiguration: KeychainConfiguration = KeychainConfiguration())
-    {
+                                      keychainConfiguration: KeychainConfiguration = KeychainConfiguration()) {
+        
         self.clientID              = clientID
         self.clientSecret          = clientSecret
         self.keychainConfiguration = keychainConfiguration
@@ -124,10 +124,14 @@ public final class AuthManager {
      - parameter webViewType: OAuth認証を行うWebViewの種類
      - parameter completion:  認証後に呼ばれるハンドラ
      */
-    public func authorizeWithScope(scopes: Set<Scope>, redirectURL: NSURL, webViewType: AuthWebViewType, completion: AuthCompletionHandler) {
+    public func authorizeWithScope(scopes: Set<Scope>,
+                                   redirectURL: NSURL,
+                                   webViewType: AuthWebViewType,
+                                   completion: AuthCompletionHandler) {
+        
         let authInfo = (state: NSUUID().UUIDString, redirectURL: redirectURL, completion: completion)
         
-        let request = QiitaAPI.AuthorizeRequest.init(
+        let request = QiitaAPI.Authorization.AuthorizeRequest.init(
             clientID: clientID,
             scopes: scopes,
             state: authInfo.state)

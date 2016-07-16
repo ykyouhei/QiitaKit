@@ -1,5 +1,5 @@
 //
-//  FollowingTagsRequest.swift
+//  GetFollowingTagsRequest.swift
 //  Qiitag
 //
 //  Created by 山口　恭兵 on 2015/12/28.
@@ -10,12 +10,16 @@ import Foundation
 import APIKit
 import Unbox
 
-extension QiitaAPI {
+public extension QiitaAPI.Tag {
 
     /**
-     ユーザがフォローしているタグ一覧をフォロー日時の降順で返すリクエスト
+     ユーザがフォローしているタグ一覧をフォロー日時の降順で返します
+     
+     https://qiita.com/api/v2/docs#get-apiv2usersuser_idfollowing_tags
      */
-    public struct FollowingTagsRequest: QiitaPageableRequestType {
+    public struct GetFollowingTagsRequest: QiitaPageableRequestType {
+        
+        // MARK: Propeties
         
         /// 取得するユーザのID
         public let userID: String
@@ -26,6 +30,8 @@ extension QiitaAPI {
         /// 1ページあたりに含まれる要素数 (1から100まで)
         public var perPage: Int
         
+        
+        // MARK: Initialize
         
         public init(userID: String, page: Int = 1, perPage: Int = 20) {
             self.userID  = userID

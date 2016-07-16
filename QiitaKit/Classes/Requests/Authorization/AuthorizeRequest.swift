@@ -24,12 +24,14 @@ public enum Scope: String {
     case WriteQiitaTeam = "write_qiita_team"
 }
 
-public extension QiitaAPI {
+public extension QiitaAPI.Authorization {
 
     /**
      アプリケーションのユーザに認可画面を表示するためのリクエスト
      */
     public struct AuthorizeRequest: QiitaRequestType {
+        
+        // MARK: Properties
         
         /// 登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます。
         let clientID: String
@@ -39,6 +41,15 @@ public extension QiitaAPI {
         
         /// CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値
         let state: String
+        
+        
+        // MARK: Initialize
+        
+        public init(clientID: String, scopes: Set<Scope>, state: String) {
+            self.clientID = clientID
+            self.scopes   = scopes
+            self.state    = state
+        }
         
     
         // MARK: QiitaRequestType
@@ -59,7 +70,8 @@ public extension QiitaAPI {
             ]
         }
         
-        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Bool {
+        public func responseFromObject(object: AnyObject,
+                                       URLResponse: NSHTTPURLResponse) throws -> Bool {
             return true
         }
         

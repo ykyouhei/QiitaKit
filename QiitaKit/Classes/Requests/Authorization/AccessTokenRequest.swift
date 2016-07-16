@@ -10,7 +10,8 @@ import Foundation
 import APIKit
 import Unbox
 
-extension QiitaAPI {
+
+public extension QiitaAPI.Authorization {
     
     /**
      与えられた認証情報をもとに新しいアクセストークンを発行します
@@ -18,6 +19,8 @@ extension QiitaAPI {
      https://qiita.com/api/v2/docs#post-apiv2access_tokens
      */
     public struct AccessTokenRequest: QiitaRequestType {
+        
+        // MARK: Properties
         
         /// 登録されたAPIクライアントを特定するためのID
         let clientID: String
@@ -27,6 +30,15 @@ extension QiitaAPI {
         
         /// リダイレクト用のURLに付与された、アクセストークンと交換するための文字列
         let code: String
+        
+        
+        // MARK: Initialize
+        
+        public init(clientID: String, clientSecret: String, code: String) {
+            self.clientID     = clientID
+            self.clientSecret = clientSecret
+            self.code         = code
+        }
         
         
         // MARK: QiitaRequestType
@@ -47,8 +59,8 @@ extension QiitaAPI {
             ]
         }
         
-        
-        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AccessTokenResponse {
+        public func responseFromObject(object: AnyObject,
+                                       URLResponse: NSHTTPURLResponse) throws -> AccessTokenResponse {
             guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
             return try Unbox(json)
         }

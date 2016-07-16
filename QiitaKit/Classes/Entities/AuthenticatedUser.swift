@@ -89,7 +89,6 @@ extension AuthenticatedUser: Unboxable {
         organization                = unboxer.unbox("organization")
         twitterScreenName           = unboxer.unbox("twitter_screen_name")
         websiteURL                  = unboxer.unbox("website_url")
-        
         imageMonthlyUploadLimit     = unboxer.unbox("image_monthly_upload_limit")
         imageMonthlyUploadRemaining = unboxer.unbox("image_monthly_upload_remaining")
         teamOnly                    = unboxer.unbox("team_only")

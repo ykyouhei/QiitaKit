@@ -12,7 +12,7 @@ import Unbox
 /**
  ユーザからの投稿を表します
  */
-public struct PostItem {
+public struct Item {
     
     /// タグを特定するための一意な名前
     public let id: String
@@ -52,7 +52,7 @@ public struct PostItem {
     
 }
 
-extension PostItem: Unboxable {
+extension Item: Unboxable {
     
     public init(unboxer: Unboxer) {
         id           = unboxer.unbox("id")

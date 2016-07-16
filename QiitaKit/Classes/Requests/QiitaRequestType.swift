@@ -9,15 +9,9 @@
 import Foundation
 import APIKit
 
-/**
- QiitaのAPIクラス
- 
- Extensinoで各エンドポイント用のリクエストが実装されています
- */
-public final class QiitaAPI {}
 
-public protocol QiitaRequestType: RequestType {
-}
+public protocol QiitaRequestType: RequestType {}
+
 
 extension QiitaRequestType {
     
@@ -98,10 +92,10 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
     associatedtype Element
     
     /// ページ番号 (1から100まで)
-    var page: Int { get set }
+    var page: Int { get }
     
     /// 1ページあたりに含まれる要素数 (1から100まで)
-    var perPage: Int { get set }
+    var perPage: Int { get }
     
     /**
      HTTPレスポンスをパースする
