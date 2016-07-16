@@ -71,6 +71,7 @@
 		4171BAFC1D3A0375000DFEB8 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
 		4171BAFE1D3A06D5000DFEB8 /* APITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */; };
 		4171BB001D3A0E3B000DFEB8 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */; };
+		4171BB021D3A2EC3000DFEB8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4171BB011D3A2EC3000DFEB8 /* README.md */; };
 		4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFDE1D3228B200B421A0 /* AuthManager.swift */; };
 		4175AFE11D3228CE00B421A0 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */; };
 		41E5E3D81D32466F0051BDC4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
@@ -196,6 +197,7 @@
 		4171BAF21D3A0006000DFEB8 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITableViewController.swift; sourceTree = "<group>"; };
 		4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		4171BB011D3A2EC3000DFEB8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4175AFDE1D3228B200B421A0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = QiitaKit/Classes/Models/AuthManager.swift; sourceTree = SOURCE_ROOT; };
 		4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = QiitaKit/Classes/Models/KeychainWrapper.swift; sourceTree = SOURCE_ROOT; };
 		41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccessTokenResponse.json; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		4171BAE11D39FF00000DFEB8 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				4171BB011D3A2EC3000DFEB8 /* README.md */,
 				4171BAE21D39FF00000DFEB8 /* AppDelegate.swift */,
 				4171BAE41D39FF00000DFEB8 /* LoginViewController.swift */,
 				4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */,
@@ -754,6 +757,7 @@
 			files = (
 				4171BAE51D39FF00000DFEB8 /* LoginViewController.swift in Sources */,
 				4171BAFE1D3A06D5000DFEB8 /* APITableViewController.swift in Sources */,
+				4171BB021D3A2EC3000DFEB8 /* README.md in Sources */,
 				4171BB001D3A0E3B000DFEB8 /* RequestViewController.swift in Sources */,
 				4171BAE31D39FF00000DFEB8 /* AppDelegate.swift in Sources */,
 			);
