@@ -33,7 +33,7 @@ public extension QiitaAPI.Tag {
         
         // MARK: Initialize
         
-        public init(userID: String, page: Int = 1, perPage: Int = 20) {
+        public init(userID: String, page: Int, perPage: Int) {
             self.userID  = userID
             self.page    = page
             self.perPage = perPage

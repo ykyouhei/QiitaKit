@@ -54,28 +54,28 @@ public struct PageableResponse<Element> {
     
     public let objects: [Element]
     
-    public let hasNext: Bool
+    public let nextPage: Int?
     
-    public let hasPrev: Bool
+    public let prevPage: Int?
     
     public var count: Int {
         return objects.count
     }
     
-    public init() {
-        self.totalCount = 0
-        self.currentPage = 0
-        self.hasNext = false
-        self.hasPrev = false
-        self.objects = [Element]()
+    public var hasNext: Bool {
+        return nextPage != nil
     }
     
-    internal init(totalCount: Int, currentPage: Int, hasNext: Bool, hasPrev: Bool, objects: [Element]) {
-        self.totalCount = totalCount
+    public var hasPrev: Bool {
+        return prevPage != nil
+    }
+    
+    internal init(totalCount: Int, currentPage: Int, objects: [Element], nextPage: Int?, prevPage: Int?) {
+        self.totalCount  = totalCount
         self.currentPage = currentPage
-        self.hasNext = hasNext
-        self.hasPrev = hasPrev
-        self.objects = objects
+        self.nextPage    = nextPage
+        self.prevPage    = prevPage
+        self.objects     = objects
     }
     
     public subscript(index: Int) -> Element {
@@ -119,31 +119,31 @@ public extension QiitaPageableRequestType {
     }
     
     public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> PageableResponse<Element> {
-        let elements = try responseFromObjects(object)
-        let totalCount = (URLResponse.allHeaderFields["Total-Count"] as? Int) ?? 0
-        var hasNext = false
-        var hasPrev = false
+        let elements       = try responseFromObjects(object)
+        let currentPage    = self.page
+        var totalCount     = Int(0)
+        var nextPage: Int? = nil
+        var prevPage: Int? = nil
+
+        if let count = URLResponse.allHeaderFields["Total-Count"]?.integerValue {
+            totalCount = count
+        }
         
         if let link = URLResponse.allHeaderFields["Link"] as? String {
-            hasPrev = link.containsString("rel=\"prev\"")
-            hasNext = link.containsString("rel=\"next\"")
-            
-//            if link.containsString("rel=\"prev\"") {
-//                prevRequest = self
-//                prevRequest!.page -= 1
-//            }
-//            if link.containsString("rel=\"next\"") {
-//                nextRequest = self
-//                nextRequest!.page += 1
-//            }
+            if link.containsString("rel=\"prev\"") {
+                prevPage = currentPage - 1
+            }
+            if link.containsString("rel=\"next\"") {
+                nextPage = currentPage + 1
+            }
         }
         
         return PageableResponse(
             totalCount: totalCount,
-            currentPage: self.page,
-            hasNext: hasNext,
-            hasPrev: hasPrev,
-            objects: elements
+            currentPage: currentPage,
+            objects: elements,
+            nextPage: nextPage,
+            prevPage: prevPage
         )
     }
     

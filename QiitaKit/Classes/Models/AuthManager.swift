@@ -124,10 +124,10 @@ public final class AuthManager {
      - parameter webViewType: OAuth認証を行うWebViewの種類
      - parameter completion:  認証後に呼ばれるハンドラ
      */
-    public func authorizeWithScope(scopes: Set<Scope>,
-                                   redirectURL: NSURL,
-                                   webViewType: AuthWebViewType,
-                                   completion: AuthCompletionHandler) {
+    public func authorize(withScopes scopes: Set<Scope>,
+                                              redirectURL: NSURL,
+                                              webViewType: AuthWebViewType,
+                                              completion: AuthCompletionHandler) {
         
         let authInfo = (state: NSUUID().UUIDString, redirectURL: redirectURL, completion: completion)
         
