@@ -70,6 +70,10 @@ public struct PageableResponse<Element> {
         return prevPage != nil
     }
     
+    public init() {
+        self.init(totalCount: 0, currentPage: 0, objects: [], nextPage: nil, prevPage: nil)
+    }
+    
     internal init(totalCount: Int, currentPage: Int, objects: [Element], nextPage: Int?, prevPage: Int?) {
         self.totalCount  = totalCount
         self.currentPage = currentPage
