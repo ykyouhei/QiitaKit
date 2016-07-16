@@ -119,10 +119,10 @@ Session.sendRequest(request) { result in
 
 - `github "ykyouhei/QiitaKit"` をCartfileに追記.
 - `carthage update`を実行.
-- `Carthage/Checkouts`以下に生成される `QiitaKit.framework` ,`APIKit.framework` , `Result.framework` をプロジェクトにリンク
+- `Carthage/Checkouts`以下に生成される`QiitaKit.framework`,`APIKit.framework`,`Result.framework`をプロジェクトにリンク
 
 ### [CocoaPods](https://github.com/cocoapods/cocoapods)
 
-- `pod 'QiitaKit'` をPodfileに追記
-- Run `pod install`.
+- `pod 'QiitaKit'`をPodfileに追記
+- `pod install`を実行
 

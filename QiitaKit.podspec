@@ -11,4 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = "QiitaKit/Classes/**/*.swift"
   s.requires_arc = true
   s.ios.deployment_target = '8.0'
+  s.dependency "APIKit", "~> 2.0.0"
+  s.dependency "Unbox", "~> 1.8.0"
 end
