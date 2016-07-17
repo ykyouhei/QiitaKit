@@ -9,6 +9,8 @@
 import Foundation
 import Result
 import APIKit
+import WebKit
+import UIKit
 
 /**
  OAuthを行うWebViewの種類
@@ -143,12 +145,62 @@ public final class AuthManager {
     }
     
     /**
+     Keychainに保存してあるアクセストークン、WebViewのCookie等を削除する
+     
+     - throws: ErrorType
+     */
+    public func logout() throws {
+        try deleteToken()
+        try removeWKWebViewCache()
+        removeUIWebViewCaches()
+    }
+    
+    /**
      Keychainに保存してあるアクセストークンを削除します
      
      - throws: KeychainError
      */
     public func deleteToken() throws {
         try keychain.deleteItem(withKey: KeychainKey.accessToken)
+    }
+    
+    
+    /* ====================================================================== */
+    // MARK: Private
+    /* ====================================================================== */
+    
+    private func removeWKWebViewCache() throws {
+        if #available(iOS 9.0, *) {
+            let websiteDataTypes: Set<String> = [
+                WKWebsiteDataTypeDiskCache,
+                WKWebsiteDataTypeMemoryCache
+            ]
+            let date = NSDate(timeIntervalSince1970: 0)
+            
+            WKWebsiteDataStore
+                .defaultDataStore()
+                .removeDataOfTypes(
+                    websiteDataTypes,
+                    modifiedSince: date
+                ) {}
+        } else {
+            var libraryPath = NSSearchPathForDirectoriesInDomains(
+                .LibraryDirectory,
+                .UserDomainMask,
+                false).first!
+            
+            libraryPath += "/Cookies"
+            
+            try NSFileManager.defaultManager().removeItemAtPath(libraryPath)
+            
+        }
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+    }
+    
+    private func removeUIWebViewCaches() {
+        let cookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        cookieStorage.cookies?.forEach { cookieStorage.deleteCookie($0) }
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
     }
     
 }
