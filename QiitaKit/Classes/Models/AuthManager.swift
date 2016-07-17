@@ -142,4 +142,13 @@ public final class AuthManager {
             webViewType: webViewType)
     }
     
+    /**
+     Keychainに保存してあるアクセストークンを削除します
+     
+     - throws: KeychainError
+     */
+    public func deleteToken() throws {
+        try keychain.deleteItem(withKey: KeychainKey.accessToken)
+    }
+    
 }
