@@ -33,10 +33,10 @@ public extension QiitaAPI.Tag {
         // MARK: Properties
         
         /// ページ番号 (1から100まで)
-        public let page: Int
+        public var page: Int
         
         /// 1ページあたりに含まれる要素数 (1から100まで)
-        public let perPage: Int
+        public var perPage: Int
        
         /// 並び順
         public let sort: Sort

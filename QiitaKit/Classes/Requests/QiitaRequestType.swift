@@ -96,10 +96,10 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
     associatedtype Element
     
     /// ページ番号 (1から100まで)
-    var page: Int { get }
+    var page: Int { get set }
     
     /// 1ページあたりに含まれる要素数 (1から100まで)
-    var perPage: Int { get }
+    var perPage: Int { get set }
     
     /**
      HTTPレスポンスをパースする

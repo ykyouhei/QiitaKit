@@ -44,10 +44,10 @@ public extension QiitaAPI.Item {
         public let type: Type
         
         /// ページ番号 (1から100まで)
-        public let page: Int
+        public var page: Int
         
         /// 1ページあたりに含まれる要素数 (1から100まで)
-        public let perPage: Int
+        public var perPage: Int
         
         
         // MARK: Initialize
