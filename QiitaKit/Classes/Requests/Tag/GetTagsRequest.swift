@@ -13,22 +13,22 @@ import Unbox
 public extension QiitaAPI.Tag {
     
     /**
+     並び順
+     
+     - Count: 投稿数順
+     - Name:  名前順
+     */
+    public enum Sort: String {
+        case Count = "count"
+        case Name  = "name"
+    }
+    
+    /**
      タグ一覧を作成日時の降順で返します
      
      https://qiita.com/api/v2/docs#get-apiv2tags
      */
     public struct GetTagsRequest: QiitaPageableRequestType {
-        
-        /**
-         並び順
-         
-         - Count: 投稿数順
-         - Name:  名前順
-         */
-        public enum Sort: String {
-            case Count = "count"
-            case Name  = "name"
-        }
         
         // MARK: Properties
         

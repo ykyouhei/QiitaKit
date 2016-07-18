@@ -12,6 +12,25 @@ import Unbox
 
 public extension QiitaAPI.Item {
     
+    // MARK: Types
+    
+    /**
+     取得する投稿のタイプ
+     
+     - Query:               クエリにマッチする投稿一覧
+     - Tag:                 指定されたタグが付けられた投稿一覧
+     - AuthenticatedUser:   認証中のユーザの投稿一覧
+     - UserPosted:          指定されたユーザの投稿一覧
+     - UserStocks:          指定されたユーザがストックした投稿一覧
+     */
+    public enum ItemsType {
+        case Query(query: String)
+        case Tag(tagID: String)
+        case AuthenticatedUser
+        case UserPosted(userID: String)
+        case UserStocks(userID: String)
+    }
+    
     /**
      投稿の一覧を作成日時の降順で返します
      
@@ -19,29 +38,12 @@ public extension QiitaAPI.Item {
      */
     public struct GetItemsRequest: QiitaPageableRequestType {
         
-        // MARK: Types
         
-        /**
-         取得する投稿のタイプ
-         
-         - Query:               クエリにマッチする投稿一覧
-         - Tag:                 指定されたタグが付けられた投稿一覧
-         - AuthenticatedUser:   認証中のユーザの投稿一覧
-         - UserPosted:          指定されたユーザの投稿一覧
-         - UserStocks:          指定されたユーザがストックした投稿一覧
-         */
-        public enum Type {
-            case Query(query: String)
-            case Tag(tagID: String)
-            case AuthenticatedUser
-            case UserPosted(userID: String)
-            case UserStocks(userID: String)
-        }
         
         // MARK: Properties
         
         /// 取得する投稿のタイプ
-        public let type: Type
+        public let type: ItemsType
         
         /// ページ番号 (1から100まで)
         public var page: Int
@@ -52,7 +54,7 @@ public extension QiitaAPI.Item {
         
         // MARK: Initialize
        
-        public init(type: Type, page: Int, perPage: Int) {
+        public init(type: ItemsType, page: Int, perPage: Int) {
             self.type    = type
             self.page    = page
             self.perPage = perPage
