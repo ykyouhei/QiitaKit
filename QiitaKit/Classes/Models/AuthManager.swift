@@ -173,7 +173,8 @@ public final class AuthManager {
         if #available(iOS 9.0, *) {
             let websiteDataTypes: Set<String> = [
                 WKWebsiteDataTypeDiskCache,
-                WKWebsiteDataTypeMemoryCache
+                WKWebsiteDataTypeMemoryCache,
+                WKWebsiteDataTypeCookies
             ]
             let date = NSDate(timeIntervalSince1970: 0)
             

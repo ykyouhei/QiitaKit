@@ -19,6 +19,8 @@ internal final class APITableViewController: UITableViewController {
         super.viewDidLoad()
         
         title = currentUser.name
+        
+        navigationController?.delegate = self
     }
 
     
@@ -95,6 +97,18 @@ internal final class APITableViewController: UITableViewController {
             case .Failure(let error):
                 self.showErrorAlert(error)
             }
+        }
+    }
+    
+}
+
+extension APITableViewController: UINavigationControllerDelegate {
+    
+    func navigationController(navigationController: UINavigationController,
+                              willShowViewController viewController: UIViewController,
+                                                     animated: Bool) {
+        if viewController is LoginViewController {
+            let _ = try? AuthManager.sharedManager.logout()
         }
     }
     
