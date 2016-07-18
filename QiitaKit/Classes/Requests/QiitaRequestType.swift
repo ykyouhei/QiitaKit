@@ -95,6 +95,7 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
     
     associatedtype Element
     
+    
     /// ページ番号 (1から100まで)
     var page: Int { get set }
     
@@ -113,6 +114,8 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
 }
 
 public extension QiitaPageableRequestType {
+    
+    typealias Response = PageableResponse<Element>
     
     /// ページング用パラメータ
     var pageParamaters: [String : String] {
