@@ -8,17 +8,17 @@
 
 import Foundation
 
-internal let ISO8601DateFormatter: NSDateFormatter = {
-    let dateFormatter = NSDateFormatter()
+internal let ISO8601DateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     return dateFormatter
 }()
 
-internal extension NSURL {
+internal extension URL {
     var fragments: [String : String] {
         
-        guard let URLComponents = NSURLComponents(string: absoluteString),
-            items = URLComponents.queryItems else {
+        guard let URLComponents = URLComponents(string: absoluteString),
+            let items = URLComponents.queryItems else {
                 return [:]
         }
         

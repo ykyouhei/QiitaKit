@@ -18,10 +18,10 @@ import APIKit
  - WriteQiitaTeam: Qiita:Teamにデータを書き込む
  */
 public enum Scope: String {
-    case ReadQiita      = "read_qiita"
-    case ReadQiitaTeam  = "read_qiita_team"
-    case WriteQiita     = "write_qiita"
-    case WriteQiitaTeam = "write_qiita_team"
+    case readQiita      = "read_qiita"
+    case readQiitaTeam  = "read_qiita_team"
+    case writeQiita     = "write_qiita"
+    case writeQiitaTeam = "write_qiita_team"
 }
 
 public extension QiitaAPI.Authorization {
@@ -55,23 +55,22 @@ public extension QiitaAPI.Authorization {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "/oauth/authorize"
         }
         
-        public var parameters: AnyObject? {
+        public var parameters: Any? {
             return [
                 "client_id" : clientID,
-                "scope"     : scopes.map{ $0.rawValue }.joinWithSeparator(" "),
+                "scope"     : scopes.map{ $0.rawValue }.joined(separator: " "),
                 "state"     : state
             ]
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Bool {
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Bool {
             return true
         }
         

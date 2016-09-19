@@ -21,8 +21,8 @@ class UserTests: XCTestCase {
     }
     
     func testParse() {
-        let json = readJSON("User", forClass: self.dynamicType)
-        let user: User = try! Unbox(json)
+        let json = readJSON("User", forClass: type(of: self))
+        let user: User = try! Unbox(data: json)
         
         XCTAssertEqual("Hello, world.", user.description)
         XCTAssertEqual("yaotti", user.facebookID)

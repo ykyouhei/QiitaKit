@@ -14,13 +14,13 @@ import Unbox
 
  https://qiita.com/api/v2/docs#コメント
  */
-public struct Comment {
+public struct Comment: CustomStringConvertible {
     
     /// コメントの内容を表すMarkdown形式の文字列
     public let body: String
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// コメントの一意なID
     public let id: String
@@ -29,7 +29,7 @@ public struct Comment {
     public let renderedBody: String
     
     /// データが最後に更新された日時
-    public let updatedAt: NSDate
+    public let updatedAt: Date
     
     /// Qiita上のユーザを表します
     public let user: User
@@ -39,12 +39,12 @@ public struct Comment {
 extension Comment: Unboxable {
     
     public init(unboxer: Unboxer) {
-        body         = unboxer.unbox("body")
-        createdAt    = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        id           = unboxer.unbox("id")
-        renderedBody = unboxer.unbox("rendered_body")
-        updatedAt    = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
-        user         = unboxer.unbox("user")
+        body         = unboxer.unbox(key: "body")
+        createdAt    = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
+        id           = unboxer.unbox(key: "id")
+        renderedBody = unboxer.unbox(key: "rendered_body")
+        updatedAt    = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
+        user         = unboxer.unbox(key: "user")
     }
     
 }

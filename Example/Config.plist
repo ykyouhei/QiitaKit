@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>clientID</key>
-	<string></string>
+	<string>e1c948eb91361b76dea33f04f1373e63445b1d60</string>
 	<key>clientSecret</key>
-	<string></string>
+	<string>7f7d9197ac2b0f4253e8b4dcb5c03a0f9d574e1e</string>
 	<key>redirectURL</key>
-	<string></string>
+	<string>qiitag://authorized</string>
 </dict>
 </plist>

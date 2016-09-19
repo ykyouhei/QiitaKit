@@ -61,14 +61,14 @@ public extension QiitaAPI.Item {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .PATCH
+            return .patch
         }
         
         public var path: String {
             return "items/\(itemID)"
         }
         
-        public var parameters: AnyObject? {
+        public var parameters: Any? {
             let tagParams = tags.map {
                 [
                     "name"     : $0.name,
@@ -84,10 +84,11 @@ public extension QiitaAPI.Item {
             ]
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Item {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Item {
+            guard let json = object as? [String: AnyObject] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return try Unbox(dictionary: json)
         }
         
     }

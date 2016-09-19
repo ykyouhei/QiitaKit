@@ -14,10 +14,10 @@ import Unbox
  
  https://qiita.com/api/v2/docs#いいね
  */
-public struct Like {
+public struct Like: CustomStringConvertible {
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// Qiita上のユーザを表します
     public let user: User
@@ -27,8 +27,8 @@ public struct Like {
 extension Like: Unboxable {
     
     public init(unboxer: Unboxer) {
-        createdAt = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        user      = unboxer.unbox("user")
+        createdAt = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
+        user      = unboxer.unbox(key: "user")
     }
     
 }

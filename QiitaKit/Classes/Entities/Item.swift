@@ -12,7 +12,7 @@ import Unbox
 /**
  ユーザからの投稿を表します
  */
-public struct Item {
+public struct Item: CustomStringConvertible {
     
     /// タグを特定するための一意な名前
     public let id: String
@@ -27,7 +27,7 @@ public struct Item {
     public let coediting: Bool
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// Qiita:Teamのグループを表します
     public let group: Group?
@@ -42,10 +42,10 @@ public struct Item {
     public let title: String
     
     /// データが最後に更新された日時
-    public let updatedAt: NSDate
+    public let updatedAt: Date
     
     /// 投稿のURL
-    public let URL: NSURL
+    public let URL: Foundation.URL
     
     /// 投稿者
     public let user: User
@@ -55,18 +55,18 @@ public struct Item {
 extension Item: Unboxable {
     
     public init(unboxer: Unboxer) {
-        id           = unboxer.unbox("id")
-        renderedBody = unboxer.unbox("rendered_body")
-        body         = unboxer.unbox("body")
-        coediting    = unboxer.unbox("coediting")
-        createdAt    = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        group        = unboxer.unbox("group")
-        privated     = unboxer.unbox("private")
-        tags         = unboxer.unbox("tags")
-        title        = unboxer.unbox("title")
-        updatedAt    = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
-        URL          = unboxer.unbox("url")
-        user         = unboxer.unbox("user")
+        id           = unboxer.unbox(key: "id")
+        renderedBody = unboxer.unbox(key: "rendered_body")
+        body         = unboxer.unbox(key: "body")
+        coediting    = unboxer.unbox(key: "coediting")
+        createdAt    = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
+        group        = unboxer.unbox(key: "group")
+        privated     = unboxer.unbox(key: "private")
+        tags         = unboxer.unbox(key: "tags")
+        title        = unboxer.unbox(key: "title")
+        updatedAt    = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
+        URL          = unboxer.unbox(key: "url")
+        user         = unboxer.unbox(key: "user")
     }
     
 }

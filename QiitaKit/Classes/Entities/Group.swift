@@ -14,10 +14,10 @@ import Unbox
  
  https://qiita.com/api/v2/docs#グループ
  */
-public struct Group {
+public struct Group: CustomStringConvertible {
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// グループの一意なIDを表します
     public let id: Int
@@ -29,7 +29,7 @@ public struct Group {
     public let privated: Bool
     
     /// データが最後に更新された日時
-    public let updatedAt: NSDate
+    public let updatedAt: Date
     
     /// グループのチーム上での一意な名前を表します
     public let urlName: String
@@ -39,12 +39,12 @@ public struct Group {
 extension Group: Unboxable {
     
     public init(unboxer: Unboxer) {
-        createdAt = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        id        = unboxer.unbox("id")
-        name      = unboxer.unbox("name")
-        privated = unboxer.unbox("private")
-        updatedAt = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
-        urlName   = unboxer.unbox("url_name")
+        createdAt = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
+        id        = unboxer.unbox(key: "id")
+        name      = unboxer.unbox(key: "name")
+        privated  = unboxer.unbox(key: "private")
+        updatedAt = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
+        urlName   = unboxer.unbox(key: "url_name")
     }
     
 }

@@ -32,6 +32,7 @@
 		414EBC021D32866800078494 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBC011D32866800078494 /* Like.json */; };
 		414EBC041D3286F800078494 /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC031D3286F800078494 /* LikeTests.swift */; };
 		414EBC101D32994F00078494 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC0F1D32994F00078494 /* Comment.swift */; };
+		4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */; };
 		4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */; };
 		4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */; };
 		4171BAA71D39EA7F000DFEB8 /* GetFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */; };
@@ -160,6 +161,7 @@
 		414EBC011D32866800078494 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
 		414EBC031D3286F800078494 /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
 		414EBC0F1D32994F00078494 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+Default.swift"; sourceTree = "<group>"; };
 		4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTagRequest.swift; sourceTree = "<group>"; };
 		4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFollowingTagRequest.swift; sourceTree = "<group>"; };
 		4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowingTagRequest.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */,
+				4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -644,17 +647,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = kyo__hei;
 				TargetAttributes = {
 					4171BADF1D39FF00000DFEB8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					C278CA861C40F146005DCFB5 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					C278CA901C40F146005DCFB5 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -770,6 +776,7 @@
 				4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */,
 				410687B21D39C9F8003A310A /* QiitaAPI.swift in Sources */,
 				4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */,
+				4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */,
 				C278CAC51C40F52F005DCFB5 /* Item.swift in Sources */,
 				4171BAB11D39ED5A000DFEB8 /* GetStockersRequest.swift in Sources */,
 				410687C91D39DE14003A310A /* GetCommentRequest.swift in Sources */,
@@ -877,9 +884,9 @@
 		4171BAF01D39FF00000DFEB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -889,15 +896,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4171BAF11D39FF00000DFEB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -907,6 +915,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -923,8 +932,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -971,8 +982,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -992,6 +1005,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1003,6 +1017,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1019,6 +1034,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1026,6 +1042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1041,6 +1058,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1057,6 +1075,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1072,6 +1091,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

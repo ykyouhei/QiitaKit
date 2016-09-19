@@ -12,7 +12,7 @@ import Unbox
 /**
  Qiita上のユーザを表します
  */
-public struct User {
+public struct User: CustomStringConvertible {
     
     /// 自己紹介文
     public let description: String?
@@ -51,34 +51,34 @@ public struct User {
     public let permanentID: Int
     
     /// 設定しているプロフィール画像のURL
-    public let profileImageURL: NSURL
+    public let profileImageURL: URL
     
     /// Twitterのスクリーンネーム
     public let twitterScreenName: String?
     
     /// 設定しているWebサイトのURL
-    public let websiteURL: NSURL?
+    public let websiteURL: URL?
    
 }
 
 extension User: Unboxable {
     
     public init(unboxer: Unboxer) {
-        id                = unboxer.unbox("id")
-        followeesCount    = unboxer.unbox("followees_count")
-        followersCount    = unboxer.unbox("followers_count")
-        itemsCount        = unboxer.unbox("items_count")
-        permanentID       = unboxer.unbox("permanent_id")
-        profileImageURL   = unboxer.unbox("profile_image_url")
-        description       = unboxer.unbox("description")
-        facebookID        = unboxer.unbox("facebook_id")
-        githubLoginName   = unboxer.unbox("github_login_name")
-        linkedinID        = unboxer.unbox("linkedin_id")
-        location          = unboxer.unbox("location")
-        name              = unboxer.unbox("name")
-        organization      = unboxer.unbox("organization")
-        twitterScreenName = unboxer.unbox("twitter_screen_name")
-        websiteURL        = unboxer.unbox("website_url")
+        id                = unboxer.unbox(key: "id")
+        followeesCount    = unboxer.unbox(key: "followees_count")
+        followersCount    = unboxer.unbox(key: "followers_count")
+        itemsCount        = unboxer.unbox(key: "items_count")
+        permanentID       = unboxer.unbox(key: "permanent_id")
+        profileImageURL   = unboxer.unbox(key: "profile_image_url")
+        description       = unboxer.unbox(key: "description")
+        facebookID        = unboxer.unbox(key: "facebook_id")
+        githubLoginName   = unboxer.unbox(key: "github_login_name")
+        linkedinID        = unboxer.unbox(key: "linkedin_id")
+        location          = unboxer.unbox(key: "location")
+        name              = unboxer.unbox(key: "name")
+        organization      = unboxer.unbox(key: "organization")
+        twitterScreenName = unboxer.unbox(key: "twitter_screen_name")
+        websiteURL        = unboxer.unbox(key: "website_url")
     }
     
 }

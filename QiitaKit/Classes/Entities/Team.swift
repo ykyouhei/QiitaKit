@@ -14,7 +14,7 @@ import Unbox
  
  https://qiita.com/api/v2/docs#%E3%83%81%E3%83%BC%E3%83%A0
  */
-public struct Team {
+public struct Team: CustomStringConvertible {
     
     /// チームが利用可能な状態かどうか
     public let active: Bool
@@ -30,9 +30,9 @@ public struct Team {
 extension Team: Unboxable {
     
     public init(unboxer: Unboxer) {
-        active = unboxer.unbox("active")
-        id     = unboxer.unbox("id")
-        name   = unboxer.unbox("name")
+        active = unboxer.unbox(key: "active")
+        id     = unboxer.unbox(key: "id")
+        name   = unboxer.unbox(key: "name")
     }
     
 }

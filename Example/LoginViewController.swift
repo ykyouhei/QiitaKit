@@ -15,20 +15,20 @@ var currentUser: AuthenticatedUser!
 
 extension UIViewController {
     
-    func showAlert(title: String,
+    func showAlert(_ title: String,
                    message: String,
                    okHandler: ((UIAlertAction) -> ())? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: okHandler))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: okHandler))
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
-    func showErrorAlert(error: ErrorType) {
+    func showErrorAlert(_ error: Error) {
         let title = "Error"
         let message = "\(error)"
         showAlert(title, message: message)
@@ -38,28 +38,28 @@ extension UIViewController {
 
 internal final class LoginViewController: UIViewController {
     
-    @IBAction private func didTapLoginButton(sender: UIButton) {
-        let plistPath = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")!
+    @IBAction fileprivate func didTapLoginButton(_ sender: UIButton) {
+        let plistPath = Bundle.main.path(forResource: "Config", ofType: "plist")!
         let plist = NSDictionary(contentsOfFile: plistPath) as! [String:String]
         
-        let redirectURL = NSURL(string: plist["redirectURL"]!)!
-        let scopes: Set<Scope> = [.ReadQiita, .WriteQiita]
+        let redirectURL = URL(string: plist["redirectURL"]!)!
+        let scopes: Set<Scope> = [.readQiita, .writeQiita]
         
         AuthManager.sharedManager.authorize(withScopes: scopes,
                                             redirectURL: redirectURL,
-                                            webViewType: .UIWebView)
+                                            webViewType: .uiWebView)
         { result in
             switch result {
-            case .Success:
+            case .success:
                 self.requestAuthenticatedUser()
                 
-            case .Failure(let error):
+            case .failure(let error):
                 self.showErrorAlert(error)
             }
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if AuthManager.sharedManager.authorized {
@@ -67,21 +67,21 @@ internal final class LoginViewController: UIViewController {
         }
     }
     
-    private func requestAuthenticatedUser() {
-        Session.sendRequest(QiitaAPI.User.GetAuthenticatedUserRequest()) { result in
+    fileprivate func requestAuthenticatedUser() {
+        Session.send(QiitaAPI.User.GetAuthenticatedUserRequest()) { result in
             switch result {
-            case .Success(let user):
+            case .success(let user):
                 currentUser = user
                 self.showAPITableViewController()
                 
-            case .Failure(let error):
+            case .failure(let error):
                 self.showErrorAlert(error)
             }
         }
     }
     
-    private func showAPITableViewController() {
-        performSegueWithIdentifier("showAPIs", sender: nil)
+    fileprivate func showAPITableViewController() {
+        performSegue(withIdentifier: "showAPIs", sender: nil)
     }
 
 }

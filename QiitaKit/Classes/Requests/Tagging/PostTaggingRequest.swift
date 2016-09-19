@@ -43,24 +43,25 @@ public extension QiitaAPI.Tagging {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .POST
+            return .post
         }
         
         public var path: String {
             return "items/\(itemID)/taggings"
         }
         
-        public var parameters: AnyObject? {
+        public var parameters: Any? {
             return [
                 "name"     : name,
                 "versions" : versions
             ]
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Tagging {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Tagging {
+            guard let json = object as? [String: AnyObject] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return try Unbox(dictionary: json)
         }
         
     }

@@ -39,23 +39,24 @@ public extension QiitaAPI.Comment {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .PATCH
+            return .patch
         }
         
         public var path: String {
             return "comments/\(commentID)"
         }
         
-        public var parameters: AnyObject? {
+        public var parameters: Any? {
             return [
                 "body" : body
             ]
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Comment {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Comment {
+            guard let json = object as? [String: AnyObject] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return try Unbox(dictionary: json)
         }
         
     }

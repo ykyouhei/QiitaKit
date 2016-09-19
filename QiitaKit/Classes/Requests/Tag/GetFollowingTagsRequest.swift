@@ -43,7 +43,7 @@ public extension QiitaAPI.Tag {
         // MARK: QiitaPageableRequestType
     
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
@@ -51,12 +51,14 @@ public extension QiitaAPI.Tag {
         }
         
         public var parameters: AnyObject? {
-            return pageParamaters
+            return pageParamaters as AnyObject?
         }
         
-        public func responseFromObjects(object: AnyObject) throws -> [Tag] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any) throws -> [Tag] {
+            guard let json = object as? [[String: AnyObject]] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return try Unbox(dictionaries: json)
         }
         
     }

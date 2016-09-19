@@ -12,7 +12,7 @@ import Unbox
 /**
  アクセストークン情報
  */
-public struct AccessTokenResponse {
+public struct AccessTokenResponse: CustomStringConvertible {
     
     public let clientID: String
     
@@ -23,8 +23,8 @@ public struct AccessTokenResponse {
 extension AccessTokenResponse: Unboxable {
    
     public init(unboxer: Unboxer) {
-        self.clientID = unboxer.unbox("client_id")
-        self.token    = unboxer.unbox("token")
+        self.clientID = unboxer.unbox(key: "client_id")
+        self.token    = unboxer.unbox(key: "token")
     }
     
 }

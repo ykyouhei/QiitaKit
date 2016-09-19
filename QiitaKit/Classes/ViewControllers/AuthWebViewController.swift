@@ -16,21 +16,21 @@ internal final class AuthWebViewController: UIViewController {
     // MARK: - Properties
     /* ====================================================================== */
     
-    internal var request: NSURLRequest
+    internal var request: URLRequest
     
     internal var webViewType: AuthWebViewType
     
-    private let authInfo: AuthManager.AuthInfo
+    fileprivate let authInfo: AuthManager.AuthInfo
     
     
     // UI
     
     static var window: UIWindow?
     
-    private var webView: UIView! {
+    private var webView: UIView? {
         didSet {
-            webView.layer.cornerRadius = 5
-            webView.clipsToBounds      = true
+            webView?.layer.cornerRadius = 5
+            webView?.clipsToBounds      = true
         }
     }
     
@@ -39,7 +39,7 @@ internal final class AuthWebViewController: UIViewController {
     // MARK: - Actions
     /* ====================================================================== */
     
-    @IBAction private func didTapCancelButton(sender: UIButton) {
+    @IBAction private func didTapCancelButton(_ sender: UIButton) {
         switch webView {
         case let webView as UIWebView:  webView.stopLoading()
         case let webView as WKWebView:  webView.stopLoading()
@@ -54,7 +54,7 @@ internal final class AuthWebViewController: UIViewController {
     // MARK: - initializer
     /* ====================================================================== */
     
-    private init(request: NSURLRequest,
+    private init(request: URLRequest,
                  authInfo: AuthManager.AuthInfo,
                  webViewType: AuthWebViewType)
     {
@@ -76,38 +76,65 @@ internal final class AuthWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
         
         switch webViewType {
-        case .UIWebView:
+        case .uiWebView:
             let uiWebView = UIWebView()
             uiWebView.delegate = self
             webView = uiWebView
             
-        case .WKWebView:
+        case .wkWebView:
             let wkWebView = WKWebView()
             wkWebView.navigationDelegate = self
             webView = wkWebView
         }
         
-        webView.frame = view.bounds
-        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView!.frame = view.bounds
+        webView!.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(webView)
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "H:|-12-[webView]-12-|",
-            options: [],
-            metrics: nil,
-            views: ["webView" : webView]))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-            "V:|-20-[webView]-20-|",
-            options: [],
-            metrics: nil,
-            views: ["webView" : webView]))
+        view.addSubview(webView!)
+        
+        let constraints = [
+            NSLayoutConstraint(
+                item: webView!,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .top,
+                multiplier: 1,
+                constant: 20),
+            NSLayoutConstraint(
+                item: webView!,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .bottom,
+                multiplier: 1,
+                constant: -20),
+            NSLayoutConstraint(
+                item: webView!,
+                attribute: .left,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .left,
+                multiplier: 1,
+                constant: 12),
+            NSLayoutConstraint(
+                item: webView!,
+                attribute: .right,
+                relatedBy: .equal,
+                toItem: view,
+                attribute: .right,
+                multiplier: 1,
+                constant: -12)
+        ]
+
+        view.addConstraints(constraints)
         
         switch webView {
         case let webView as UIWebView:  webView.loadRequest(request)
-        case let webView as WKWebView:  webView.loadRequest(request)
+        case let webView as WKWebView:  webView.load(request)
         default:                        break
         }
     }
@@ -116,11 +143,11 @@ internal final class AuthWebViewController: UIViewController {
     // MARK: Internal Method
     /* ====================================================================== */
     
-    static func showWithRequest(request: NSURLRequest,
+    static func show(withRequest request: URLRequest,
                                 authInfo: AuthManager.AuthInfo,
                                 webViewType: AuthWebViewType)
     {
-        let window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        let window = UIWindow(frame:UIScreen.main.bounds)
         let rootViewController = AuthWebViewController(
             request: request,
             authInfo: authInfo,
@@ -129,7 +156,7 @@ internal final class AuthWebViewController: UIViewController {
         rootViewController.request = request
         
         window.alpha = 0
-        window.transform = CGAffineTransformMakeScale(1, 1)
+        window.transform = CGAffineTransform(scaleX: 1, y: 1)
         window.backgroundColor = UIColor(white:0, alpha: 0.6)
         window.windowLevel = UIWindowLevelNormal + 5
         window.rootViewController = rootViewController
@@ -138,9 +165,9 @@ internal final class AuthWebViewController: UIViewController {
         
         AuthWebViewController.window = window
         
-        UIView.transitionWithView(window,
+        UIView.transition(with: window,
             duration: 0.2,
-            options: [.TransitionCrossDissolve, .CurveEaseInOut],
+            options: .transitionCrossDissolve,
             animations: {
                 window.alpha = 1
             }, completion: nil)
@@ -149,12 +176,12 @@ internal final class AuthWebViewController: UIViewController {
     static func close() {
         guard let window = AuthWebViewController.window else { return }
         
-        UIView.transitionWithView(window,
+        UIView.transition(with: window,
             duration: 0.2,
-            options: [.TransitionCrossDissolve, .CurveEaseInOut],
+            options: .transitionCrossDissolve,
             animations: {
                 window.rootViewController?.view.subviews.forEach {
-                    $0.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                    $0.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 }
                 window.alpha = 0;
             }, completion: { finished in
@@ -164,7 +191,7 @@ internal final class AuthWebViewController: UIViewController {
                 
                 AuthWebViewController.window = nil
                 
-                if let window = UIApplication.sharedApplication().delegate?.window {
+                if let window = UIApplication.shared.delegate?.window {
                     window?.makeKeyAndVisible()
                 }
         })
@@ -175,11 +202,11 @@ internal final class AuthWebViewController: UIViewController {
     // MARK: Private Method
     /* ====================================================================== */
     
-    private func parse(redirectURL url: NSURL) {
+    fileprivate func parse(redirectURL url: URL) {
         guard let state = url.fragments["state"],
-            code = url.fragments["code"] where state == authInfo.state else
-        {
-            authInfo.completion(result: .Failure(.InvalidState))
+            let code = url.fragments["code"], state == authInfo.state
+        else {
+            authInfo.completion(.failure(.invalidState))
             return
         }
         
@@ -188,15 +215,15 @@ internal final class AuthWebViewController: UIViewController {
             clientSecret: AuthManager.sharedManager.clientSecret,
             code: code)
         
-        Session.sendRequest(accessTokenRequest) { result in
+        Session.send(accessTokenRequest) { result in
             switch result {
-            case .Success(let accessTokenResponse):
+            case .success(let accessTokenResponse):
                 AuthManager.sharedManager.accessToken = accessTokenResponse.token
                 AuthWebViewController.close()
-                self.authInfo.completion(result: .Success(true))
+                self.authInfo.completion(.success(true))
                 
-            case .Failure:
-                self.authInfo.completion(result: .Failure(.FaildToGetAccessToken))
+            case .failure:
+                self.authInfo.completion(.failure(.faildToGetAccessToken))
                 
             }
             
@@ -211,20 +238,20 @@ internal final class AuthWebViewController: UIViewController {
 
 extension AuthWebViewController: WKNavigationDelegate {
     
-    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
-        guard let scheme = navigationAction.request.URL?.scheme else {
-            decisionHandler(.Allow)
+        guard let scheme = navigationAction.request.url?.scheme else {
+            decisionHandler(.allow)
             return
         }
         
         switch scheme {
-        case authInfo.redirectURL.scheme:
-            parse(redirectURL: navigationAction.request.URL!)
-            decisionHandler(.Cancel)
+        case authInfo.redirectURL.scheme!:
+            parse(redirectURL: navigationAction.request.url!)
+            decisionHandler(.cancel)
             
         default:
-            decisionHandler(.Allow)
+            decisionHandler(.allow)
             
         }
     }
@@ -236,14 +263,14 @@ extension AuthWebViewController: WKNavigationDelegate {
 
 extension AuthWebViewController: UIWebViewDelegate {
     
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        guard let scheme = request.URL?.scheme else {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        guard let scheme = request.url?.scheme else {
             return true
         }
         
         switch scheme {
-        case authInfo.redirectURL.scheme:
-            parse(redirectURL: request.URL!)
+        case authInfo.redirectURL.scheme!:
+            parse(redirectURL: request.url!)
             return false
             
         default:

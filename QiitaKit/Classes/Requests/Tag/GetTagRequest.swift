@@ -35,17 +35,19 @@ public extension QiitaAPI.Tag {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "tags/\(tagID)"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Tag {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any,
+                             urlResponse: HTTPURLResponse) throws -> Tag {
+            guard let json = object as? [String: AnyObject] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return try Unbox(dictionary: json)
         }
         
     }

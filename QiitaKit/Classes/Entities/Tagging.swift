@@ -12,7 +12,7 @@ import Unbox
 /**
  投稿とタグとの関連を表します
  */
-public struct Tagging  {
+public struct Tagging: CustomStringConvertible {
     
     /// タグを特定するための一意な名前
     public let name: String
@@ -25,8 +25,8 @@ public struct Tagging  {
 extension Tagging: Unboxable {
     
     public init(unboxer: Unboxer) {
-        name     = unboxer.unbox("name")
-        versions = unboxer.unbox("versions")
+        name     = unboxer.unbox(key: "name")
+        versions = unboxer.unbox(key: "versions")
     }
     
 }
