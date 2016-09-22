@@ -19,8 +19,8 @@ public extension QiitaAPI.Tag {
      - Name:  名前順
      */
     public enum Sort: String {
-        case Count = "count"
-        case Name  = "name"
+        case count = "count"
+        case name  = "name"
     }
     
     /**
