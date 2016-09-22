@@ -10,15 +10,12 @@ import Foundation
 
 extension CustomStringConvertible {
     public var description : String {
-        var description: String = ""
-        description = "***** \(type(of: self)) *****\n"
-        
+        let type = "\(type(of: self))"
         let selfMirror = Mirror(reflecting: self)
-        for child in selfMirror.children {
-            if let propertyName = child.label {
-                description += "\(propertyName): \(child.value)\n"
-            }
+        let property = selfMirror.children.reduce("") {
+            $1.label != nil ? $0 + "    \($1.label!) = \($1.value)\n" : $0
         }
-        return description
+        
+        return "<\(type)> {\n\(property)\n}"
     }
 }
