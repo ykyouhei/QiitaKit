@@ -61,14 +61,14 @@ public extension QiitaAPI.Tag {
             return "tags"
         }
         
-        public var queryParameters: [String : AnyObject]? {
+        public var queryParameters: [String : Any]? {
             var params = pageParamaters
             params["sort"] = sort.rawValue
-            return params as [String : AnyObject]?
+            return params as [String : Any]?
         }
         
         public func response(from object: Any) throws -> [Tag] {
-            guard let json = object as? [[String: AnyObject]] else {
+            guard let json = object as? [[String: Any]] else {
                 throw QiitaKitError.invalidJSON
             }
             return try Unbox(dictionaries: json)

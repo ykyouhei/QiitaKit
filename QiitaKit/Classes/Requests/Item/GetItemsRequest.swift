@@ -75,16 +75,16 @@ public extension QiitaAPI.Item {
             }
         }
         
-        public var queryParameters: [String : AnyObject]? {
+        public var queryParameters: [String : Any]? {
             var params = pageParamaters
             if case .query(let query) = type {
                 params["query"] = query
             }
-            return params as [String : AnyObject]?
+            return params as [String : Any]?
         }
     
         public func response(from object: Any) throws -> [Item] {
-            guard let json = object as? [[String: AnyObject]] else {
+            guard let json = object as? [[String: Any]] else {
                 throw QiitaKitError.invalidJSON
             }
             return try Unbox(dictionaries: json)

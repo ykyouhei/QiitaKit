@@ -34,7 +34,7 @@ public extension QiitaAPI.User {
         }
         
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> AuthenticatedUser {
-            guard let json = object as? [String: AnyObject] else {
+            guard let json = object as? [String: Any] else {
                 throw QiitaKitError.invalidJSON
             }
             return try Unbox(dictionary: json)

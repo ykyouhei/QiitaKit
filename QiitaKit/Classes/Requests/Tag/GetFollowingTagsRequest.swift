@@ -50,12 +50,12 @@ public extension QiitaAPI.Tag {
             return "users/\(userID)/following_tags"
         }
         
-        public var parameters: AnyObject? {
-            return pageParamaters as AnyObject?
+        public var parameters: Any? {
+            return pageParamaters as Any?
         }
         
         public func response(from object: Any) throws -> [Tag] {
-            guard let json = object as? [[String: AnyObject]] else {
+            guard let json = object as? [[String: Any]] else {
                 throw QiitaKitError.invalidJSON
             }
             return try Unbox(dictionaries: json)

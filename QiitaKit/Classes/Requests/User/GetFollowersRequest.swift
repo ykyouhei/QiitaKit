@@ -50,12 +50,12 @@ public extension QiitaAPI.User {
             return "users/\(userID)/followers"
         }
         
-        public var queryParameters: [String : AnyObject]? {
-            return pageParamaters as [String : AnyObject]?
+        public var queryParameters: [String : Any]? {
+            return pageParamaters as [String : Any]?
         }
         
         public func response(from object: Any) throws -> [User] {
-            guard let json = object as? [[String: AnyObject]] else {
+            guard let json = object as? [[String: Any]] else {
                 throw QiitaKitError.invalidJSON
             }
             return try Unbox(dictionaries: json)

@@ -47,15 +47,15 @@ internal struct KeychainWrapper {
     
     // MARK: Keychain access
     
-    func keychainQuery(withKey key: String) -> [String : AnyObject] {
-        var query = [String : AnyObject]()
+    func keychainQuery(withKey key: String) -> [String : Any] {
+        var query = [String : Any]()
         
         query[kSecClass as String] = kSecClassGenericPassword
-        query[kSecAttrService as String] = config.service as AnyObject?
-        query[kSecAttrAccount as String] = key as AnyObject?
+        query[kSecAttrService as String] = config.service as Any?
+        query[kSecAttrAccount as String] = key as Any?
         
         if let accessGroup = config.accessGroup {
-            query[kSecAttrAccessGroup as String] = accessGroup as AnyObject?
+            query[kSecAttrAccessGroup as String] = accessGroup as Any?
         }
         
         return query
@@ -76,7 +76,7 @@ internal struct KeychainWrapper {
         guard status != errSecItemNotFound else { throw KeychainError.noPassword }
         guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         
-        guard let existingItem = queryResult as? [String : AnyObject],
+        guard let existingItem = queryResult as? [String : Any],
             let passwordData = existingItem[kSecValueData as String] as? Data,
             let password = String(data: passwordData, encoding: String.Encoding.utf8)
             else {
@@ -92,8 +92,8 @@ internal struct KeychainWrapper {
         do {
             try _ = read(withKey: key)
             
-            var attributesToUpdate = [String : AnyObject]()
-            attributesToUpdate[kSecValueData as String] = encodedPassword as AnyObject?
+            var attributesToUpdate = [String : Any]()
+            attributesToUpdate[kSecValueData as String] = encodedPassword as Any?
             
             let query = keychainQuery(withKey: key)
             let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
@@ -102,7 +102,7 @@ internal struct KeychainWrapper {
         }
         catch KeychainError.noPassword {
             var newItem = keychainQuery(withKey: key)
-            newItem[kSecValueData as String] = encodedPassword as AnyObject?
+            newItem[kSecValueData as String] = encodedPassword as Any?
             
             let status = SecItemAdd(newItem as CFDictionary, nil)
             

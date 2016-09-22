@@ -36,7 +36,7 @@ public struct Item: CustomStringConvertible {
     public let privated: Bool
     
     /// このタグが付けられた投稿の数
-    public let tags: [[String : AnyObject]]
+    public let tags: [[String : Any]]
     
     /// 投稿のタイトル
     public let title: String
