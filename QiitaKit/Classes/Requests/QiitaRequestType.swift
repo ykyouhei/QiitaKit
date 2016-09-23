@@ -132,8 +132,8 @@ public extension QiitaPageableRequestType {
         var nextPage: Int? = nil
         var prevPage: Int? = nil
 
-        if let count = urlResponse.allHeaderFields["Total-Count"] as? Int {
-            totalCount = count
+        if let count = urlResponse.allHeaderFields["Total-Count"] as? String {
+            totalCount = Int(count) ?? 0
         }
         
         if let link = urlResponse.allHeaderFields["Link"] as? String {
