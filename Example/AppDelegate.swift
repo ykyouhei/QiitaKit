@@ -20,9 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let plistPath = Bundle.main.path(forResource: "Config", ofType: "plist")!
         let plist = NSDictionary(contentsOfFile: plistPath) as! [String:String]
         
+        guard let clientID     = plist["clientID"],
+              let clientSecret = plist["clientSecret"], !clientSecret.isEmpty && !clientID.isEmpty
+        else {
+            fatalError("Config.plistにclientID,clientSecretを設定してください")
+        }
+        
         AuthManager.sharedManager.setup(
-            clientID: plist["clientID"]!,
-            clientSecret: plist["clientSecret"]!)
+            clientID: clientID,
+            clientSecret: clientSecret)
         
         return true
     }
