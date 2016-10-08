@@ -16,7 +16,7 @@ internal struct JSON {
         return formatter
     }()
     
-    let object: AnyObject
+    let object: AnyObject?
     
     init(_ any: Any) {
         self.object = any as AnyObject
@@ -27,8 +27,13 @@ internal struct JSON {
         self.object = json as AnyObject
     }
     
+    init(_ object: AnyObject?) {
+        self.object = object
+    }
+    
     subscript(key: String) -> JSON {
-        guard let value = object.value(forKey: key) else { return self }
+        guard let unwrapedObj = object else { return self }
+        guard let value = unwrapedObj.value(forKey: key) else { return JSON(nil) }
         return JSON(value)
     }
     
@@ -39,6 +44,8 @@ internal struct JSON {
     var double: Double? { return object as? Double }
     var url:    URL?    { return string.flatMap{ URL(string: $0) } }
     var date:   Date?   { return string.flatMap{ JSON.formatter.date(from: $0) } }
+    
+    var dictionary: [String:Any]? { return object as? [String:Any] }
     
 }
 

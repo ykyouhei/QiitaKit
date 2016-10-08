@@ -60,7 +60,7 @@ extension Item: JSONParsable {
         body         = json["body"].string!
         coediting    = json["coediting"].bool!
         createdAt    = json["created_at"].date!
-        group        = Group(json: json["group"])
+        group        = json["group"].dictionary.map { Group(json: JSON($0)) }
         privated     = json["private"].bool!
         tags         = json["tags"].object as! [[String : Any]]
         title        = json["title"].string!
