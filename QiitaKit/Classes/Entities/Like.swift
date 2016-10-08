@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿に付けられた個々のタグを表します
@@ -24,11 +24,11 @@ public struct Like: CustomStringConvertible {
     
 }
 
-extension Like: Unboxable {
+extension Like: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        createdAt = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
-        user      = unboxer.unbox(key: "user")
+    internal init(json: JSON) {
+        createdAt = json["created_at"].date!
+        user      = User(json: json["user"])
     }
     
 }

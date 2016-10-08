@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  ユーザからの投稿を表します
@@ -52,21 +52,21 @@ public struct Item: CustomStringConvertible {
     
 }
 
-extension Item: Unboxable {
+extension Item: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id           = unboxer.unbox(key: "id")
-        renderedBody = unboxer.unbox(key: "rendered_body")
-        body         = unboxer.unbox(key: "body")
-        coediting    = unboxer.unbox(key: "coediting")
-        createdAt    = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
-        group        = unboxer.unbox(key: "group")
-        privated     = unboxer.unbox(key: "private")
-        tags         = unboxer.unbox(key: "tags")
-        title        = unboxer.unbox(key: "title")
-        updatedAt    = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
-        URL          = unboxer.unbox(key: "url")
-        user         = unboxer.unbox(key: "user")
+    internal init(json: JSON) {
+        id           = json["id"].string!
+        renderedBody = json["rendered_body"].string!
+        body         = json["body"].string!
+        coediting    = json["coediting"].bool!
+        createdAt    = json["created_at"].date!
+        group        = Group(json: json["group"])
+        privated     = json["private"].bool!
+        tags         = json["tags"].object as! [[String : Any]]
+        title        = json["title"].string!
+        updatedAt    = json["updated_at"].date!
+        URL          = json["url"].url!
+        user         = User(json: json["user"])
     }
     
 }

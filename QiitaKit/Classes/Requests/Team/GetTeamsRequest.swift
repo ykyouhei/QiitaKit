@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Team {
     
@@ -35,10 +35,10 @@ public extension QiitaAPI.Team {
         }
         
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> [Team] {
-            guard let json = object as? [[String: Any]] else {
+            guard let json = object as? [Any] else {
                 throw QiitaKitError.invalidJSON
             }
-            return try Unbox(dictionaries: json)
+            return json.map{ Team(json: JSON($0)) }
         }
         
     }

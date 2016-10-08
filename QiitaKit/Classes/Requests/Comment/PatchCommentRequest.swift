@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Comment {
     
@@ -53,10 +53,7 @@ public extension QiitaAPI.Comment {
         }
         
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Comment {
-            guard let json = object as? [String: Any] else {
-                throw QiitaKitError.invalidJSON
-            }
-            return try Unbox(dictionary: json)
+            return Comment(json: JSON(object))
         }
         
     }

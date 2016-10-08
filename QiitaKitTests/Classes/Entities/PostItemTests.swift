@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class PostItemTests: XCTestCase {
@@ -22,7 +22,7 @@ class PostItemTests: XCTestCase {
     
     func testParse() {
         let json = readJSON("PostItem", forClass: type(of: self))
-        let postItem: Item = try! Unbox(data: json)
+        let postItem = Item(data: json)
         
         XCTAssertEqual("<h1>Example</h1>", postItem.renderedBody)
         XCTAssertEqual("# Example", postItem.body)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
 		410687B21D39C9F8003A310A /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687B11D39C9F8003A310A /* QiitaAPI.swift */; };
 		410687C01D39D8EE003A310A /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687BE1D39D8EE003A310A /* AccessTokenRequest.swift */; };
 		410687C11D39D8EE003A310A /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687BF1D39D8EE003A310A /* AuthorizeRequest.swift */; };
@@ -33,6 +32,7 @@
 		414EBC041D3286F800078494 /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC031D3286F800078494 /* LikeTests.swift */; };
 		414EBC101D32994F00078494 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC0F1D32994F00078494 /* Comment.swift */; };
 		4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */; };
+		4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169C2F31DA8BCA800CA496A /* JSONParsable.swift */; };
 		4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */; };
 		4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */; };
 		4171BAA71D39EA7F000DFEB8 /* GetFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */; };
@@ -69,7 +69,6 @@
 		4171BAF61D3A0329000DFEB8 /* QiitaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
 		4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
-		4171BAFC1D3A0375000DFEB8 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
 		4171BAFE1D3A06D5000DFEB8 /* APITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */; };
 		4171BB001D3A0E3B000DFEB8 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */; };
 		4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFDE1D3228B200B421A0 /* AuthManager.swift */; };
@@ -162,6 +161,7 @@
 		414EBC031D3286F800078494 /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
 		414EBC0F1D32994F00078494 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+Default.swift"; sourceTree = "<group>"; };
+		4169C2F31DA8BCA800CA496A /* JSONParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
 		4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFollowingTagRequest.swift; sourceTree = "<group>"; };
 		4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -239,7 +239,6 @@
 				4171BAF51D3A0329000DFEB8 /* QiitaKit.framework in Frameworks */,
 				4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */,
 				4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */,
-				4171BAFC1D3A0375000DFEB8 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +249,6 @@
 				C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */,
 				C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */,
 				C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */,
-				4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */,
 				C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +505,7 @@
 				414EBC0F1D32994F00078494 /* Comment.swift */,
 				410687D61D39E3CD003A310A /* Tagging.swift */,
 				4171BAAA1D39EB95000DFEB8 /* Team.swift */,
+				4169C2F31DA8BCA800CA496A /* JSONParsable.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -728,7 +727,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -743,7 +741,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
@@ -806,6 +803,7 @@
 				4171BACF1D39F6DB000DFEB8 /* PatchItemRequest.swift in Sources */,
 				410687C11D39D8EE003A310A /* AuthorizeRequest.swift in Sources */,
 				4171BAAB1D39EB95000DFEB8 /* Team.swift in Sources */,
+				4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */,
 				410687CF1D39E06C003A310A /* PutThankRequest.swift in Sources */,
 				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
 				4171BAD51D39F95C000DFEB8 /* DeleteStockRequest.swift in Sources */,

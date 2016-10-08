@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  Qiita:Teamのグループを表します
@@ -36,15 +36,15 @@ public struct Group: CustomStringConvertible {
     
 }
 
-extension Group: Unboxable {
+extension Group: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        createdAt = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
-        id        = unboxer.unbox(key: "id")
-        name      = unboxer.unbox(key: "name")
-        privated  = unboxer.unbox(key: "private")
-        updatedAt = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
-        urlName   = unboxer.unbox(key: "url_name")
+    internal init(json: JSON) {
+        createdAt = json["created_at"].date!
+        id        = json["id"].int!
+        name      = json["name"].string!
+        privated  = json["private"].bool!
+        updatedAt = json["updated_at"].date!
+        urlName   = json["url_name"].string!
     }
     
 }

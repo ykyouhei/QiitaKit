@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Tag {
     
@@ -43,10 +43,7 @@ public extension QiitaAPI.Tag {
         }
         
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Tag {
-            guard let json = object as? [String: Any] else {
-                throw QiitaKitError.invalidJSON
-            }
-            return try Unbox(dictionary: json)
+            return Tag(json: JSON(object))
         }
         
     }

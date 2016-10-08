@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿に付けられた個々のタグを表します
@@ -28,13 +28,13 @@ public struct Tag: CustomStringConvertible {
     
 }
 
-extension Tag: Unboxable {
+extension Tag: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id             = unboxer.unbox(key: "id")
-        followersCount = unboxer.unbox(key: "followers_count")
-        itemsCount     = unboxer.unbox(key: "items_count")
-        iconURL        = unboxer.unbox(key: "icon_url")
+    internal init(json: JSON) {
+        id             = json["id"].string!
+        followersCount = json["followers_count"].int!
+        itemsCount     = json["items_count"].int!
+        iconURL        = json["icon_url"].url
     }
     
 }

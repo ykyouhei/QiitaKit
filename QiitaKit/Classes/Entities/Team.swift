@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  Qiita:Team上で所属しているチームを表します。Qiita:Teamでのみ有効です
@@ -27,12 +27,12 @@ public struct Team: CustomStringConvertible {
     
 }
 
-extension Team: Unboxable {
+extension Team: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        active = unboxer.unbox(key: "active")
-        id     = unboxer.unbox(key: "id")
-        name   = unboxer.unbox(key: "name")
+    internal init(json: JSON) {
+        active = json["active"].bool!
+        id     = json["id"].string!
+        name   = json["name"].string!
     }
     
 }

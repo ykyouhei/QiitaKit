@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Tag {
     
@@ -68,10 +68,10 @@ public extension QiitaAPI.Tag {
         }
         
         public func response(from object: Any) throws -> [Tag] {
-            guard let json = object as? [[String: Any]] else {
+            guard let json = object as? [Any] else {
                 throw QiitaKitError.invalidJSON
             }
-            return try Unbox(dictionaries: json)
+            return json.map{ Tag(json: JSON($0)) }
         }
         
     }

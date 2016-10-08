@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿とタグとの関連を表します
@@ -22,11 +22,11 @@ public struct Tagging: CustomStringConvertible {
     
 }
 
-extension Tagging: Unboxable {
+extension Tagging: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        name     = unboxer.unbox(key: "name")
-        versions = unboxer.unbox(key: "versions")
+    internal init(json: JSON) {
+        name     = json["name"].string!
+        versions = (json["versions"].object as? [String]) ?? []
     }
     
 }

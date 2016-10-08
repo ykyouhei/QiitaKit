@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class GroupTests: XCTestCase {
@@ -22,7 +22,7 @@ class GroupTests: XCTestCase {
     
     func testParse() {
         let json = readJSON("Group", forClass: type(of: self))
-        let group: Group = try! Unbox(data: json)
+        let group = Group(data: json)
     
         XCTAssertEqual(Date(timeIntervalSince1970: 946684800), group.createdAt)
         XCTAssertEqual(1, group.id)

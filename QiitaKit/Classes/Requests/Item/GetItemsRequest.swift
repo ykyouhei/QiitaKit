@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Item {
     
@@ -84,10 +84,10 @@ public extension QiitaAPI.Item {
         }
     
         public func response(from object: Any) throws -> [Item] {
-            guard let json = object as? [[String: Any]] else {
+            guard let json = object as? [Any] else {
                 throw QiitaKitError.invalidJSON
             }
-            return try Unbox(dictionaries: json)
+            return json.map{ Item(json: JSON($0)) }
         }
         
     }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class AccessTokenResponseTests: XCTestCase {
@@ -22,7 +22,7 @@ class AccessTokenResponseTests: XCTestCase {
     
     func testParse() {
         let json = readJSON("AccessTokenResponse", forClass: type(of: self))
-        let accessTokenResponse: AccessTokenResponse = try! Unbox(data: json)
+        let accessTokenResponse = AccessTokenResponse(data: json)
         
         XCTAssertEqual("a91f0396a0968ff593eafdd194e3d17d32c41b1da7b25e873b42e9058058cd9d", accessTokenResponse.clientID)
         XCTAssertEqual("ea5d0a593b2655e9568f144fb1826342292f5c6b7d406fda00577b8d1530d8a5", accessTokenResponse.token)

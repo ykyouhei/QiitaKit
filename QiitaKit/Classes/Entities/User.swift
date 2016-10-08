@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  Qiita上のユーザを表します
@@ -15,7 +15,7 @@ import Unbox
 public struct User: CustomStringConvertible {
     
     /// 自己紹介文
-    public let description: String?
+    public let userDescription: String?
     
     /// Facebook ID
     public let facebookID: String?
@@ -61,24 +61,25 @@ public struct User: CustomStringConvertible {
    
 }
 
-extension User: Unboxable {
+extension User: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id                = unboxer.unbox(key: "id")
-        followeesCount    = unboxer.unbox(key: "followees_count")
-        followersCount    = unboxer.unbox(key: "followers_count")
-        itemsCount        = unboxer.unbox(key: "items_count")
-        permanentID       = unboxer.unbox(key: "permanent_id")
-        profileImageURL   = unboxer.unbox(key: "profile_image_url")
-        description       = unboxer.unbox(key: "description")
-        facebookID        = unboxer.unbox(key: "facebook_id")
-        githubLoginName   = unboxer.unbox(key: "github_login_name")
-        linkedinID        = unboxer.unbox(key: "linkedin_id")
-        location          = unboxer.unbox(key: "location")
-        name              = unboxer.unbox(key: "name")
-        organization      = unboxer.unbox(key: "organization")
-        twitterScreenName = unboxer.unbox(key: "twitter_screen_name")
-        websiteURL        = unboxer.unbox(key: "website_url")
+    internal init(json: JSON) {
+        print(json)
+        id                = json["id"].string!
+        followeesCount    = json["followees_count"].int!
+        followersCount    = json["followers_count"].int!
+        itemsCount        = json["items_count"].int!
+        permanentID       = json["permanent_id"].int!
+        profileImageURL   = json["profile_image_url"].url!
+        userDescription   = json["description"].string
+        facebookID        = json["facebook_id"].string
+        githubLoginName   = json["github_login_name"].string
+        linkedinID        = json["linkedin_id"].string
+        location          = json["location"].string
+        name              = json["name"].string
+        organization      = json["organization"].string
+        twitterScreenName = json["twitter_screen_name"].string
+        websiteURL        = json["website_url"].url
     }
     
 }

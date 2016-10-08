@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.User {
     
@@ -55,10 +55,10 @@ public extension QiitaAPI.User {
         }
         
         public func response(from object: Any) throws -> [User] {
-            guard let json = object as? [[String: Any]] else {
+            guard let json = object as? [Any] else {
                 throw QiitaKitError.invalidJSON
             }
-            return try Unbox(dictionaries: json)
+            return json.map{ User(json: JSON($0)) }
         }
         
     }

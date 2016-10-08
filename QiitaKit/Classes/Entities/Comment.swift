@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿に付けられたコメントを表します
@@ -36,15 +36,15 @@ public struct Comment: CustomStringConvertible {
     
 }
 
-extension Comment: Unboxable {
+extension Comment: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        body         = unboxer.unbox(key: "body")
-        createdAt    = unboxer.unbox(key: "created_at", formatter: ISO8601DateFormatter)
-        id           = unboxer.unbox(key: "id")
-        renderedBody = unboxer.unbox(key: "rendered_body")
-        updatedAt    = unboxer.unbox(key: "updated_at", formatter: ISO8601DateFormatter)
-        user         = unboxer.unbox(key: "user")
+    internal init(json: JSON) {
+        body         = json["body"].string!
+        createdAt    = json["created_at"].date!
+        id           = json["id"].string!
+        renderedBody = json["rendered_body"].string!
+        updatedAt    = json["updated_at"].date!
+        user         = User(json: json["user"])
     }
     
 }

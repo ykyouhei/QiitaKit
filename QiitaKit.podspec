@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "QiitaKit"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "A Swift API Client for Qiita"
   s.homepage     = "https://github.com/ykyouhei/QiitaKit"
   s.license      = "MIT"
@@ -11,6 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = "QiitaKit/Classes/**/*.swift"
   s.requires_arc = true
   s.ios.deployment_target = '8.0'
-  s.dependency "APIKit", "~> 2.0.0"
-  s.dependency "Unbox", "~> 1.8.0"
+  s.dependency "APIKit", "~> 3.0.0"
 end
