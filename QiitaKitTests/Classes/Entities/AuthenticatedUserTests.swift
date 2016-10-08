@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class AuthenticatedUserTests: XCTestCase {
@@ -21,10 +21,10 @@ class AuthenticatedUserTests: XCTestCase {
     }
 
     func testParse() {
-        let json = readJSON("AuthenticatedUser", forClass: self.dynamicType)
-        let authenticatedUser: AuthenticatedUser = try! Unbox(json)
+        let json = readJSON("AuthenticatedUser", forClass: type(of: self))
+        let authenticatedUser = AuthenticatedUser(data: json)
         
-        XCTAssertEqual("Hello, world.", authenticatedUser.description)
+        XCTAssertEqual("Hello, world.", authenticatedUser.userDescription)
         XCTAssertEqual("yaotti", authenticatedUser.facebookID)
         XCTAssertEqual(100, authenticatedUser.followeesCount)
         XCTAssertEqual(200, authenticatedUser.followersCount)

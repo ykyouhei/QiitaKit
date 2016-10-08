@@ -15,12 +15,12 @@ class RequestViewController: UIViewController {
     
     var object: Any!
     
-    @IBOutlet private weak var textView: UITextView!
+    @IBOutlet fileprivate weak var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = "\(object))".stringByReplacingOccurrencesOfString(",", withString: "\n")
+        textView.text = "\(object))".replacingOccurrences(of: ",", with: "\n")
     }
 
 }

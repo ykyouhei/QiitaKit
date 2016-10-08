@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Tag {
 
@@ -43,20 +43,22 @@ public extension QiitaAPI.Tag {
         // MARK: QiitaPageableRequestType
     
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "users/\(userID)/following_tags"
         }
         
-        public var parameters: AnyObject? {
-            return pageParamaters
+        public var parameters: Any? {
+            return pageParamaters as Any?
         }
         
-        public func responseFromObjects(object: AnyObject) throws -> [Tag] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any) throws -> [Tag] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ Tag(json: JSON($0)) }
         }
         
     }

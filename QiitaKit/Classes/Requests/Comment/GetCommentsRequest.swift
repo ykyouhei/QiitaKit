@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Comment {
     
@@ -35,17 +35,18 @@ public extension QiitaAPI.Comment {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "items/\(itemID)/comments"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> [Comment] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> [Comment] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ Comment(json: JSON($0)) }
         }
         
     }

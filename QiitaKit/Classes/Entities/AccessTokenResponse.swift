@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import Unbox
 
 /**
  アクセストークン情報
  */
-public struct AccessTokenResponse {
+public struct AccessTokenResponse: CustomStringConvertible {
     
     public let clientID: String
     
@@ -20,11 +19,11 @@ public struct AccessTokenResponse {
    
 }
 
-extension AccessTokenResponse: Unboxable {
+extension AccessTokenResponse: JSONParsable {
    
-    public init(unboxer: Unboxer) {
-        self.clientID = unboxer.unbox("client_id")
-        self.token    = unboxer.unbox("token")
+    internal init(json: JSON) {
+        self.clientID = json["client_id"].string!
+        self.token    = json["token"].string!
     }
     
 }

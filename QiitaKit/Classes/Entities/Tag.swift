@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿に付けられた個々のタグを表します
  */
-public struct Tag  {
+public struct Tag: CustomStringConvertible {
     
     /// タグを特定するための一意な名前
     public let id: String
@@ -24,17 +24,17 @@ public struct Tag  {
     public let itemsCount: Int
     
     /// このタグに設定されたアイコン画像のURL
-    public let iconURL: NSURL?
+    public let iconURL: URL?
     
 }
 
-extension Tag: Unboxable {
+extension Tag: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id             = unboxer.unbox("id")
-        followersCount = unboxer.unbox("followers_count")
-        itemsCount     = unboxer.unbox("items_count")
-        iconURL        = unboxer.unbox("icon_url")
+    internal init(json: JSON) {
+        id             = json["id"].string!
+        followersCount = json["followers_count"].int!
+        itemsCount     = json["items_count"].int!
+        iconURL        = json["icon_url"].url
     }
     
 }

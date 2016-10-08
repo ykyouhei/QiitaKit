@@ -8,8 +8,8 @@
 
 import Foundation
 
-func readJSON(withName: String, forClass: AnyClass) -> NSData {
-    let bundle = NSBundle(forClass: forClass)
-    let jsonPath = bundle.pathForResource(withName, ofType: "json")
-    return NSData(contentsOfFile: jsonPath!)!
+func readJSON(_ withName: String, forClass: AnyClass) -> Data {
+    let bundle = Bundle(for: forClass)
+    let jsonPath = bundle.path(forResource: withName, ofType: "json")
+    return (try! Data(contentsOf: URL(fileURLWithPath: jsonPath!)))
 }

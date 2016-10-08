@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.User {
 
@@ -26,16 +26,15 @@ public extension QiitaAPI.User {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "/authenticated_user"
         }
         
-        public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AuthenticatedUser {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> AuthenticatedUser {
+            return AuthenticatedUser(json: JSON(object))
         }
         
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Item {
     
@@ -24,11 +24,11 @@ public extension QiitaAPI.Item {
      - UserStocks:          指定されたユーザがストックした投稿一覧
      */
     public enum ItemsType {
-        case Query(query: String)
-        case Tag(tagID: String)
-        case AuthenticatedUser
-        case UserPosted(userID: String)
-        case UserStocks(userID: String)
+        case query(query: String)
+        case tag(tagID: String)
+        case authenticatedUser
+        case userPosted(userID: String)
+        case userStocks(userID: String)
     }
     
     /**
@@ -37,8 +37,6 @@ public extension QiitaAPI.Item {
      https://qiita.com/api/v2/docs#get-apiv2items
      */
     public struct GetItemsRequest: QiitaPageableRequestType {
-        
-        
         
         // MARK: Properties
         
@@ -64,30 +62,32 @@ public extension QiitaAPI.Item {
         // MARK: QiitaPageableRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             switch type {
-            case .Query:                    return "items"
-            case .Tag(let tagID):           return "tags/\(tagID)/items"
-            case .AuthenticatedUser:        return "authenticated_user/items"
-            case .UserPosted(let userID):   return "users/\(userID)/items"
-            case .UserStocks(let userID):   return "users/\(userID)/stocks"
+            case .query:                    return "items"
+            case .tag(let tagID):           return "tags/\(tagID)/items"
+            case .authenticatedUser:        return "authenticated_user/items"
+            case .userPosted(let userID):   return "users/\(userID)/items"
+            case .userStocks(let userID):   return "users/\(userID)/stocks"
             }
         }
         
-        public var queryParameters: [String : AnyObject]? {
+        public var queryParameters: [String : Any]? {
             var params = pageParamaters
-            if case .Query(let query) = type {
+            if case .query(let query) = type {
                 params["query"] = query
             }
-            return params
+            return params as [String : Any]?
         }
     
-        public func responseFromObjects(object: AnyObject) throws -> [Item] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any) throws -> [Item] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ Item(json: JSON($0)) }
         }
         
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Team {
     
@@ -27,17 +27,18 @@ public extension QiitaAPI.Team {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "teams"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> [Team] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> [Team] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ Team(json: JSON($0)) }
         }
         
     }

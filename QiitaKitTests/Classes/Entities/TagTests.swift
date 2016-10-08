@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class TagTests: XCTestCase {
@@ -21,8 +21,8 @@ class TagTests: XCTestCase {
     }
     
     func testParse() {
-        let json = readJSON("Tag", forClass: self.dynamicType)
-        let tag: Tag = try! Unbox(json)
+        let json = readJSON("Tag", forClass: type(of: self))
+        let tag = Tag(data: json)
         
         XCTAssertEqual(100, tag.followersCount)
         XCTAssertEqual("https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg", tag.iconURL?.absoluteString)

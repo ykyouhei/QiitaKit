@@ -7,20 +7,20 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  投稿に付けられたコメントを表します
 
  https://qiita.com/api/v2/docs#コメント
  */
-public struct Comment {
+public struct Comment: CustomStringConvertible {
     
     /// コメントの内容を表すMarkdown形式の文字列
     public let body: String
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// コメントの一意なID
     public let id: String
@@ -29,22 +29,22 @@ public struct Comment {
     public let renderedBody: String
     
     /// データが最後に更新された日時
-    public let updatedAt: NSDate
+    public let updatedAt: Date
     
     /// Qiita上のユーザを表します
     public let user: User
     
 }
 
-extension Comment: Unboxable {
+extension Comment: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        body         = unboxer.unbox("body")
-        createdAt    = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        id           = unboxer.unbox("id")
-        renderedBody = unboxer.unbox("rendered_body")
-        updatedAt    = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
-        user         = unboxer.unbox("user")
+    internal init(json: JSON) {
+        body         = json["body"].string!
+        createdAt    = json["created_at"].date!
+        id           = json["id"].string!
+        renderedBody = json["rendered_body"].string!
+        updatedAt    = json["updated_at"].date!
+        user         = User(json: json["user"])
     }
     
 }

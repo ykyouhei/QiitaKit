@@ -7,15 +7,15 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  現在のアクセストークンで認証中のユーザを表します。通常のユーザ情報よりも詳細な情報を含んでいます。
  */
-public struct AuthenticatedUser {
+public struct AuthenticatedUser: CustomStringConvertible {
     
     /// 自己紹介文
-    public let description: String?
+    public let userDescription: String?
     
     /// Facebook ID
     public let facebookID: String?
@@ -51,13 +51,13 @@ public struct AuthenticatedUser {
     public let permanentID: Int
     
     /// 設定しているプロフィール画像のURL
-    public let profileImageURL: NSURL
+    public let profileImageURL: URL
     
     /// Twitterのスクリーンネーム
     public let twitterScreenName: String?
     
     /// 設定しているWebサイトのURL
-    public let websiteURL: NSURL?
+    public let websiteURL: URL?
     
     /// 1ヶ月あたりにQiitaにアップロードできる画像の総容量
     public let imageMonthlyUploadLimit: Int
@@ -71,27 +71,27 @@ public struct AuthenticatedUser {
 }
 
 
-extension AuthenticatedUser: Unboxable {
+extension AuthenticatedUser: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id                          = unboxer.unbox("id")
-        followeesCount              = unboxer.unbox("followees_count")
-        followersCount              = unboxer.unbox("followers_count")
-        itemsCount                  = unboxer.unbox("items_count")
-        permanentID                 = unboxer.unbox("permanent_id")
-        profileImageURL             = unboxer.unbox("profile_image_url")
-        description                 = unboxer.unbox("description")
-        facebookID                  = unboxer.unbox("facebook_id")
-        githubLoginName             = unboxer.unbox("github_login_name")
-        linkedinID                  = unboxer.unbox("linkedin_id")
-        location                    = unboxer.unbox("location")
-        name                        = unboxer.unbox("name")
-        organization                = unboxer.unbox("organization")
-        twitterScreenName           = unboxer.unbox("twitter_screen_name")
-        websiteURL                  = unboxer.unbox("website_url")
-        imageMonthlyUploadLimit     = unboxer.unbox("image_monthly_upload_limit")
-        imageMonthlyUploadRemaining = unboxer.unbox("image_monthly_upload_remaining")
-        teamOnly                    = unboxer.unbox("team_only")
+    internal init(json: JSON) {
+        id                          = json["id"].string!
+        followeesCount              = json["followees_count"].int!
+        followersCount              = json["followers_count"].int!
+        itemsCount                  = json["items_count"].int!
+        permanentID                 = json["permanent_id"].int!
+        profileImageURL             = json["profile_image_url"].url!
+        userDescription             = json["description"].string
+        facebookID                  = json["facebook_id"].string
+        githubLoginName             = json["github_login_name"].string
+        linkedinID                  = json["linkedin_id"].string
+        location                    = json["location"].string
+        name                        = json["name"].string
+        organization                = json["organization"].string
+        twitterScreenName           = json["twitter_screen_name"].string
+        websiteURL                  = json["website_url"].url
+        imageMonthlyUploadLimit     = json["image_monthly_upload_limit"].int!
+        imageMonthlyUploadRemaining = json["image_monthly_upload_remaining"].int!
+        teamOnly                    = json["team_only"].bool!
     }
     
 }

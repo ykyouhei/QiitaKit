@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class LikeTests: XCTestCase {
@@ -21,10 +21,9 @@ class LikeTests: XCTestCase {
     }
     
     func testParse() {
-        let json = readJSON("Like", forClass: self.dynamicType)
-        let like: Like = try! Unbox(json)
-        
-        XCTAssertEqual(NSDate(timeIntervalSince1970: 946684800), like.createdAt)
+        let json = readJSON("Like", forClass: type(of: self))
+        let like = Like(data: json)
+        XCTAssertEqual(Date(timeIntervalSince1970: 946684800), like.createdAt)
         XCTAssertEqual("Hiroshige Umino", like.user.name)
     }
     

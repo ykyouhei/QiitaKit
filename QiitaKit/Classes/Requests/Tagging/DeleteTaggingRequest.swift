@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Tagging {
     
@@ -39,16 +39,15 @@ public extension QiitaAPI.Tagging {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .DELETE
+            return .delete
         }
         
         public var path: String {
             return "items/\(itemID)/taggings/\(taggingID)"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Bool {
-            return URLResponse.statusCode == 204
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Bool {
+            return urlResponse.statusCode == 204
         }
         
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Tag {
     
@@ -19,8 +19,8 @@ public extension QiitaAPI.Tag {
      - Name:  名前順
      */
     public enum Sort: String {
-        case Count = "count"
-        case Name  = "name"
+        case count = "count"
+        case name  = "name"
     }
     
     /**
@@ -54,22 +54,24 @@ public extension QiitaAPI.Tag {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "tags"
         }
         
-        public var queryParameters: [String : AnyObject]? {
+        public var queryParameters: [String : Any]? {
             var params = pageParamaters
             params["sort"] = sort.rawValue
-            return params
+            return params as [String : Any]?
         }
         
-        public func responseFromObjects(object: AnyObject) throws -> [Tag] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any) throws -> [Tag] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ Tag(json: JSON($0)) }
         }
         
     }

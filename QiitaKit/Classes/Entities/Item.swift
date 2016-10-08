@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Unbox
+
 
 /**
  ユーザからの投稿を表します
  */
-public struct Item {
+public struct Item: CustomStringConvertible {
     
     /// タグを特定するための一意な名前
     public let id: String
@@ -27,7 +27,7 @@ public struct Item {
     public let coediting: Bool
     
     /// データが作成された日時
-    public let createdAt: NSDate
+    public let createdAt: Date
     
     /// Qiita:Teamのグループを表します
     public let group: Group?
@@ -36,37 +36,37 @@ public struct Item {
     public let privated: Bool
     
     /// このタグが付けられた投稿の数
-    public let tags: [[String : AnyObject]]
+    public let tags: [[String : Any]]
     
     /// 投稿のタイトル
     public let title: String
     
     /// データが最後に更新された日時
-    public let updatedAt: NSDate
+    public let updatedAt: Date
     
     /// 投稿のURL
-    public let URL: NSURL
+    public let URL: Foundation.URL
     
     /// 投稿者
     public let user: User
     
 }
 
-extension Item: Unboxable {
+extension Item: JSONParsable {
     
-    public init(unboxer: Unboxer) {
-        id           = unboxer.unbox("id")
-        renderedBody = unboxer.unbox("rendered_body")
-        body         = unboxer.unbox("body")
-        coediting    = unboxer.unbox("coediting")
-        createdAt    = unboxer.unbox("created_at", formatter: ISO8601DateFormatter)
-        group        = unboxer.unbox("group")
-        privated     = unboxer.unbox("private")
-        tags         = unboxer.unbox("tags")
-        title        = unboxer.unbox("title")
-        updatedAt    = unboxer.unbox("updated_at", formatter: ISO8601DateFormatter)
-        URL          = unboxer.unbox("url")
-        user         = unboxer.unbox("user")
+    internal init(json: JSON) {
+        id           = json["id"].string!
+        renderedBody = json["rendered_body"].string!
+        body         = json["body"].string!
+        coediting    = json["coediting"].bool!
+        createdAt    = json["created_at"].date!
+        group        = json["group"].dictionary.map { Group(json: JSON($0)) }
+        privated     = json["private"].bool!
+        tags         = json["tags"].object as! [[String : Any]]
+        title        = json["title"].string!
+        updatedAt    = json["updated_at"].date!
+        URL          = json["url"].url!
+        user         = User(json: json["user"])
     }
     
 }

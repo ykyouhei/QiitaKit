@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Item {
     
@@ -35,16 +35,15 @@ public extension QiitaAPI.Item {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "items/\(itemID)/stock"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Bool {
-            return URLResponse.statusCode == 204
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Bool {
+            return urlResponse.statusCode == 204
         }
         
     }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Unbox
+
 @testable import QiitaKit
 
 class GroupTests: XCTestCase {
@@ -21,14 +21,14 @@ class GroupTests: XCTestCase {
     }
     
     func testParse() {
-        let json = readJSON("Group", forClass: self.dynamicType)
-        let group: Group = try! Unbox(json)
+        let json = readJSON("Group", forClass: type(of: self))
+        let group = Group(data: json)
     
-        XCTAssertEqual(NSDate(timeIntervalSince1970: 946684800), group.createdAt)
+        XCTAssertEqual(Date(timeIntervalSince1970: 946684800), group.createdAt)
         XCTAssertEqual(1, group.id)
         XCTAssertEqual("Dev", group.name)
         XCTAssertEqual(false, group.privated)
-        XCTAssertEqual(NSDate(timeIntervalSince1970: 946684800), group.updatedAt)
+        XCTAssertEqual(Date(timeIntervalSince1970: 946684800), group.updatedAt)
         XCTAssertEqual("dev", group.urlName)
     }
     

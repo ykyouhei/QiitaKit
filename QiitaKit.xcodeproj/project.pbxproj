@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
 		410687B21D39C9F8003A310A /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687B11D39C9F8003A310A /* QiitaAPI.swift */; };
 		410687C01D39D8EE003A310A /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687BE1D39D8EE003A310A /* AccessTokenRequest.swift */; };
 		410687C11D39D8EE003A310A /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687BF1D39D8EE003A310A /* AuthorizeRequest.swift */; };
@@ -32,6 +31,8 @@
 		414EBC021D32866800078494 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBC011D32866800078494 /* Like.json */; };
 		414EBC041D3286F800078494 /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC031D3286F800078494 /* LikeTests.swift */; };
 		414EBC101D32994F00078494 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC0F1D32994F00078494 /* Comment.swift */; };
+		4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */; };
+		4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169C2F31DA8BCA800CA496A /* JSONParsable.swift */; };
 		4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */; };
 		4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */; };
 		4171BAA71D39EA7F000DFEB8 /* GetFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */; };
@@ -68,7 +69,6 @@
 		4171BAF61D3A0329000DFEB8 /* QiitaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
 		4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
-		4171BAFC1D3A0375000DFEB8 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
 		4171BAFE1D3A06D5000DFEB8 /* APITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */; };
 		4171BB001D3A0E3B000DFEB8 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */; };
 		4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFDE1D3228B200B421A0 /* AuthManager.swift */; };
@@ -137,21 +137,21 @@
 /* Begin PBXFileReference section */
 		4100A3201D3218FF009D62AC /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = SOURCE_ROOT; };
 		410687B11D39C9F8003A310A /* QiitaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
-		410687BE1D39D8EE003A310A /* AccessTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
+		410687BE1D39D8EE003A310A /* AccessTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccessTokenRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		410687BF1D39D8EE003A310A /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
-		410687C21D39DA72003A310A /* GetLikesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLikesRequest.swift; sourceTree = "<group>"; };
+		410687C21D39DA72003A310A /* GetLikesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetLikesRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		410687C61D39DCE8003A310A /* DeleteCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentRequest.swift; sourceTree = "<group>"; };
-		410687C81D39DE14003A310A /* GetCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommentRequest.swift; sourceTree = "<group>"; };
-		410687CA1D39DEE1003A310A /* PatchCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchCommentRequest.swift; sourceTree = "<group>"; };
-		410687CC1D39DFB6003A310A /* DeleteThankRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteThankRequest.swift; sourceTree = "<group>"; };
-		410687CE1D39E06C003A310A /* PutThankRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutThankRequest.swift; sourceTree = "<group>"; };
-		410687D01D39E0F3003A310A /* GetCommentsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommentsRequest.swift; sourceTree = "<group>"; };
-		410687D21D39E1B1003A310A /* PostCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentRequest.swift; sourceTree = "<group>"; };
-		410687D41D39E26B003A310A /* PostTaggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTaggingRequest.swift; sourceTree = "<group>"; };
+		410687C81D39DE14003A310A /* GetCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetCommentRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687CA1D39DEE1003A310A /* PatchCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PatchCommentRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687CC1D39DFB6003A310A /* DeleteThankRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeleteThankRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687CE1D39E06C003A310A /* PutThankRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PutThankRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687D01D39E0F3003A310A /* GetCommentsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetCommentsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687D21D39E1B1003A310A /* PostCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PostCommentRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687D41D39E26B003A310A /* PostTaggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PostTaggingRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		410687D61D39E3CD003A310A /* Tagging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tagging.swift; sourceTree = "<group>"; };
 		410687D81D39E471003A310A /* DeleteTaggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaggingRequest.swift; sourceTree = "<group>"; };
-		410687DA1D39E55F003A310A /* GetFollowingTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowingTagsRequest.swift; sourceTree = "<group>"; };
-		410687DC1D39E585003A310A /* GetTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTagsRequest.swift; sourceTree = "<group>"; };
+		410687DA1D39E55F003A310A /* GetFollowingTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingTagsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		410687DC1D39E585003A310A /* GetTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTagsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		414EBBE91D325AF400078494 /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		414EBBEB1D325B0100078494 /* Tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tag.json; sourceTree = "<group>"; };
 		414EBBED1D32615800078494 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -160,26 +160,28 @@
 		414EBC011D32866800078494 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
 		414EBC031D3286F800078494 /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
 		414EBC0F1D32994F00078494 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTagRequest.swift; sourceTree = "<group>"; };
+		4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+Default.swift"; sourceTree = "<group>"; };
+		4169C2F31DA8BCA800CA496A /* JSONParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
+		4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFollowingTagRequest.swift; sourceTree = "<group>"; };
-		4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowingTagRequest.swift; sourceTree = "<group>"; };
+		4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BAA81D39EB17000DFEB8 /* PutFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutFollowingTagRequest.swift; sourceTree = "<group>"; };
 		4171BAAA1D39EB95000DFEB8 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		4171BAAC1D39EC36000DFEB8 /* GetTeamsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamsRequest.swift; sourceTree = "<group>"; };
-		4171BAAE1D39ED01000DFEB8 /* GetAuthenticatedUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAuthenticatedUserRequest.swift; sourceTree = "<group>"; };
-		4171BAB01D39ED5A000DFEB8 /* GetStockersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStockersRequest.swift; sourceTree = "<group>"; };
-		4171BAB21D39EE02000DFEB8 /* GetUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersRequest.swift; sourceTree = "<group>"; };
-		4171BAB51D39EE43000DFEB8 /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
-		4171BAB71D39EEBC000DFEB8 /* GetFolloweesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFolloweesRequest.swift; sourceTree = "<group>"; };
-		4171BAB91D39EF27000DFEB8 /* GetFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersRequest.swift; sourceTree = "<group>"; };
+		4171BAAC1D39EC36000DFEB8 /* GetTeamsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTeamsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAAE1D39ED01000DFEB8 /* GetAuthenticatedUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetAuthenticatedUserRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAB01D39ED5A000DFEB8 /* GetStockersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetStockersRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAB21D39EE02000DFEB8 /* GetUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetUsersRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAB51D39EE43000DFEB8 /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetUser.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAB71D39EEBC000DFEB8 /* GetFolloweesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFolloweesRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAB91D39EF27000DFEB8 /* GetFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowersRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BABB1D39EF79000DFEB8 /* DeleteFollowingUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFollowingUserRequest.swift; sourceTree = "<group>"; };
-		4171BABD1D39F001000DFEB8 /* GetFollowingUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowingUserRequest.swift; sourceTree = "<group>"; };
+		4171BABD1D39F001000DFEB8 /* GetFollowingUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingUserRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BABF1D39F0B2000DFEB8 /* PutFollowingUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutFollowingUserRequest.swift; sourceTree = "<group>"; };
-		4171BAC11D39F108000DFEB8 /* GetItemsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItemsRequest.swift; sourceTree = "<group>"; };
-		4171BAC71D39F33D000DFEB8 /* PostItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItemRequest.swift; sourceTree = "<group>"; };
-		4171BAC91D39F5EF000DFEB8 /* DeleteItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteItemRequest.swift; sourceTree = "<group>"; };
-		4171BACB1D39F679000DFEB8 /* GetItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItemRequest.swift; sourceTree = "<group>"; };
-		4171BACE1D39F6DB000DFEB8 /* PatchItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchItemRequest.swift; sourceTree = "<group>"; };
+		4171BAC11D39F108000DFEB8 /* GetItemsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetItemsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAC71D39F33D000DFEB8 /* PostItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PostItemRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BAC91D39F5EF000DFEB8 /* DeleteItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeleteItemRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BACB1D39F679000DFEB8 /* GetItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetItemRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4171BACE1D39F6DB000DFEB8 /* PatchItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PatchItemRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BAD01D39F8A1000DFEB8 /* DeleteLikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteLikeRequest.swift; sourceTree = "<group>"; };
 		4171BAD21D39F910000DFEB8 /* PutLikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutLikeRequest.swift; sourceTree = "<group>"; };
 		4171BAD41D39F95C000DFEB8 /* DeleteStockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteStockRequest.swift; sourceTree = "<group>"; };
@@ -198,7 +200,7 @@
 		4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		4171BB011D3A2EC3000DFEB8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4175AFDE1D3228B200B421A0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = QiitaKit/Classes/Models/AuthManager.swift; sourceTree = SOURCE_ROOT; };
-		4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = QiitaKit/Classes/Models/KeychainWrapper.swift; sourceTree = SOURCE_ROOT; };
+		4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = KeychainWrapper.swift; path = QiitaKit/Classes/Models/KeychainWrapper.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccessTokenResponse.json; sourceTree = "<group>"; };
 		41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponseTests.swift; sourceTree = "<group>"; };
 		41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
@@ -217,7 +219,7 @@
 		C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaRequestType.swift; sourceTree = "<group>"; };
 		C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
-		C278CAC01C40F52F005DCFB5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C278CAC01C40F52F005DCFB5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Item.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C278CAC11C40F52F005DCFB5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C278CAC21C40F52F005DCFB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWebViewController.swift; path = ViewControllers/AuthWebViewController.swift; sourceTree = "<group>"; };
@@ -237,7 +239,6 @@
 				4171BAF51D3A0329000DFEB8 /* QiitaKit.framework in Frameworks */,
 				4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */,
 				4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */,
-				4171BAFC1D3A0375000DFEB8 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +249,6 @@
 				C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */,
 				C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */,
 				C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */,
-				4100A3211D3218FF009D62AC /* Unbox.framework in Frameworks */,
 				C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +505,7 @@
 				414EBC0F1D32994F00078494 /* Comment.swift */,
 				410687D61D39E3CD003A310A /* Tagging.swift */,
 				4171BAAA1D39EB95000DFEB8 /* Team.swift */,
+				4169C2F31DA8BCA800CA496A /* JSONParsable.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -562,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */,
+				4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -644,17 +646,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = kyo__hei;
 				TargetAttributes = {
 					4171BADF1D39FF00000DFEB8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					C278CA861C40F146005DCFB5 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					C278CA901C40F146005DCFB5 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -722,7 +727,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -737,7 +741,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
@@ -770,6 +773,7 @@
 				4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */,
 				410687B21D39C9F8003A310A /* QiitaAPI.swift in Sources */,
 				4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */,
+				4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */,
 				C278CAC51C40F52F005DCFB5 /* Item.swift in Sources */,
 				4171BAB11D39ED5A000DFEB8 /* GetStockersRequest.swift in Sources */,
 				410687C91D39DE14003A310A /* GetCommentRequest.swift in Sources */,
@@ -799,6 +803,7 @@
 				4171BACF1D39F6DB000DFEB8 /* PatchItemRequest.swift in Sources */,
 				410687C11D39D8EE003A310A /* AuthorizeRequest.swift in Sources */,
 				4171BAAB1D39EB95000DFEB8 /* Team.swift in Sources */,
+				4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */,
 				410687CF1D39E06C003A310A /* PutThankRequest.swift in Sources */,
 				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
 				4171BAD51D39F95C000DFEB8 /* DeleteStockRequest.swift in Sources */,
@@ -877,9 +882,9 @@
 		4171BAF01D39FF00000DFEB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -889,15 +894,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4171BAF11D39FF00000DFEB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -907,6 +913,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -923,8 +930,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -971,8 +980,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -992,6 +1003,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1003,6 +1015,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1019,6 +1032,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1026,6 +1040,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1041,6 +1056,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1057,6 +1073,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1072,6 +1089,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

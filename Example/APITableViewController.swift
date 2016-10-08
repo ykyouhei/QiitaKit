@@ -13,7 +13,7 @@ import Result
 
 internal final class APITableViewController: UITableViewController {
     
-    private var successObject: Any?
+    fileprivate var successObject: Any?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,8 @@ internal final class APITableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch (indexPath as NSIndexPath).row {
         case 0:
             send(QiitaAPI.User.GetAuthenticatedUserRequest())
             
@@ -51,7 +51,7 @@ internal final class APITableViewController: UITableViewController {
             
           case 4:
             send(QiitaAPI.Item.GetItemsRequest(
-                type: .AuthenticatedUser,
+                type: .authenticatedUser,
                 page: 1,
                 perPage: 10)
             )
@@ -70,8 +70,8 @@ internal final class APITableViewController: UITableViewController {
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.destinationViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
         case let vc as RequestViewController:
             vc.object = successObject
         default:
@@ -79,22 +79,22 @@ internal final class APITableViewController: UITableViewController {
         }
     }
     
-    func send<T: QiitaRequestType>(request: T) {
+    func send<T: QiitaRequestType>(_ request: T) {
         let indicator = UIActivityIndicatorView(frame: view.bounds)
         indicator.startAnimating()
-        indicator.activityIndicatorViewStyle = .Gray
+        indicator.activityIndicatorViewStyle = .gray
         view.addSubview(indicator)
         
-        Session.sendRequest(request) { result in
+        Session.send(request) { result in
             indicator.removeFromSuperview()
             
             switch result {
-            case .Success(let object):
+            case .success(let object):
                 print(object)
                 self.successObject = object
-                self.performSegueWithIdentifier("showRequest", sender: nil)
+                self.performSegue(withIdentifier: "showRequest", sender: nil)
                 
-            case .Failure(let error):
+            case .failure(let error):
                 self.showErrorAlert(error)
             }
         }
@@ -104,8 +104,8 @@ internal final class APITableViewController: UITableViewController {
 
 extension APITableViewController: UINavigationControllerDelegate {
     
-    func navigationController(navigationController: UINavigationController,
-                              willShowViewController viewController: UIViewController,
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
                                                      animated: Bool) {
         if viewController is LoginViewController {
             let _ = try? AuthManager.sharedManager.logout()

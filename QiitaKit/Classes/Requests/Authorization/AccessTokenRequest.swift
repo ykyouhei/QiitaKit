@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 
 public extension QiitaAPI.Authorization {
@@ -44,14 +44,14 @@ public extension QiitaAPI.Authorization {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .POST
+            return .post
         }
         
         public var path: String {
             return "/access_tokens"
         }
         
-        public var parameters: AnyObject? {
+        public var parameters: Any? {
             return [
                 "client_id"     : clientID,
                 "client_secret" : clientSecret,
@@ -59,10 +59,8 @@ public extension QiitaAPI.Authorization {
             ]
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> AccessTokenResponse {
-            guard let json = object as? [String: AnyObject] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> AccessTokenResponse {
+            return AccessTokenResponse(json: JSON(object))
         }
         
     }

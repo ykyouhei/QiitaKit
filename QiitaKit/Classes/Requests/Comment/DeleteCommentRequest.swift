@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.Comment {
     
@@ -35,16 +35,15 @@ public extension QiitaAPI.Comment {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .DELETE
+            return .delete
         }
         
         public var path: String {
             return "comments/\(commentID)"
         }
         
-        public func responseFromObject(object: AnyObject,
-                                       URLResponse: NSHTTPURLResponse) throws -> Bool {
-            return URLResponse.statusCode == 204
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Bool {
+            return urlResponse.statusCode == 204
         }
         
     }

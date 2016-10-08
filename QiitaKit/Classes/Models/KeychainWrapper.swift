@@ -27,7 +27,7 @@ internal struct KeychainWrapper {
     
     // MARK: Types
     
-    enum KeychainError: ErrorType {
+    enum KeychainError: Error {
         case noPassword
         case unexpectedPasswordData
         case unexpectedItemData
@@ -47,15 +47,15 @@ internal struct KeychainWrapper {
     
     // MARK: Keychain access
     
-    func keychainQuery(withKey key: String) -> [String : AnyObject] {
-        var query = [String : AnyObject]()
+    func keychainQuery(withKey key: String) -> [String : Any] {
+        var query = [String : Any]()
         
         query[kSecClass as String] = kSecClassGenericPassword
-        query[kSecAttrService as String] = config.service
-        query[kSecAttrAccount as String] = key
+        query[kSecAttrService as String] = config.service as Any?
+        query[kSecAttrAccount as String] = key as Any?
         
         if let accessGroup = config.accessGroup {
-            query[kSecAttrAccessGroup as String] = accessGroup
+            query[kSecAttrAccessGroup as String] = accessGroup as Any?
         }
         
         return query
@@ -69,16 +69,16 @@ internal struct KeychainWrapper {
         query[kSecReturnData as String]       = kCFBooleanTrue
         
         var queryResult: AnyObject?
-        let status = withUnsafeMutablePointer(&queryResult) {
-            SecItemCopyMatching(query, UnsafeMutablePointer($0))
+        let status = withUnsafeMutablePointer(to: &queryResult) {
+            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
         }
         
         guard status != errSecItemNotFound else { throw KeychainError.noPassword }
         guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         
-        guard let existingItem = queryResult as? [String : AnyObject],
-            passwordData = existingItem[kSecValueData as String] as? NSData,
-            password = String(data: passwordData, encoding: NSUTF8StringEncoding)
+        guard let existingItem = queryResult as? [String : Any],
+            let passwordData = existingItem[kSecValueData as String] as? Data,
+            let password = String(data: passwordData, encoding: String.Encoding.utf8)
             else {
                 throw KeychainError.unexpectedPasswordData
         }
@@ -86,25 +86,25 @@ internal struct KeychainWrapper {
         return password
     }
     
-    func save(password: String, forKey key: String) throws {
-        let encodedPassword = password.dataUsingEncoding(NSUTF8StringEncoding)!
+    func save(_ password: String, forKey key: String) throws {
+        let encodedPassword = password.data(using: String.Encoding.utf8)!
         
         do {
             try _ = read(withKey: key)
             
-            var attributesToUpdate = [String : AnyObject]()
-            attributesToUpdate[kSecValueData as String] = encodedPassword
+            var attributesToUpdate = [String : Any]()
+            attributesToUpdate[kSecValueData as String] = encodedPassword as Any?
             
             let query = keychainQuery(withKey: key)
-            let status = SecItemUpdate(query, attributesToUpdate)
+            let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
             
             guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         }
         catch KeychainError.noPassword {
             var newItem = keychainQuery(withKey: key)
-            newItem[kSecValueData as String] = encodedPassword
+            newItem[kSecValueData as String] = encodedPassword as Any?
             
-            let status = SecItemAdd(newItem, nil)
+            let status = SecItemAdd(newItem as CFDictionary, nil)
             
             guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         }
@@ -112,7 +112,7 @@ internal struct KeychainWrapper {
     
     func deleteItem(withKey key: String) throws {
         let query = keychainQuery(withKey: key)
-        let status = SecItemDelete(query)
+        let status = SecItemDelete(query as CFDictionary)
         
         guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
     }

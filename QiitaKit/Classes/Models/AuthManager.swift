@@ -19,8 +19,8 @@ import UIKit
  - WKWebView
  */
 public enum AuthWebViewType {
-    case UIWebView
-    case WKWebView
+    case uiWebView
+    case wkWebView
 }
 
 
@@ -33,9 +33,9 @@ public final class AuthManager {
     // MARK: - Types
     /* ====================================================================== */
     
-    public typealias AuthCompletionHandler = (result: Result<Bool, QiitaKitError>) -> Void
+    public typealias AuthCompletionHandler = (_ result: Result<Bool, QiitaKitError>) -> Void
     
-    internal typealias AuthInfo = (state: String, redirectURL: NSURL, completion: AuthCompletionHandler)
+    internal typealias AuthInfo = (state: String, redirectURL: URL, completion: AuthCompletionHandler)
     
     private struct KeychainKey {
         static let accessToken = "accessToken"
@@ -105,10 +105,10 @@ public final class AuthManager {
      - parameter teamDomain:            QiitaTeamのドメイン(Optional)
      - parameter keychainConfiguration: accessToken等を保存するKeychainの設定(Optional)
      */
-    public func setup(clientID clientID: String,
-                                      clientSecret: String,
-                                      teamDomain: String? = nil,
-                                      keychainConfiguration: KeychainConfiguration = KeychainConfiguration()) {
+    public func setup(clientID: String,
+                      clientSecret: String,
+                      teamDomain: String? = nil,
+                      keychainConfiguration: KeychainConfiguration = KeychainConfiguration()) {
         
         self.clientID              = clientID
         self.clientSecret          = clientSecret
@@ -127,19 +127,19 @@ public final class AuthManager {
      - parameter completion:  認証後に呼ばれるハンドラ
      */
     public func authorize(withScopes scopes: Set<Scope>,
-                                              redirectURL: NSURL,
+                                              redirectURL: URL,
                                               webViewType: AuthWebViewType,
-                                              completion: AuthCompletionHandler) {
+                                              completion: @escaping AuthCompletionHandler) {
         
-        let authInfo = (state: NSUUID().UUIDString, redirectURL: redirectURL, completion: completion)
+        let authInfo = (state: UUID().uuidString, redirectURL: redirectURL, completion: completion)
         
         let request = QiitaAPI.Authorization.AuthorizeRequest.init(
             clientID: clientID,
             scopes: scopes,
             state: authInfo.state)
         
-        AuthWebViewController.showWithRequest(
-            try! request.buildURLRequest(),
+        AuthWebViewController.show(
+            withRequest: try! request.buildURLRequest(),
             authInfo: authInfo,
             webViewType: webViewType)
     }
@@ -176,32 +176,32 @@ public final class AuthManager {
                 WKWebsiteDataTypeMemoryCache,
                 WKWebsiteDataTypeCookies
             ]
-            let date = NSDate(timeIntervalSince1970: 0)
+            let date = Date(timeIntervalSince1970: 0)
             
             WKWebsiteDataStore
-                .defaultDataStore()
-                .removeDataOfTypes(
-                    websiteDataTypes,
+                .default()
+                .removeData(
+                    ofTypes: websiteDataTypes,
                     modifiedSince: date
                 ) {}
         } else {
             var libraryPath = NSSearchPathForDirectoriesInDomains(
-                .LibraryDirectory,
-                .UserDomainMask,
+                .libraryDirectory,
+                .userDomainMask,
                 false).first!
             
             libraryPath += "/Cookies"
             
-            try NSFileManager.defaultManager().removeItemAtPath(libraryPath)
+            try FileManager.default.removeItem(atPath: libraryPath)
             
         }
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        URLCache.shared.removeAllCachedResponses()
     }
     
     private func removeUIWebViewCaches() {
-        let cookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        let cookieStorage = HTTPCookieStorage.shared
         cookieStorage.cookies?.forEach { cookieStorage.deleteCookie($0) }
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        URLCache.shared.removeAllCachedResponses()
     }
     
 }

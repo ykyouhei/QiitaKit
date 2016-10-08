@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Unbox
+
 
 public extension QiitaAPI.User {
     
@@ -39,20 +39,22 @@ public extension QiitaAPI.User {
         // MARK: QiitaRequestType
         
         public var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
         public var path: String {
             return "users"
         }
         
-        public var queryParameters: [String : AnyObject]? {
-            return pageParamaters
+        public var queryParameters: [String : Any]? {
+            return pageParamaters as [String : Any]?
         }
         
-        public func responseFromObjects(object: AnyObject) throws -> [User] {
-            guard let json = object as? [[String: AnyObject]] else { throw QiitaKitError.InvalidJSON }
-            return try Unbox(json)
+        public func response(from object: Any) throws -> [User] {
+            guard let json = object as? [Any] else {
+                throw QiitaKitError.invalidJSON
+            }
+            return json.map{ User(json: JSON($0)) }
         }
         
     }

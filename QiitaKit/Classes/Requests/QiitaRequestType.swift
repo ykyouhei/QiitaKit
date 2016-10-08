@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 
 
-public protocol QiitaRequestType: RequestType {}
+public protocol QiitaRequestType: Request {}
 
 
 extension QiitaRequestType {
@@ -19,9 +19,9 @@ extension QiitaRequestType {
         return "v2"
     }
     
-    public var baseURL: NSURL {
+    public var baseURL: URL {
         let domain = AuthManager.sharedManager.teamDomain ?? "qiita.com"
-        return NSURL(string: "https://\(domain)/api/\(version)")!
+        return URL(string: "https://\(domain)/api/\(version)")!
     }
     
     public var headerFields: [String : String] {
@@ -33,7 +33,7 @@ extension QiitaRequestType {
         ]
     }
     
-    public func interceptObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AnyObject {
+    public func intercept(object: Any, URLResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(URLResponse.statusCode) else {
             throw QiitaKitError(object: object)
         }
@@ -109,7 +109,7 @@ public protocol QiitaPageableRequestType: QiitaRequestType {
      
      - returns: [Element]
      */
-    func responseFromObjects(object: AnyObject) throws -> [Element]
+    func response(from object: Any) throws -> [Element]
     
 }
 
@@ -125,22 +125,22 @@ public extension QiitaPageableRequestType {
         ]
     }
     
-    public func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> PageableResponse<Element> {
-        let elements       = try responseFromObjects(object)
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> PageableResponse<Element> {
+        let elements       = try response(from: object)
         let currentPage    = self.page
         var totalCount     = Int(0)
         var nextPage: Int? = nil
         var prevPage: Int? = nil
 
-        if let count = URLResponse.allHeaderFields["Total-Count"]?.integerValue {
-            totalCount = count
+        if let count = urlResponse.allHeaderFields["Total-Count"] as? String {
+            totalCount = Int(count) ?? 0
         }
         
-        if let link = URLResponse.allHeaderFields["Link"] as? String {
-            if link.containsString("rel=\"prev\"") {
+        if let link = urlResponse.allHeaderFields["Link"] as? String {
+            if link.contains("rel=\"prev\"") {
                 prevPage = currentPage - 1
             }
-            if link.containsString("rel=\"next\"") {
+            if link.contains("rel=\"next\"") {
                 nextPage = currentPage + 1
             }
         }

@@ -13,34 +13,34 @@ import Foundation
  
  - CommonError: 共通のエラー
  */
-public enum QiitaKitError: ErrorType {
+public enum QiitaKitError: Error {
     
-    case InvalidRedirectScheme
+    case invalidRedirectScheme
     
-    case InvalidState
+    case invalidState
     
-    case FaildToGetAccessToken
+    case faildToGetAccessToken
     
-    case AlreadyStocked
+    case alreadyStocked
     
-    case CommonError(message: String, type: String)
+    case commonError(message: String, type: String)
     
-    case InvalidJSON
+    case invalidJSON
     
-    case Unknown
+    case unknown
     
-    internal init(object: AnyObject) {
+    internal init(object: Any) {
         guard let json = object as? [String : String],
-            type = json["type"],
-            message = json["message"] else
+            let type = json["type"],
+            let message = json["message"] else
         {
-            self = .Unknown
+            self = .unknown
             return
         }
         
         switch type {
-        case "already_stocked": self = .AlreadyStocked
-        default:                self = CommonError(message: message, type: type)
+        case "already_stocked": self = .alreadyStocked
+        default:                self = .commonError(message: message, type: type)
         }
     }
     
