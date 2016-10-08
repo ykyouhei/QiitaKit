@@ -4,7 +4,7 @@
 [![Pod Version](http://img.shields.io/cocoapods/v/QiitaKit.svg?style=flat)](http://cocoadocs.org/docsets/QiitaKit/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/QiitaKit.svg?style=flat)](http://cocoadocs.org/docsets/QiitaKit/)
 [![Pod License](http://img.shields.io/cocoapods/l/QiitaKit.svg?style=flat)](https://github.com/ykyohei/QiitaKit/blob/master/LICENSE)
-![Swift version](https://img.shields.io/badge/swift-2.2-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-3.0-orange.svg)
 
 Swift製のQiitaAPIClient（v2）です。OAuth認証にも対応しています。
 
@@ -52,10 +52,10 @@ let authorized: Bool = AuthManager.sharedManager.authorized
 OAuth認証を行う。認証を行うためのWindowが表示されます
 
 - parameter scopes:      アプリで利用可能なスコープ
-   - ReadQiita:      Qiitaからアクセストークンに紐付いたユーザに関連したデータを読み出す
-   - ReadQiitaTeam:  Qiita:Teamからデータを読み出す
-   - WriteQiita:     Qiitaにデータを書き込む
-   - WriteQiitaTeam: Qiita:Teamにデータを書き込む
+   - readQiita:      Qiitaからアクセストークンに紐付いたユーザに関連したデータを読み出す
+   - readQiitaTeam:  Qiita:Teamからデータを読み出す
+   - writeQiita:     Qiitaにデータを書き込む
+   - writeQiitaTeam: Qiita:Teamにデータを書き込む
     
 - parameter redirectURL: 登録アプリケーションで設定したリダイレクト先のURL
 
