@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import APIKit
-import Result
 import QiitaKit
 
 var currentUser: AuthenticatedUser!
@@ -68,7 +66,7 @@ internal final class LoginViewController: UIViewController {
     }
     
     fileprivate func requestAuthenticatedUser() {
-        Session.send(QiitaAPI.User.GetAuthenticatedUserRequest()) { result in
+        APIClient().send(QiitaAPI.User.GetAuthenticatedUserRequest()) { result in
             switch result {
             case .success(let user):
                 currentUser = user

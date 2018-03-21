@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import APIKit
 import QiitaKit
-import Result
 
 class RequestViewController: UIViewController {
     
