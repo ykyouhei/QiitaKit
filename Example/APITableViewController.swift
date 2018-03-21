@@ -8,8 +8,6 @@
 
 import UIKit
 import QiitaKit
-import APIKit
-import Result
 
 internal final class APITableViewController: UITableViewController {
     
@@ -79,13 +77,13 @@ internal final class APITableViewController: UITableViewController {
         }
     }
     
-    func send<T: QiitaRequestType>(_ request: T) {
+    func send<T: QiitaRequest>(_ request: T) {
         let indicator = UIActivityIndicatorView(frame: view.bounds)
         indicator.startAnimating()
         indicator.activityIndicatorViewStyle = .gray
         view.addSubview(indicator)
         
-        Session.send(request) { result in
+        APIClient().send(request) { result in
             indicator.removeFromSuperview()
             
             switch result {

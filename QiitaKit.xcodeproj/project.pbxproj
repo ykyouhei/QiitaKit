@@ -23,16 +23,9 @@
 		410687D91D39E471003A310A /* DeleteTaggingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687D81D39E471003A310A /* DeleteTaggingRequest.swift */; };
 		410687DB1D39E55F003A310A /* GetFollowingTagsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687DA1D39E55F003A310A /* GetFollowingTagsRequest.swift */; };
 		410687DD1D39E585003A310A /* GetTagsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410687DC1D39E585003A310A /* GetTagsRequest.swift */; };
-		414EBBEA1D325AF400078494 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBE91D325AF400078494 /* TagTests.swift */; };
-		414EBBEC1D325B0100078494 /* Tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBBEB1D325B0100078494 /* Tag.json */; };
-		414EBBEE1D32615800078494 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBED1D32615800078494 /* UserTests.swift */; };
-		414EBBF01D32616400078494 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBBEF1D32616400078494 /* User.json */; };
 		414EBC001D3285B600078494 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBBFF1D3285B600078494 /* Like.swift */; };
-		414EBC021D32866800078494 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 414EBC011D32866800078494 /* Like.json */; };
-		414EBC041D3286F800078494 /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC031D3286F800078494 /* LikeTests.swift */; };
 		414EBC101D32994F00078494 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EBC0F1D32994F00078494 /* Comment.swift */; };
 		4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */; };
-		4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169C2F31DA8BCA800CA496A /* JSONParsable.swift */; };
 		4171BAA31D39E8AF000DFEB8 /* GetTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */; };
 		4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */; };
 		4171BAA71D39EA7F000DFEB8 /* GetFollowingTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */; };
@@ -67,39 +60,43 @@
 		4171BAF31D3A0006000DFEB8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4171BAF21D3A0006000DFEB8 /* Config.plist */; };
 		4171BAF51D3A0329000DFEB8 /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
 		4171BAF61D3A0329000DFEB8 /* QiitaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
-		4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
 		4171BAFE1D3A06D5000DFEB8 /* APITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */; };
 		4171BB001D3A0E3B000DFEB8 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */; };
-		4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFDE1D3228B200B421A0 /* AuthManager.swift */; };
-		4175AFE11D3228CE00B421A0 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */; };
-		41E5E3D81D32466F0051BDC4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4100A3201D3218FF009D62AC /* Unbox.framework */; };
-		41E5E3D91D32466F0051BDC4 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
-		41E5E3DA1D32466F0051BDC4 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
-		41E5E3DF1D3249D60051BDC4 /* AccessTokenResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */; };
-		41E5E3E11D324A4F0051BDC4 /* AccessTokenResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */; };
-		41E5E3E31D324A9B0051BDC4 /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */; };
-		41E5E3E61D324DCC0051BDC4 /* AuthenticatedUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */; };
-		41E5E3E81D324DD70051BDC4 /* AuthenticatedUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */; };
-		41E5E3EA1D324F720051BDC4 /* PostItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3E91D324F720051BDC4 /* PostItemTests.swift */; };
-		41E5E3EC1D324F800051BDC4 /* PostItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3EB1D324F800051BDC4 /* PostItem.json */; };
 		41E5E3EE1D3250EB0051BDC4 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3ED1D3250EB0051BDC4 /* Group.swift */; };
-		41E5E3F01D3252BE0051BDC4 /* Group.json in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E3EF1D3252BE0051BDC4 /* Group.json */; };
-		41E5E3F21D3252CE0051BDC4 /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */; };
+		8805E2782062340100F66271 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8805E2772062340100F66271 /* Result.swift */; };
+		8805E27A20624E5600F66271 /* QiitaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8805E27920624E5600F66271 /* QiitaResponse.swift */; };
+		8805E27C206250B300F66271 /* PageableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8805E27B206250B300F66271 /* PageableResponse.swift */; };
+		880F2FF020628C600090E8EC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F2FEF20628C600090E8EC /* APIError.swift */; };
+		880F2FFA206291570090E8EC /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
+		880F3016206291BD0090E8EC /* SupportFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F3005206291BD0090E8EC /* SupportFunctions.swift */; };
+		880F3017206291BD0090E8EC /* LikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F3007206291BD0090E8EC /* LikeTests.swift */; };
+		880F3018206291BD0090E8EC /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F3008206291BD0090E8EC /* UserTests.swift */; };
+		880F3019206291BD0090E8EC /* AuthenticatedUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F3009206291BD0090E8EC /* AuthenticatedUserTests.swift */; };
+		880F301A206291BD0090E8EC /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F300A206291BD0090E8EC /* TagTests.swift */; };
+		880F301B206291BD0090E8EC /* PostItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F300B206291BD0090E8EC /* PostItemTests.swift */; };
+		880F301C206291BD0090E8EC /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F300C206291BD0090E8EC /* GroupTests.swift */; };
+		880F301D206291BD0090E8EC /* AccessTokenResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F300D206291BD0090E8EC /* AccessTokenResponseTests.swift */; };
+		880F301E206291BD0090E8EC /* PostItem.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F300F206291BD0090E8EC /* PostItem.json */; };
+		880F301F206291BD0090E8EC /* AccessTokenResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3010206291BD0090E8EC /* AccessTokenResponse.json */; };
+		880F3020206291BD0090E8EC /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3011206291BD0090E8EC /* Like.json */; };
+		880F3021206291BD0090E8EC /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3012206291BD0090E8EC /* User.json */; };
+		880F3022206291BD0090E8EC /* Tag.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3013206291BD0090E8EC /* Tag.json */; };
+		880F3023206291BD0090E8EC /* AuthenticatedUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3014206291BD0090E8EC /* AuthenticatedUser.json */; };
+		880F3024206291BD0090E8EC /* Group.json in Resources */ = {isa = PBXBuildFile; fileRef = 880F3015206291BD0090E8EC /* Group.json */; };
+		88F9C803205529E4003447E6 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F9C802205529E4003447E6 /* AuthWebViewController.swift */; };
+		88F9C806205529FB003447E6 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F9C804205529FB003447E6 /* AuthManager.swift */; };
+		88F9C807205529FB003447E6 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F9C805205529FB003447E6 /* KeychainWrapper.swift */; };
+		88F9C80A20557990003447E6 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F9C80920557990003447E6 /* EmptyResponse.swift */; };
 		C278CA8B1C40F146005DCFB5 /* QiitaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C278CA8A1C40F146005DCFB5 /* QiitaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C278CA871C40F146005DCFB5 /* QiitaKit.framework */; };
-		C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */; };
-		C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */; };
+		C278CABD1C40F51A005DCFB5 /* QiitaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAB71C40F51A005DCFB5 /* QiitaRequest.swift */; };
+		C278CAC31C40F52F005DCFB5 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CABE1C40F52F005DCFB5 /* AccessToken.swift */; };
 		C278CAC41C40F52F005DCFB5 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */; };
 		C278CAC51C40F52F005DCFB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC01C40F52F005DCFB5 /* Item.swift */; };
 		C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC11C40F52F005DCFB5 /* Tag.swift */; };
 		C278CAC71C40F52F005DCFB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CAC21C40F52F005DCFB5 /* User.swift */; };
-		C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */; };
 		C2A29E6F1C4129BA00542D7C /* NSURL+Fragments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */; };
 		C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E711C412AE200542D7C /* UIKit.framework */; };
 		C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E731C412AF200542D7C /* WebKit.framework */; };
-		C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E751C412B2500542D7C /* APIKit.framework */; };
-		C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A29E781C412B2500542D7C /* Result.framework */; };
 		C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29E7F1C41388300542D7C /* QiitaKitError.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +108,7 @@
 			remoteGlobalIDString = C278CA861C40F146005DCFB5;
 			remoteInfo = QiitaKit;
 		};
-		C278CA931C40F146005DCFB5 /* PBXContainerItemProxy */ = {
+		880F2FFB206291570090E8EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C278CA7E1C40F146005DCFB5 /* Project object */;
 			proxyType = 1;
@@ -135,7 +132,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4100A3201D3218FF009D62AC /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = SOURCE_ROOT; };
 		410687B11D39C9F8003A310A /* QiitaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
 		410687BE1D39D8EE003A310A /* AccessTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AccessTokenRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		410687BF1D39D8EE003A310A /* AuthorizeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
@@ -152,16 +148,9 @@
 		410687D81D39E471003A310A /* DeleteTaggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaggingRequest.swift; sourceTree = "<group>"; };
 		410687DA1D39E55F003A310A /* GetFollowingTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingTagsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		410687DC1D39E585003A310A /* GetTagsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTagsRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		414EBBE91D325AF400078494 /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
-		414EBBEB1D325B0100078494 /* Tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tag.json; sourceTree = "<group>"; };
-		414EBBED1D32615800078494 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		414EBBEF1D32616400078494 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		414EBBFF1D3285B600078494 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
-		414EBC011D32866800078494 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
-		414EBC031D3286F800078494 /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
 		414EBC0F1D32994F00078494 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4155AB641D903D300069B587 /* CustomStringConvertible+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomStringConvertible+Default.swift"; sourceTree = "<group>"; };
-		4169C2F31DA8BCA800CA496A /* JSONParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
 		4171BAA21D39E8AF000DFEB8 /* GetTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4171BAA41D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFollowingTagRequest.swift; sourceTree = "<group>"; };
 		4171BAA61D39EA7F000DFEB8 /* GetFollowingTagRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GetFollowingTagRequest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -199,35 +188,44 @@
 		4171BAFD1D3A06D5000DFEB8 /* APITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITableViewController.swift; sourceTree = "<group>"; };
 		4171BAFF1D3A0E3B000DFEB8 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		4171BB011D3A2EC3000DFEB8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4175AFDE1D3228B200B421A0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = QiitaKit/Classes/Models/AuthManager.swift; sourceTree = SOURCE_ROOT; };
-		4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = KeychainWrapper.swift; path = QiitaKit/Classes/Models/KeychainWrapper.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccessTokenResponse.json; sourceTree = "<group>"; };
-		41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponseTests.swift; sourceTree = "<group>"; };
-		41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
-		41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserTests.swift; sourceTree = "<group>"; };
-		41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AuthenticatedUser.json; sourceTree = "<group>"; };
-		41E5E3E91D324F720051BDC4 /* PostItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItemTests.swift; sourceTree = "<group>"; };
-		41E5E3EB1D324F800051BDC4 /* PostItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostItem.json; sourceTree = "<group>"; };
 		41E5E3ED1D3250EB0051BDC4 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		41E5E3EF1D3252BE0051BDC4 /* Group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Group.json; sourceTree = "<group>"; };
-		41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
+		8805E2772062340100F66271 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		8805E27920624E5600F66271 /* QiitaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaResponse.swift; sourceTree = "<group>"; };
+		8805E27B206250B300F66271 /* PageableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageableResponse.swift; sourceTree = "<group>"; };
+		880F2FEF20628C600090E8EC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		880F2FF5206291570090E8EC /* QiitaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		880F2FF9206291570090E8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880F3005206291BD0090E8EC /* SupportFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFunctions.swift; sourceTree = "<group>"; };
+		880F3007206291BD0090E8EC /* LikeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeTests.swift; sourceTree = "<group>"; };
+		880F3008206291BD0090E8EC /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		880F3009206291BD0090E8EC /* AuthenticatedUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUserTests.swift; sourceTree = "<group>"; };
+		880F300A206291BD0090E8EC /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		880F300B206291BD0090E8EC /* PostItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostItemTests.swift; sourceTree = "<group>"; };
+		880F300C206291BD0090E8EC /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
+		880F300D206291BD0090E8EC /* AccessTokenResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponseTests.swift; sourceTree = "<group>"; };
+		880F300F206291BD0090E8EC /* PostItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostItem.json; sourceTree = "<group>"; };
+		880F3010206291BD0090E8EC /* AccessTokenResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccessTokenResponse.json; sourceTree = "<group>"; };
+		880F3011206291BD0090E8EC /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
+		880F3012206291BD0090E8EC /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		880F3013206291BD0090E8EC /* Tag.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tag.json; sourceTree = "<group>"; };
+		880F3014206291BD0090E8EC /* AuthenticatedUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AuthenticatedUser.json; sourceTree = "<group>"; };
+		880F3015206291BD0090E8EC /* Group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Group.json; sourceTree = "<group>"; };
+		88F9C802205529E4003447E6 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
+		88F9C804205529FB003447E6 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		88F9C805205529FB003447E6 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		88F9C80920557990003447E6 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		C278CA871C40F146005DCFB5 /* QiitaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QiitaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C278CA8A1C40F146005DCFB5 /* QiitaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiitaKit.h; sourceTree = "<group>"; };
 		C278CA8C1C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C278CA911C40F146005DCFB5 /* QiitaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C278CA981C40F146005DCFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaRequestType.swift; sourceTree = "<group>"; };
-		C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		C278CAB71C40F51A005DCFB5 /* QiitaRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaRequest.swift; sourceTree = "<group>"; };
+		C278CABE1C40F52F005DCFB5 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
 		C278CAC01C40F52F005DCFB5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Item.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C278CAC11C40F52F005DCFB5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C278CAC21C40F52F005DCFB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWebViewController.swift; path = ViewControllers/AuthWebViewController.swift; sourceTree = "<group>"; };
 		C2A29E6E1C4129BA00542D7C /* NSURL+Fragments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Fragments.swift"; sourceTree = "<group>"; };
 		C2A29E711C412AE200542D7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2A29E731C412AF200542D7C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		C2A29E751C412B2500542D7C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = SOURCE_ROOT; };
-		C2A29E781C412B2500542D7C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		C2A29E7F1C41388300542D7C /* QiitaKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaKitError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,8 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4171BAF51D3A0329000DFEB8 /* QiitaKit.framework in Frameworks */,
-				4171BAFA1D3A0375000DFEB8 /* APIKit.framework in Frameworks */,
-				4171BAFB1D3A0375000DFEB8 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880F2FF2206291570090E8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880F2FFA206291570090E8EC /* QiitaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,21 +250,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A29E791C412B2500542D7C /* APIKit.framework in Frameworks */,
 				C2A29E741C412AF200542D7C /* WebKit.framework in Frameworks */,
-				C2A29E7C1C412B2500542D7C /* Result.framework in Frameworks */,
 				C2A29E721C412AE200542D7C /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C278CA8E1C40F146005DCFB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41E5E3D91D32466F0051BDC4 /* APIKit.framework in Frameworks */,
-				C278CA921C40F146005DCFB5 /* QiitaKit.framework in Frameworks */,
-				41E5E3D81D32466F0051BDC4 /* Unbox.framework in Frameworks */,
-				41E5E3DA1D32466F0051BDC4 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,20 +289,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		410687B51D39D82A003A310A /* Project */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Project;
-			sourceTree = "<group>";
-		};
-		410687B61D39D838003A310A /* Template */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Template;
-			sourceTree = "<group>";
-		};
 		410687B71D39D842003A310A /* Team */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,12 +323,12 @@
 			isa = PBXGroup;
 			children = (
 				410687C61D39DCE8003A310A /* DeleteCommentRequest.swift */,
-				410687C81D39DE14003A310A /* GetCommentRequest.swift */,
-				410687CA1D39DEE1003A310A /* PatchCommentRequest.swift */,
 				410687CC1D39DFB6003A310A /* DeleteThankRequest.swift */,
-				410687CE1D39E06C003A310A /* PutThankRequest.swift */,
+				410687C81D39DE14003A310A /* GetCommentRequest.swift */,
 				410687D01D39E0F3003A310A /* GetCommentsRequest.swift */,
+				410687CA1D39DEE1003A310A /* PatchCommentRequest.swift */,
 				410687D21D39E1B1003A310A /* PostCommentRequest.swift */,
+				410687CE1D39E06C003A310A /* PutThankRequest.swift */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -393,49 +370,69 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		41E5E3DB1D32492F0051BDC4 /* Classes */ = {
+		880F2FF6206291570090E8EC /* QiitaKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				41E5E3DC1D32493D0051BDC4 /* Entities */,
-				41E5E3E21D324A9B0051BDC4 /* SupportFunctions.swift */,
+				880F300E206291BD0090E8EC /* Resources */,
+				880F3004206291BD0090E8EC /* Tests */,
+				880F2FF9206291570090E8EC /* Info.plist */,
 			);
-			path = Classes;
+			path = QiitaKitTests;
 			sourceTree = "<group>";
 		};
-		41E5E3DC1D32493D0051BDC4 /* Entities */ = {
+		880F3004206291BD0090E8EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				41E5E3E01D324A4F0051BDC4 /* AccessTokenResponseTests.swift */,
-				41E5E3E51D324DCC0051BDC4 /* AuthenticatedUserTests.swift */,
-				41E5E3E91D324F720051BDC4 /* PostItemTests.swift */,
-				414EBBE91D325AF400078494 /* TagTests.swift */,
-				414EBBED1D32615800078494 /* UserTests.swift */,
-				41E5E3F11D3252CE0051BDC4 /* GroupTests.swift */,
-				414EBC031D3286F800078494 /* LikeTests.swift */,
+				880F3005206291BD0090E8EC /* SupportFunctions.swift */,
+				880F3006206291BD0090E8EC /* Entities */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		880F3006206291BD0090E8EC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				880F3007206291BD0090E8EC /* LikeTests.swift */,
+				880F3008206291BD0090E8EC /* UserTests.swift */,
+				880F3009206291BD0090E8EC /* AuthenticatedUserTests.swift */,
+				880F300A206291BD0090E8EC /* TagTests.swift */,
+				880F300B206291BD0090E8EC /* PostItemTests.swift */,
+				880F300C206291BD0090E8EC /* GroupTests.swift */,
+				880F300D206291BD0090E8EC /* AccessTokenResponseTests.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		41E5E3DD1D3249690051BDC4 /* Resources */ = {
+		880F300E206291BD0090E8EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				41E5E3DE1D3249D60051BDC4 /* AccessTokenResponse.json */,
-				41E5E3E71D324DD70051BDC4 /* AuthenticatedUser.json */,
-				41E5E3EB1D324F800051BDC4 /* PostItem.json */,
-				414EBBEB1D325B0100078494 /* Tag.json */,
-				414EBBEF1D32616400078494 /* User.json */,
-				41E5E3EF1D3252BE0051BDC4 /* Group.json */,
-				414EBC011D32866800078494 /* Like.json */,
+				880F300F206291BD0090E8EC /* PostItem.json */,
+				880F3010206291BD0090E8EC /* AccessTokenResponse.json */,
+				880F3011206291BD0090E8EC /* Like.json */,
+				880F3012206291BD0090E8EC /* User.json */,
+				880F3013206291BD0090E8EC /* Tag.json */,
+				880F3014206291BD0090E8EC /* AuthenticatedUser.json */,
+				880F3015206291BD0090E8EC /* Group.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		88F9C80820557809003447E6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				88F9C80920557990003447E6 /* EmptyResponse.swift */,
+				8805E27920624E5600F66271 /* QiitaResponse.swift */,
+				8805E27B206250B300F66271 /* PageableResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		C278CA7D1C40F146005DCFB5 = {
 			isa = PBXGroup;
 			children = (
 				C278CA891C40F146005DCFB5 /* QiitaKit */,
-				C278CA951C40F146005DCFB5 /* QiitaKitTests */,
 				4171BAE11D39FF00000DFEB8 /* Example */,
+				880F2FF6206291570090E8EC /* QiitaKitTests */,
 				C278CA881C40F146005DCFB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -444,8 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				C278CA871C40F146005DCFB5 /* QiitaKit.framework */,
-				C278CA911C40F146005DCFB5 /* QiitaKitTests.xctest */,
 				4171BAE01D39FF00000DFEB8 /* Example.app */,
+				880F2FF5206291570090E8EC /* QiitaKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,34 +450,26 @@
 		C278CA891C40F146005DCFB5 /* QiitaKit */ = {
 			isa = PBXGroup;
 			children = (
-				C278CAAA1C40F388005DCFB5 /* Classes */,
+				C278CAAA1C40F388005DCFB5 /* Sources */,
 				C278CAAF1C40F44E005DCFB5 /* Frameworks */,
 				C278CAAB1C40F394005DCFB5 /* SupportingFiles */,
 			);
 			path = QiitaKit;
 			sourceTree = "<group>";
 		};
-		C278CA951C40F146005DCFB5 /* QiitaKitTests */ = {
+		C278CAAA1C40F388005DCFB5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				41E5E3DB1D32492F0051BDC4 /* Classes */,
-				41E5E3DD1D3249690051BDC4 /* Resources */,
-				C278CA981C40F146005DCFB5 /* Info.plist */,
-			);
-			path = QiitaKitTests;
-			sourceTree = "<group>";
-		};
-		C278CAAA1C40F388005DCFB5 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
+				C2A29E7F1C41388300542D7C /* QiitaKitError.swift */,
+				8805E2772062340100F66271 /* Result.swift */,
+				C278CAAC1C40F424005DCFB5 /* Entities */,
 				C2A29E6D1C41299200542D7C /* Extensions */,
-				C278CACA1C40FAB6005DCFB5 /* ViewControllers */,
 				C278CAAE1C40F444005DCFB5 /* Models */,
 				C278CAAD1C40F43E005DCFB5 /* Requests */,
-				C278CAAC1C40F424005DCFB5 /* Entities */,
-				C2A29E7F1C41388300542D7C /* QiitaKitError.swift */,
+				88F9C80820557809003447E6 /* Responses */,
+				C278CACA1C40FAB6005DCFB5 /* ViewControllers */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		C278CAAB1C40F394005DCFB5 /* SupportingFiles */ = {
@@ -495,7 +484,7 @@
 		C278CAAC1C40F424005DCFB5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				C278CABE1C40F52F005DCFB5 /* AccessTokenResponse.swift */,
+				C278CABE1C40F52F005DCFB5 /* AccessToken.swift */,
 				C278CABF1C40F52F005DCFB5 /* AuthenticatedUser.swift */,
 				C278CAC01C40F52F005DCFB5 /* Item.swift */,
 				C278CAC11C40F52F005DCFB5 /* Tag.swift */,
@@ -505,7 +494,7 @@
 				414EBC0F1D32994F00078494 /* Comment.swift */,
 				410687D61D39E3CD003A310A /* Tagging.swift */,
 				4171BAAA1D39EB95000DFEB8 /* Team.swift */,
-				4169C2F31DA8BCA800CA496A /* JSONParsable.swift */,
+				880F2FEF20628C600090E8EC /* APIError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -513,18 +502,16 @@
 		C278CAAD1C40F43E005DCFB5 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				410687BD1D39D875003A310A /* Authorization */,
-				410687BC1D39D86C003A310A /* Like */,
-				410687BA1D39D857003A310A /* Comment */,
-				410687B91D39D851003A310A /* Tagging */,
-				410687B81D39D84B003A310A /* Tag */,
-				410687B71D39D842003A310A /* Team */,
-				410687B61D39D838003A310A /* Template */,
-				410687B51D39D82A003A310A /* Project */,
-				410687B41D39D822003A310A /* User */,
-				410687B31D39D819003A310A /* Item */,
-				C278CAB71C40F51A005DCFB5 /* QiitaRequestType.swift */,
 				410687B11D39C9F8003A310A /* QiitaAPI.swift */,
+				C278CAB71C40F51A005DCFB5 /* QiitaRequest.swift */,
+				410687BD1D39D875003A310A /* Authorization */,
+				410687BA1D39D857003A310A /* Comment */,
+				410687B31D39D819003A310A /* Item */,
+				410687BC1D39D86C003A310A /* Like */,
+				410687B81D39D84B003A310A /* Tag */,
+				410687B91D39D851003A310A /* Tagging */,
+				410687B71D39D842003A310A /* Team */,
+				410687B41D39D822003A310A /* User */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -532,19 +519,15 @@
 		C278CAAE1C40F444005DCFB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4175AFDE1D3228B200B421A0 /* AuthManager.swift */,
-				4175AFE01D3228CE00B421A0 /* KeychainWrapper.swift */,
+				88F9C804205529FB003447E6 /* AuthManager.swift */,
+				88F9C805205529FB003447E6 /* KeychainWrapper.swift */,
 			);
-			name = Models;
-			path = Managers;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C278CAAF1C40F44E005DCFB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4100A3201D3218FF009D62AC /* Unbox.framework */,
-				C2A29E751C412B2500542D7C /* APIKit.framework */,
-				C2A29E781C412B2500542D7C /* Result.framework */,
 				C2A29E731C412AF200542D7C /* WebKit.framework */,
 				C2A29E711C412AE200542D7C /* UIKit.framework */,
 			);
@@ -554,9 +537,9 @@
 		C278CACA1C40FAB6005DCFB5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C278CACB1C40FB1F005DCFB5 /* AuthWebViewController.swift */,
+				88F9C802205529E4003447E6 /* AuthWebViewController.swift */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C2A29E6D1C41299200542D7C /* Extensions */ = {
@@ -589,7 +572,6 @@
 				4171BADC1D39FF00000DFEB8 /* Sources */,
 				4171BADD1D39FF00000DFEB8 /* Frameworks */,
 				4171BADE1D39FF00000DFEB8 /* Resources */,
-				4171BAF41D3A02BF000DFEB8 /* Carthage */,
 				4171BAF91D3A0329000DFEB8 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -601,6 +583,24 @@
 			productName = Example;
 			productReference = 4171BAE01D39FF00000DFEB8 /* Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		880F2FF4206291570090E8EC /* QiitaKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880F2FFD206291570090E8EC /* Build configuration list for PBXNativeTarget "QiitaKitTests" */;
+			buildPhases = (
+				880F2FF1206291570090E8EC /* Sources */,
+				880F2FF2206291570090E8EC /* Frameworks */,
+				880F2FF3206291570090E8EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880F2FFC206291570090E8EC /* PBXTargetDependency */,
+			);
+			name = QiitaKitTests;
+			productName = QiitaKitTests;
+			productReference = 880F2FF5206291570090E8EC /* QiitaKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C278CA861C40F146005DCFB5 /* QiitaKit */ = {
 			isa = PBXNativeTarget;
@@ -620,44 +620,25 @@
 			productReference = C278CA871C40F146005DCFB5 /* QiitaKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C278CA901C40F146005DCFB5 /* QiitaKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C278CA9E1C40F146005DCFB5 /* Build configuration list for PBXNativeTarget "QiitaKitTests" */;
-			buildPhases = (
-				C278CA8D1C40F146005DCFB5 /* Sources */,
-				C278CA8E1C40F146005DCFB5 /* Frameworks */,
-				C278CA8F1C40F146005DCFB5 /* Resources */,
-				41E5E3E41D324D4C0051BDC4 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C278CA941C40F146005DCFB5 /* PBXTargetDependency */,
-			);
-			name = QiitaKitTests;
-			productName = QiitaKitTests;
-			productReference = C278CA911C40F146005DCFB5 /* QiitaKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C278CA7E1C40F146005DCFB5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = kyo__hei;
 				TargetAttributes = {
 					4171BADF1D39FF00000DFEB8 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 					};
-					C278CA861C40F146005DCFB5 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+					880F2FF4206291570090E8EC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
-					C278CA901C40F146005DCFB5 = {
+					C278CA861C40F146005DCFB5 = {
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 0800;
 					};
@@ -677,8 +658,8 @@
 			projectRoot = "";
 			targets = (
 				C278CA861C40F146005DCFB5 /* QiitaKit */,
-				C278CA901C40F146005DCFB5 /* QiitaKitTests */,
 				4171BADF1D39FF00000DFEB8 /* Example */,
+				880F2FF4206291570090E8EC /* QiitaKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -695,6 +676,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		880F2FF3206291570090E8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880F3021206291BD0090E8EC /* User.json in Resources */,
+				880F3020206291BD0090E8EC /* Like.json in Resources */,
+				880F301F206291BD0090E8EC /* AccessTokenResponse.json in Resources */,
+				880F301E206291BD0090E8EC /* PostItem.json in Resources */,
+				880F3023206291BD0090E8EC /* AuthenticatedUser.json in Resources */,
+				880F3024206291BD0090E8EC /* Group.json in Resources */,
+				880F3022206291BD0090E8EC /* Tag.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C278CA851C40F146005DCFB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,55 +697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C278CA8F1C40F146005DCFB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41E5E3E81D324DD70051BDC4 /* AuthenticatedUser.json in Resources */,
-				41E5E3DF1D3249D60051BDC4 /* AccessTokenResponse.json in Resources */,
-				41E5E3EC1D324F800051BDC4 /* PostItem.json in Resources */,
-				41E5E3F01D3252BE0051BDC4 /* Group.json in Resources */,
-				414EBC021D32866800078494 /* Like.json in Resources */,
-				414EBBF01D32616400078494 /* User.json in Resources */,
-				414EBBEC1D325B0100078494 /* Tag.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4171BAF41D3A02BF000DFEB8 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		41E5E3E41D324D4C0051BDC4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4171BADC1D39FF00000DFEB8 /* Sources */ = {
@@ -764,6 +711,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		880F2FF1206291570090E8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880F3019206291BD0090E8EC /* AuthenticatedUserTests.swift in Sources */,
+				880F3018206291BD0090E8EC /* UserTests.swift in Sources */,
+				880F301B206291BD0090E8EC /* PostItemTests.swift in Sources */,
+				880F301A206291BD0090E8EC /* TagTests.swift in Sources */,
+				880F3017206291BD0090E8EC /* LikeTests.swift in Sources */,
+				880F301C206291BD0090E8EC /* GroupTests.swift in Sources */,
+				880F301D206291BD0090E8EC /* AccessTokenResponseTests.swift in Sources */,
+				880F3016206291BD0090E8EC /* SupportFunctions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C278CA821C40F146005DCFB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,14 +736,15 @@
 				410687B21D39C9F8003A310A /* QiitaAPI.swift in Sources */,
 				4171BAA51D39E9C0000DFEB8 /* DeleteFollowingTagRequest.swift in Sources */,
 				4155AB651D903D300069B587 /* CustomStringConvertible+Default.swift in Sources */,
+				8805E2782062340100F66271 /* Result.swift in Sources */,
 				C278CAC51C40F52F005DCFB5 /* Item.swift in Sources */,
+				88F9C80A20557990003447E6 /* EmptyResponse.swift in Sources */,
 				4171BAB11D39ED5A000DFEB8 /* GetStockersRequest.swift in Sources */,
 				410687C91D39DE14003A310A /* GetCommentRequest.swift in Sources */,
 				4171BAC31D39F108000DFEB8 /* GetItemsRequest.swift in Sources */,
 				C278CAC61C40F52F005DCFB5 /* Tag.swift in Sources */,
 				C2A29E801C41388300542D7C /* QiitaKitError.swift in Sources */,
 				4171BABE1D39F001000DFEB8 /* GetFollowingUserRequest.swift in Sources */,
-				4175AFE11D3228CE00B421A0 /* KeychainWrapper.swift in Sources */,
 				4171BAA71D39EA7F000DFEB8 /* GetFollowingTagRequest.swift in Sources */,
 				4171BAD31D39F910000DFEB8 /* PutLikeRequest.swift in Sources */,
 				414EBC101D32994F00078494 /* Comment.swift in Sources */,
@@ -789,9 +752,7 @@
 				4171BAC01D39F0B2000DFEB8 /* PutFollowingUserRequest.swift in Sources */,
 				41E5E3EE1D3250EB0051BDC4 /* Group.swift in Sources */,
 				410687C71D39DCE8003A310A /* DeleteCommentRequest.swift in Sources */,
-				C278CACC1C40FB1F005DCFB5 /* AuthWebViewController.swift in Sources */,
 				410687C31D39DA72003A310A /* GetLikesRequest.swift in Sources */,
-				4175AFDF1D3228B200B421A0 /* AuthManager.swift in Sources */,
 				410687DB1D39E55F003A310A /* GetFollowingTagsRequest.swift in Sources */,
 				410687D51D39E26B003A310A /* PostTaggingRequest.swift in Sources */,
 				410687D91D39E471003A310A /* DeleteTaggingRequest.swift in Sources */,
@@ -800,20 +761,23 @@
 				4171BAD11D39F8A1000DFEB8 /* DeleteLikeRequest.swift in Sources */,
 				4171BAB61D39EE43000DFEB8 /* GetUser.swift in Sources */,
 				4171BABA1D39EF27000DFEB8 /* GetFollowersRequest.swift in Sources */,
+				88F9C803205529E4003447E6 /* AuthWebViewController.swift in Sources */,
 				4171BACF1D39F6DB000DFEB8 /* PatchItemRequest.swift in Sources */,
 				410687C11D39D8EE003A310A /* AuthorizeRequest.swift in Sources */,
 				4171BAAB1D39EB95000DFEB8 /* Team.swift in Sources */,
-				4169C2F41DA8BCA800CA496A /* JSONParsable.swift in Sources */,
+				8805E27C206250B300F66271 /* PageableResponse.swift in Sources */,
 				410687CF1D39E06C003A310A /* PutThankRequest.swift in Sources */,
-				C278CAC31C40F52F005DCFB5 /* AccessTokenResponse.swift in Sources */,
+				C278CAC31C40F52F005DCFB5 /* AccessToken.swift in Sources */,
 				4171BAD51D39F95C000DFEB8 /* DeleteStockRequest.swift in Sources */,
 				410687CD1D39DFB6003A310A /* DeleteThankRequest.swift in Sources */,
 				4171BAC81D39F33D000DFEB8 /* PostItemRequest.swift in Sources */,
+				880F2FF020628C600090E8EC /* APIError.swift in Sources */,
 				4171BAB31D39EE02000DFEB8 /* GetUsersRequest.swift in Sources */,
 				410687CB1D39DEE1003A310A /* PatchCommentRequest.swift in Sources */,
 				410687D11D39E0F3003A310A /* GetCommentsRequest.swift in Sources */,
-				C278CABD1C40F51A005DCFB5 /* QiitaRequestType.swift in Sources */,
+				C278CABD1C40F51A005DCFB5 /* QiitaRequest.swift in Sources */,
 				4171BAD71D39F9C8000DFEB8 /* GetStockRequest.swift in Sources */,
+				8805E27A20624E5600F66271 /* QiitaResponse.swift in Sources */,
 				C278CAC71C40F52F005DCFB5 /* User.swift in Sources */,
 				410687C01D39D8EE003A310A /* AccessTokenRequest.swift in Sources */,
 				4171BACA1D39F5EF000DFEB8 /* DeleteItemRequest.swift in Sources */,
@@ -822,25 +786,12 @@
 				4171BAA91D39EB17000DFEB8 /* PutFollowingTagRequest.swift in Sources */,
 				4171BACC1D39F679000DFEB8 /* GetItemRequest.swift in Sources */,
 				410687D31D39E1B1003A310A /* PostCommentRequest.swift in Sources */,
+				88F9C806205529FB003447E6 /* AuthManager.swift in Sources */,
 				4171BADB1D39FA37000DFEB8 /* PutStockRequest.swift in Sources */,
 				4171BAB81D39EEBC000DFEB8 /* GetFolloweesRequest.swift in Sources */,
+				88F9C807205529FB003447E6 /* KeychainWrapper.swift in Sources */,
 				410687D71D39E3CD003A310A /* Tagging.swift in Sources */,
 				4171BAAD1D39EC36000DFEB8 /* GetTeamsRequest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C278CA8D1C40F146005DCFB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41E5E3E11D324A4F0051BDC4 /* AccessTokenResponseTests.swift in Sources */,
-				41E5E3E31D324A9B0051BDC4 /* SupportFunctions.swift in Sources */,
-				414EBC041D3286F800078494 /* LikeTests.swift in Sources */,
-				41E5E3EA1D324F720051BDC4 /* PostItemTests.swift in Sources */,
-				414EBBEE1D32615800078494 /* UserTests.swift in Sources */,
-				41E5E3E61D324DCC0051BDC4 /* AuthenticatedUserTests.swift in Sources */,
-				414EBBEA1D325AF400078494 /* TagTests.swift in Sources */,
-				41E5E3F21D3252CE0051BDC4 /* GroupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,10 +803,10 @@
 			target = C278CA861C40F146005DCFB5 /* QiitaKit */;
 			targetProxy = 4171BAF71D3A0329000DFEB8 /* PBXContainerItemProxy */;
 		};
-		C278CA941C40F146005DCFB5 /* PBXTargetDependency */ = {
+		880F2FFC206291570090E8EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C278CA861C40F146005DCFB5 /* QiitaKit */;
-			targetProxy = C278CA931C40F146005DCFB5 /* PBXContainerItemProxy */;
+			targetProxy = 880F2FFB206291570090E8EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -885,16 +836,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -904,16 +850,54 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		880F2FFE206291570090E8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = QiitaKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kyo--hei.QiitaKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		880F2FFF206291570090E8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = QiitaKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kyo--hei.QiitaKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -925,14 +909,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -961,6 +951,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -975,14 +966,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1004,6 +1001,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1020,19 +1018,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1045,51 +1038,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = QiitaKit/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		C278CA9F1C40F146005DCFB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = QiitaKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		C278CAA01C40F146005DCFB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = QiitaKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kyo--hei.QiitaKitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1101,6 +1056,15 @@
 			buildConfigurations = (
 				4171BAF01D39FF00000DFEB8 /* Debug */,
 				4171BAF11D39FF00000DFEB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880F2FFD206291570090E8EC /* Build configuration list for PBXNativeTarget "QiitaKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880F2FFE206291570090E8EC /* Debug */,
+				880F2FFF206291570090E8EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1119,15 +1083,6 @@
 			buildConfigurations = (
 				C278CA9C1C40F146005DCFB5 /* Debug */,
 				C278CA9D1C40F146005DCFB5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C278CA9E1C40F146005DCFB5 /* Build configuration list for PBXNativeTarget "QiitaKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C278CA9F1C40F146005DCFB5 /* Debug */,
-				C278CAA01C40F146005DCFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

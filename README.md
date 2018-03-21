@@ -4,7 +4,7 @@
 [![Pod Version](http://img.shields.io/cocoapods/v/QiitaKit.svg?style=flat)](http://cocoadocs.org/docsets/QiitaKit/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/QiitaKit.svg?style=flat)](http://cocoadocs.org/docsets/QiitaKit/)
 [![Pod License](http://img.shields.io/cocoapods/l/QiitaKit.svg?style=flat)](https://github.com/ykyohei/QiitaKit/blob/master/LICENSE)
-![Swift version](https://img.shields.io/badge/swift-3.0-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-4.0-orange.svg)
 
 Swift製のQiitaAPIClient（v2）です。OAuth認証にも対応しています。
 
@@ -24,7 +24,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
     /*
      初期設定を行う
-     
+
      - parameter clientID:                      登録アプリケーションのClientID
      - parameter clientSecret:                  登録アプリケーションのClientSecret
      - parameter teamDomain(Option):            QiitaTeamのドメイン(Optional)
@@ -33,9 +33,9 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     AuthManager.sharedManager.setup(
        clientID: "xxxxx",
        clientSecret: "xxxxx")
-       
+
     return true
-    
+
 }
 
 ```
@@ -56,7 +56,7 @@ OAuth認証を行う。認証を行うためのWindowが表示されます
    - readQiitaTeam:  Qiita:Teamからデータを読み出す
    - writeQiita:     Qiitaにデータを書き込む
    - writeQiitaTeam: Qiita:Teamにデータを書き込む
-    
+
 - parameter redirectURL: 登録アプリケーションで設定したリダイレクト先のURL
 
 - parameter webViewType: OAuth認証を行うWebViewの種類
@@ -69,10 +69,10 @@ AuthManager.sharedManager.authorize(withScopes: scopes,
                                     webViewType: .UIWebView)
 { result in
     switch result {
-    case .Success:
+    case .success:
         // 認証成功
-        
-    case .Failure(let error):
+
+    case .failure(let error):
         // 認証失敗
     }
 }
@@ -94,19 +94,17 @@ QiitaAPIの各リクエストに対応ています。
 
 ```Swift
 import QiitaKit
-import APIKit
-import Result
 
 // 認証中ユーザ情報を取得するリクエストオブジェクト
 let request = QiitaAPI.User.GetAuthenticatedUserRequest()
 
 // リクエスト送信
-Session.sendRequest(request) { result in
+APIClient().send(request) { result in
     switch result {
-    case .Success(let authenticatedUser):
+    case .success(let authenticatedUser):
         print(authenticatedUser)
-        
-    case .Failure(let error):
+
+    case .failure(let error):
         print(error)
     }
 }
@@ -119,10 +117,9 @@ Session.sendRequest(request) { result in
 
 - `github "ykyouhei/QiitaKit"` をCartfileに追記.
 - `carthage update`を実行.
-- `Carthage/Checkouts`以下に生成される`QiitaKit.framework`,`APIKit.framework`,`Result.framework`をプロジェクトにリンク
+- `Carthage/Checkouts`以下に生成される`QiitaKit.framework`をプロジェクトにリンク
 
 ### [CocoaPods](https://github.com/cocoapods/cocoapods)
 
 - `pod 'QiitaKit'`をPodfileに追記
 - `pod install`を実行
-
