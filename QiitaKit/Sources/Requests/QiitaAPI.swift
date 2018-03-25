@@ -59,7 +59,8 @@ public struct APIClient<Request: QiitaRequest> {
         self.urlSession = urlSession
     }
     
-    public func send(_ request: Request, completion: @escaping (Result<Request.Response, QiitaKitError>) -> Void) {
+    @discardableResult
+    public func send(_ request: Request, completion: @escaping (Result<Request.Response, QiitaKitError>) -> Void) -> URLSessionDataTask {
         let task = urlSession.dataTask(with: request.asURLRequest()) { (data, urlResponse, error) in
             func execCompletionOnMainThread(_ result: Result<Request.Response, QiitaKitError>) {
                 DispatchQueue.main.async {
@@ -93,6 +94,8 @@ public struct APIClient<Request: QiitaRequest> {
         }
         
         task.resume()
+        
+        return task
     }
     
 }
